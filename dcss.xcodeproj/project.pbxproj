@@ -35,7 +35,6 @@
 		B54FB9152860C63500BA35A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB9112860C5F100BA35A1 /* Foundation.framework */; };
 		B54FB91B2860C6FC00BA35A1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */; };
 		B54FB91D2860C74000BA35A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB9182860C67800BA35A1 /* CoreGraphics.framework */; };
-		B54FB91F2860C74C00BA35A1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB91E2860C74C00BA35A1 /* ImageIO.framework */; };
 		B558E325286E388500678CF5 /* path_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E318286E388500678CF5 /* path_utils.m */; };
 		B577E4BF285FA4B6002E7FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577E4BE285FA4B6002E7FCF /* Assets.xcassets */; };
 		B577E4C2285FA4B6002E7FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B577E4C0285FA4B6002E7FCF /* LaunchScreen.storyboard */; };
@@ -68,14 +67,7 @@
 		B577E9B8285FAAE4002E7FCF /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E995285FAAE4002E7FCF /* lvm.c */; };
 		B577E9B9285FAAE4002E7FCF /* lstate.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E996285FAAE4002E7FCF /* lstate.c */; };
 		B577E9BA285FAAE4002E7FCF /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E997285FAAE4002E7FCF /* lparser.c */; };
-		B577E9BC285FAB13002E7FCF /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B577E9BB285FAB07002E7FCF /* libiconv.tbd */; };
-		B577ED28285FBD0D002E7FCF /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED27285FBD0D002E7FCF /* GameController.framework */; };
-		B577ED32285FBD88002E7FCF /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED2D285FBD50002E7FCF /* AVFAudio.framework */; };
-		B577ED33285FBD9E002E7FCF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED2B285FBD50002E7FCF /* AudioToolbox.framework */; };
-		B577ED37285FBDED002E7FCF /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED36285FBDED002E7FCF /* CoreServices.framework */; };
-		B577ED3D285FBEF4002E7FCF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED3C285FBEF4002E7FCF /* CoreMotion.framework */; };
 		B577ED43285FC27D002E7FCF /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED42285FC278002E7FCF /* libsqlite3.tbd */; };
-		B581C7632869139200AB04A1 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B581C7622869139100AB04A1 /* CoreHaptics.framework */; };
 		B59A53C42867B14C0013E7DE /* CDDA_iOS_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */; };
 		B5A1E710286E582E009970E9 /* stone_soup_icon-512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */; };
 		B5A32FD42B3CD4E4001C48B5 /* precision-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD22B3CD4A9001C48B5 /* precision-menu.cc */; };
@@ -384,7 +376,6 @@
 		B54FB9132860C61800BA35A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B54FB9182860C67800BA35A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B54FB91E2860C74C00BA35A1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B558E30B286E388500678CF5 /* path_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_utils.h; sourceTree = "<group>"; };
 		B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCSS-Bridging-Header.h"; sourceTree = "<group>"; };
 		B558E312286E388500678CF5 /* CDDA_iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDA_iOS_main.h; sourceTree = "<group>"; };
@@ -445,22 +436,15 @@
 		B577E998285FAAE4002E7FCF /* ldebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ldebug.h; sourceTree = "<group>"; };
 		B577E999285FAAE4002E7FCF /* ltm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ltm.h; sourceTree = "<group>"; };
 		B577E99A285FAAE4002E7FCF /* lopcodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lopcodes.h; sourceTree = "<group>"; };
-		B577E9BB285FAB07002E7FCF /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		B577ED27285FBD0D002E7FCF /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		B577ED29285FBD2F002E7FCF /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		B577ED2B285FBD50002E7FCF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B577ED2C285FBD50002E7FCF /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
-		B577ED2D285FBD50002E7FCF /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		B577ED34285FBDB4002E7FCF /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		B577ED36285FBDED002E7FCF /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		B577ED38285FBE26002E7FCF /* libarchive.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libarchive.tbd; path = usr/lib/libarchive.tbd; sourceTree = SDKROOT; };
 		B577ED3A285FBEA7002E7FCF /* libcompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcompression.tbd; path = usr/lib/libcompression.tbd; sourceTree = SDKROOT; };
-		B577ED3C285FBEF4002E7FCF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B577ED3F285FBF74002E7FCF /* libswiftCompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftCompression.tbd; path = usr/lib/swift/libswiftCompression.tbd; sourceTree = SDKROOT; };
 		B577ED40285FBF74002E7FCF /* libParallelCompression.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libParallelCompression.tbd; path = usr/lib/libParallelCompression.tbd; sourceTree = SDKROOT; };
 		B577ED42285FC278002E7FCF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B577ED4B285FC415002E7FCF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		B581C7622869139100AB04A1 /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
 		B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CDDA_iOS_main.mm; sourceTree = "<group>"; };
 		B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stone_soup_icon-512x512.png"; path = "Libraries/crawl/crawl-ref/source/dat/tiles/stone_soup_icon-512x512.png"; sourceTree = SOURCE_ROOT; };
 		B5A32CB62B3CD488001C48B5 /* tiledef-icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-icons.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.h"; sourceTree = "<group>"; };
@@ -1209,18 +1193,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B577ED32285FBD88002E7FCF /* AVFAudio.framework in Frameworks */,
-				B54FB91F2860C74C00BA35A1 /* ImageIO.framework in Frameworks */,
 				B54FB91B2860C6FC00BA35A1 /* QuartzCore.framework in Frameworks */,
 				B54FB91D2860C74000BA35A1 /* CoreGraphics.framework in Frameworks */,
-				B577ED3D285FBEF4002E7FCF /* CoreMotion.framework in Frameworks */,
-				B581C7632869139200AB04A1 /* CoreHaptics.framework in Frameworks */,
 				B54FB9152860C63500BA35A1 /* Foundation.framework in Frameworks */,
-				B577ED33285FBD9E002E7FCF /* AudioToolbox.framework in Frameworks */,
-				B577ED37285FBDED002E7FCF /* CoreServices.framework in Frameworks */,
-				B577ED28285FBD0D002E7FCF /* GameController.framework in Frameworks */,
 				B54FB9142860C61800BA35A1 /* UIKit.framework in Frameworks */,
-				B577E9BC285FAB13002E7FCF /* libiconv.tbd in Frameworks */,
 				B577ED43285FC27D002E7FCF /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2082,8 +2058,6 @@
 		B577E903285FA9B9002E7FCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B581C7622869139100AB04A1 /* CoreHaptics.framework */,
-				B54FB91E2860C74C00BA35A1 /* ImageIO.framework */,
 				B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */,
 				B54FB9182860C67800BA35A1 /* CoreGraphics.framework */,
 				B54FB9132860C61800BA35A1 /* UIKit.framework */,
@@ -2092,17 +2066,11 @@
 				B577ED42285FC278002E7FCF /* libsqlite3.tbd */,
 				B577ED40285FBF74002E7FCF /* libParallelCompression.tbd */,
 				B577ED3F285FBF74002E7FCF /* libswiftCompression.tbd */,
-				B577ED3C285FBEF4002E7FCF /* CoreMotion.framework */,
 				B577ED3A285FBEA7002E7FCF /* libcompression.tbd */,
 				B577ED38285FBE26002E7FCF /* libarchive.tbd */,
-				B577ED36285FBDED002E7FCF /* CoreServices.framework */,
 				B577ED34285FBDB4002E7FCF /* CoreImage.framework */,
-				B577ED2B285FBD50002E7FCF /* AudioToolbox.framework */,
 				B577ED2C285FBD50002E7FCF /* AudioUnit.framework */,
-				B577ED2D285FBD50002E7FCF /* AVFAudio.framework */,
 				B577ED29285FBD2F002E7FCF /* CoreAudio.framework */,
-				B577ED27285FBD0D002E7FCF /* GameController.framework */,
-				B577E9BB285FAB07002E7FCF /* libiconv.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
