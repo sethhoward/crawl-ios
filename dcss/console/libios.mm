@@ -14,6 +14,7 @@
 #include "cio.h"
 #include "libutil.h"
 #include "state.h"
+#include "view.h"       // handle_terminal_resize
 #include "viewgeom.h"   // screen_cell_t, crawl_view_buffer (full def)
 
 #include "console_bridge.h"
@@ -165,9 +166,18 @@ bool kbhit() {
 }
 void delay(unsigned int ms) { if (ms) usleep(ms * 1000); }
 int getch_ck() {
-    std::unique_lock<std::mutex> lk(g_in_mutex);
-    g_in_cv.wait(lk, []{ return !g_in_queue.empty(); });
-    int k = g_in_queue.front(); g_in_queue.pop_front();
+    int k;
+    {
+        std::unique_lock<std::mutex> lk(g_in_mutex);
+        g_in_cv.wait(lk, []{ return !g_in_queue.empty(); });
+        k = g_in_queue.front(); g_in_queue.pop_front();
+    }
+    // A rotation / keyboard resize bumps the grid size and pushes CK_REDRAW.
+    // Re-lay-out here on the engine thread so the game AND menus reflow
+    // immediately, instead of waiting for the next real keypress (the in-game
+    // key reader only redraws on CK_REDRAW; it doesn't re-run init_geometry).
+    if (k == CK_REDRAW && crawl_state.terminal_resized)
+        handle_terminal_resize();
     return k;
 }
 void set_mouse_enabled(bool) {}

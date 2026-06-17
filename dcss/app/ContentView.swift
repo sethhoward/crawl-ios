@@ -41,11 +41,15 @@ struct ContentView: View {
                 model.rescale(width: geo.size.width, height: canvasH)
             }
             .onChange(of: geo.size) {
-                model.setEngineGrid(width: geo.size.width, height: baseH)
-                model.rescale(width: geo.size.width, height: canvasH)
+                let w = geo.size.width, h = geo.size.height
+                let kh = model.keyboardHeight
+                model.setEngineGrid(width: w, height: max(1, h - stripHeight))
+                model.rescale(width: w, height: max(1, h - (kh > 0 ? kh : stripHeight)))
             }
             .onChange(of: kbd) {
-                model.rescale(width: geo.size.width, height: canvasH)
+                let w = geo.size.width, h = geo.size.height
+                let kh = model.keyboardHeight
+                model.rescale(width: w, height: max(1, h - (kh > 0 ? kh : stripHeight)))
             }
         }
         .ignoresSafeArea(.keyboard)        // we size the game above the keyboard ourselves
