@@ -5,14 +5,18 @@ the engine as close to upstream as possible so version bumps stay cheap:
 
 - `Libraries/crawl` is a submodule pointing at **`sethhoward/crawl`** (a fork of the
   official **`crawl/crawl`**), branch `console-<version>`.
-- That branch is **upstream's release tag + two patched files**:
+- That branch is **upstream's release tag + three patched files**:
   - `main.cc` — rename `main()` → `DCSS_main` under `DCSS_IOS` (so the app owns
-    `UIApplicationMain`) and guard a `system()` call unavailable on iOS. See commit
-    `iOS console entry: DCSS_main under DCSS_IOS + guard system()`.
+    `UIApplicationMain`), guard a `system()` call unavailable on iOS, and under
+    `DCSS_IOS` loop `_launch_game_loop()` forever instead of falling through to
+    `end()` (the app must never terminate itself).
   - `viewgeom.cc` — add a portrait **`_stacked_layout`** (HUD/stats below the map
     instead of to its right) and select it for narrow grids, so phone portrait is
-    legible. See commit `console: add portrait 'stacked' layout`. Landscape/wide
-    grids keep the unchanged stock layout.
+    legible. Landscape/wide grids keep the unchanged stock layout.
+  - `end.cc` — under `DCSS_IOS`, a clean exit (`end(0)`, e.g. quitting the startup
+    menu) is turned into `game_ended(game_exit::abort)` so it unwinds back to the
+    game loop and re-shows the menu instead of calling `exit()` (which would quit
+    the app — not allowed on iOS). Crashes/error exits still terminate.
 - The whole iOS layer is in **`dcss/console/`** and is version-independent:
   - `libios.mm` — implements DCSS's console backend contract (`libconsole.h`):
     a character-grid model + input queue (`getch_ck` blocks on it).
@@ -35,13 +39,14 @@ In a clone of `sethhoward/crawl`:
 git remote add upstream https://github.com/crawl/crawl.git   # once
 git fetch upstream --tags
 git checkout -b console-0.35.0 0.35.0
-git cherry-pick <main.cc shim commit> <viewgeom stacked-layout commit>
+git cherry-pick <main.cc commit> <viewgeom commit> <end.cc commit>
 # or: git rebase --onto 0.35.0 0.34.1 console-0.34.1
 git push -u origin console-0.35.0
 ```
-`main.cc` is a tiny hunk (clean apply). `viewgeom.cc` adds a class + an
-`init_geometry` branch; if upstream reworked the layout code, re-port the
-`_stacked_layout` class and its selection (the change is self-contained).
+`main.cc` and `end.cc` are tiny `#if defined(DCSS_IOS)` hunks (clean apply).
+`viewgeom.cc` adds a class + an `init_geometry` branch; if upstream reworked the
+layout code, re-port the `_stacked_layout` class and its selection (the change is
+self-contained).
 
 ### 2. Regenerate the generated build inputs (macOS prebuild)
 Crawl generates several build inputs: the tiledef index tables, `prebuilt/levcomp.*`,

@@ -45,39 +45,41 @@ let palette: [Color] = [
 
 // Grid sizing. Console DCSS needs a wide layout (>= ~79 cols, stats to the
 // right) OR — with our viewgeom patch — a narrower portrait "stacked" layout
-// (stats below the map). Pick targets by aspect, then the largest font that
-// still meets the minimum cols x rows for that layout.
-struct GridMetrics {
-    let cols: Int
-    let rows: Int
-    let fontSize: CGFloat
-    let cellW: CGFloat
-    let cellH: CGFloat
+// (stats below the map). The *engine grid* (cols x rows) is chosen by aspect for
+// the full screen and only changes on rotation. The *render scale* (font/cell
+// size) fits that fixed grid into whatever drawable area is currently free —
+// so showing the keyboard just shrinks the font, it does NOT resize/clear the
+// engine grid (which would blank menus that don't repaint on resize).
+enum GridMetrics {
+    // Per-point metrics of Menlo.
+    private static func perPoint() -> (charW: CGFloat, lineH: CGFloat) {
+        let ref: CGFloat = 12
+        let f = UIFont(name: "Menlo", size: ref)
+            ?? UIFont.monospacedSystemFont(ofSize: ref, weight: .regular)
+        let charW = ("M" as NSString).size(withAttributes: [.font: f]).width / ref
+        return (charW, f.lineHeight / ref)
+    }
 
-    static func compute(width: CGFloat, height: CGFloat) -> GridMetrics {
+    // Engine grid (cols x rows) for a full-screen area, by aspect.
+    static func gridSize(width: CGFloat, height: CGFloat) -> (cols: Int, rows: Int) {
         let portrait = height >= width
         let minCols: CGFloat = portrait ? 42 : 79
         let minRows: CGFloat = portrait ? 37 : 24
+        let (charW, lineH) = perPoint()
+        let size = max(6, min(min((width / minCols) / charW, (height / minRows) / lineH), 22))
+        let cellW = size * charW, cellH = size * lineH
+        return (max(Int(minCols), Int(width / cellW)),
+                max(Int(minRows), Int(height / cellH)))
+    }
 
-        // Per-point metrics from a reference font.
-        let ref: CGFloat = 12
-        let refFont = UIFont(name: "Menlo", size: ref)
-            ?? UIFont.monospacedSystemFont(ofSize: ref, weight: .regular)
-        let charWPerPt = ("M" as NSString).size(withAttributes: [.font: refFont]).width / ref
-        let lineHPerPt = refFont.lineHeight / ref
-
-        let sizeForCols = (width / minCols) / charWPerPt
-        let sizeForRows = (height / minRows) / lineHPerPt
-        let fontSize = max(6, min(min(sizeForCols, sizeForRows), 22))
-
-        let font = UIFont(name: "Menlo", size: fontSize)
-            ?? UIFont.monospacedSystemFont(ofSize: fontSize, weight: .regular)
-        let cellW = ("M" as NSString).size(withAttributes: [.font: font]).width
-        let cellH = font.lineHeight
-        let cols = max(Int(minCols), Int(width / cellW))
-        let rows = max(Int(minRows), Int(height / cellH))
-        return GridMetrics(cols: cols, rows: rows, fontSize: fontSize,
-                           cellW: cellW, cellH: cellH)
+    // Largest font that fits a fixed cols x rows grid into the given area.
+    static func fit(cols: Int, rows: Int, width: CGFloat, height: CGFloat)
+        -> (fontSize: CGFloat, cellW: CGFloat, cellH: CGFloat)
+    {
+        let (charW, lineH) = perPoint()
+        let size = max(4, min(min(width / (CGFloat(cols) * charW),
+                                  height / (CGFloat(rows) * lineH)), 22))
+        return (size, size * charW, size * lineH)
     }
 }
 
@@ -102,20 +104,29 @@ final class GameModel: ObservableObject {
 
     func bumpTick() { tick &+= 1 }
 
-    // Called by ContentView whenever the drawable area changes (layout,
-    // rotation, keyboard show/hide).
-    func apply(width: CGFloat, height: CGFloat) {
+    // Set the engine grid for the full-screen area. Called on first layout and
+    // on rotation only — NOT when the keyboard appears (that would clear the
+    // grid and blank screens that don't repaint on resize).
+    func setEngineGrid(width: CGFloat, height: CGFloat) {
         guard width > 1, height > 1 else { return }
-        let m = GridMetrics.compute(width: width, height: height)
-        let dimsChanged = (m.cols != cols || m.rows != rows)
-        cols = m.cols; rows = m.rows
-        cellW = m.cellW; cellH = m.cellH; fontSize = m.fontSize
+        let g = GridMetrics.gridSize(width: width, height: height)
+        let changed = (g.cols != cols || g.rows != rows)
+        cols = g.cols; rows = g.rows
         if !started {
-            ios_console_set_size(Int32(m.cols), Int32(m.rows))
+            ios_console_set_size(Int32(g.cols), Int32(g.rows))
+            rescale(width: width, height: height)
             start()
-        } else if dimsChanged {
-            ios_console_resize(Int32(m.cols), Int32(m.rows))
+        } else if changed {
+            ios_console_resize(Int32(g.cols), Int32(g.rows))
         }
+    }
+
+    // Fit the fixed engine grid into the currently-free drawable area (changes
+    // with the keyboard). Pure rendering — never touches the engine.
+    func rescale(width: CGFloat, height: CGFloat) {
+        guard cols > 0, rows > 0, width > 1, height > 1 else { return }
+        let f = GridMetrics.fit(cols: cols, rows: rows, width: width, height: height)
+        fontSize = f.fontSize; cellW = f.cellW; cellH = f.cellH
     }
 
     private func start() {

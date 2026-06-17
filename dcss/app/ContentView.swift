@@ -17,6 +17,9 @@ struct ContentView: View {
             let kbd = model.keyboardHeight
             let showStrip = kbd == 0
             let strip = showStrip ? stripHeight : 0
+            // Engine grid is sized for the keyboard-down layout (stable per
+            // orientation); the keyboard only rescales the rendering.
+            let baseH = max(1, geo.size.height - stripHeight)
             let canvasH = max(1, geo.size.height - strip - kbd)
 
             VStack(spacing: 0) {
@@ -33,9 +36,16 @@ struct ContentView: View {
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(KeyboardInputView(model: model))   // invisible responder
-            .onAppear { model.apply(width: geo.size.width, height: canvasH) }
-            .onChange(of: canvasH) { newH in
-                model.apply(width: geo.size.width, height: newH)
+            .onAppear {
+                model.setEngineGrid(width: geo.size.width, height: baseH)
+                model.rescale(width: geo.size.width, height: canvasH)
+            }
+            .onChange(of: geo.size) {
+                model.setEngineGrid(width: geo.size.width, height: baseH)
+                model.rescale(width: geo.size.width, height: canvasH)
+            }
+            .onChange(of: kbd) {
+                model.rescale(width: geo.size.width, height: canvasH)
             }
         }
         .ignoresSafeArea(.keyboard)        // we size the game above the keyboard ourselves
