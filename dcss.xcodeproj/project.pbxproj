@@ -38,7 +38,9 @@
 		B577E4BF285FA4B6002E7FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577E4BE285FA4B6002E7FCF /* Assets.xcassets */; };
 		B577E4C2285FA4B6002E7FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B577E4C0285FA4B6002E7FCF /* LaunchScreen.storyboard */; };
 		B577E99B285FAAE4002E7FCF /* ltm.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E966285FAAE1002E7FCF /* ltm.c */; };
-		B577E99C285FAAE4002E7FCF /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E968285FAAE1002E7FCF /* print.c */; };
+		ACE2000000000000000000C1 /* lcorolib.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000C1 /* lcorolib.c */; };
+		ACE2000000000000000000C2 /* lctype.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000C2 /* lctype.c */; };
+		ACE2000000000000000000C3 /* lutf8lib.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000C3 /* lutf8lib.c */; };
 		B577E99D285FAAE4002E7FCF /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E969285FAAE1002E7FCF /* lapi.c */; };
 		B577E99E285FAAE4002E7FCF /* ltablib.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E96A285FAAE2002E7FCF /* ltablib.c */; };
 		B577E99F285FAAE4002E7FCF /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E96C285FAAE2002E7FCF /* liolib.c */; };
@@ -594,7 +596,9 @@
 		B577E965285FAAE1002E7FCF /* ltable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ltable.h; sourceTree = "<group>"; };
 		B577E966285FAAE1002E7FCF /* ltm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltm.c; sourceTree = "<group>"; };
 		B577E967285FAAE1002E7FCF /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua.h; sourceTree = "<group>"; };
-		B577E968285FAAE1002E7FCF /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = print.c; sourceTree = "<group>"; };
+		ACE1000000000000000000C1 /* lcorolib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lcorolib.c; sourceTree = "<group>"; };
+		ACE1000000000000000000C2 /* lctype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lctype.c; sourceTree = "<group>"; };
+		ACE1000000000000000000C3 /* lutf8lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lutf8lib.c; sourceTree = "<group>"; };
 		B577E969285FAAE1002E7FCF /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
 		B577E96A285FAAE2002E7FCF /* ltablib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltablib.c; sourceTree = "<group>"; };
 		B577E96B285FAAE2002E7FCF /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaconf.h; sourceTree = "<group>"; };
@@ -2548,7 +2552,9 @@
 				B577E994285FAAE4002E7FCF /* lvm.h */,
 				B577E97F285FAAE3002E7FCF /* lzio.c */,
 				B577E964285FAAE1002E7FCF /* lzio.h */,
-				B577E968285FAAE1002E7FCF /* print.c */,
+				ACE1000000000000000000C1 /* lcorolib.c */,
+				ACE1000000000000000000C2 /* lctype.c */,
+				ACE1000000000000000000C3 /* lutf8lib.c */,
 			);
 			name = lua;
 			path = "Libraries/crawl/crawl-ref/source/contrib/lua/src";
@@ -2926,7 +2932,9 @@
 				B5A3307D2B3CD4E4001C48B5 /* macro.cc in Sources */,
 				B5A330E32B3CD4E5001C48B5 /* store.cc in Sources */,
 				B5A330562B3CD4E4001C48B5 /* wiz-dump.cc in Sources */,
-				B577E99C285FAAE4002E7FCF /* print.c in Sources */,
+				ACE2000000000000000000C1 /* lcorolib.c in Sources */,
+				ACE2000000000000000000C2 /* lctype.c in Sources */,
+				ACE2000000000000000000C3 /* lutf8lib.c in Sources */,
 				B5A330252B3CD4E4001C48B5 /* travel.cc in Sources */,
 				B5A330D92B3CD4E5001C48B5 /* ng-init.cc in Sources */,
 				B5A330A72B3CD4E4001C48B5 /* quiver.cc in Sources */,
@@ -3190,7 +3198,7 @@
 		B577E4C4285FA4B6002E7FCF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -3232,6 +3240,7 @@
 					"ASSERTS=1",
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
+					"LUA_USE_IOS",
 					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
 					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
 					"TOUCH_UI=1",
@@ -3282,7 +3291,7 @@
 		B577E4C5285FA4B6002E7FCF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -3322,6 +3331,7 @@
 					"ASSERTS=1",
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
+					"LUA_USE_IOS",
 					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
 					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
 					"TOUCH_UI=1",
