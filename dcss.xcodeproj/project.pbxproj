@@ -241,7 +241,6 @@
 		B5A330682B3CD4E4001C48B5 /* cluautil.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E2E2B3CD4BF001C48B5 /* cluautil.cc */; };
 		B5A330692B3CD4E4001C48B5 /* startup.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E322B3CD4C0001C48B5 /* startup.cc */; };
 		B5A3306A2B3CD4E4001C48B5 /* l-spells.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E352B3CD4C0001C48B5 /* l-spells.cc */; };
-		B5A3306B2B3CD4E4001C48B5 /* mon-grow.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E362B3CD4C0001C48B5 /* mon-grow.cc */; };
 		B5A3306C2B3CD4E4001C48B5 /* describe-spells.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E3A2B3CD4C0001C48B5 /* describe-spells.cc */; };
 		B5A3306D2B3CD4E4001C48B5 /* l-dgnevt.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E402B3CD4C1001C48B5 /* l-dgnevt.cc */; };
 		B5A3306E2B3CD4E4001C48B5 /* l-travel.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E482B3CD4C1001C48B5 /* l-travel.cc */; };
@@ -365,7 +364,6 @@
 		B5A330E52B3CD4E5001C48B5 /* spl-miscast.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F852B3CD4DC001C48B5 /* spl-miscast.cc */; };
 		B5A330E62B3CD4E5001C48B5 /* acquire.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F882B3CD4DD001C48B5 /* acquire.cc */; };
 		B5A330E72B3CD4E5001C48B5 /* libutil.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F892B3CD4DD001C48B5 /* libutil.cc */; };
-		B5A330E82B3CD4E5001C48B5 /* spl-wpnench.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F8A2B3CD4DD001C48B5 /* spl-wpnench.cc */; };
 		B5A330E92B3CD4E5001C48B5 /* player-reacts.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F8B2B3CD4DD001C48B5 /* player-reacts.cc */; };
 		B5A330EA2B3CD4E5001C48B5 /* wiz-dgn.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F8C2B3CD4DD001C48B5 /* wiz-dgn.cc */; };
 		B5A330EB2B3CD4E5001C48B5 /* artefact.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F8D2B3CD4DD001C48B5 /* artefact.cc */; };
@@ -376,6 +374,9 @@
 		B5A330F02B3CD4E5001C48B5 /* jobs.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9B2B3CD4DE001C48B5 /* jobs.cc */; };
 		B5A330F12B3CD4E5001C48B5 /* tilereg-mon.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9C2B3CD4DE001C48B5 /* tilereg-mon.cc */; };
 		B5A330F22B3CD4E5001C48B5 /* mon-abil.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9D2B3CD4DF001C48B5 /* mon-abil.cc */; };
+		ACE2000000000000000000A3 /* player-notices.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A3 /* player-notices.cc */; };
+		ACE2000000000000000000A2 /* piety-info.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A2 /* piety-info.cc */; };
+		ACE2000000000000000000A1 /* mon-aura.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A1 /* mon-aura.cc */; };
 		B5A330F32B3CD4E5001C48B5 /* actor-los.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA12B3CD4DF001C48B5 /* actor-los.cc */; };
 		B5A330F42B3CD4E5001C48B5 /* skill-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA22B3CD4DF001C48B5 /* skill-menu.cc */; };
 		B5A330F52B3CD4E5001C48B5 /* stepdown.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA32B3CD4DF001C48B5 /* stepdown.cc */; };
@@ -729,7 +730,6 @@
 		B5A32CF82B3CD4AB001C48B5 /* tilereg-tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tilereg-tab.h"; path = "Libraries/crawl/crawl-ref/source/tilereg-tab.h"; sourceTree = "<group>"; };
 		B5A32CF92B3CD4AB001C48B5 /* movement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = movement.h; path = "Libraries/crawl/crawl-ref/source/movement.h"; sourceTree = "<group>"; };
 		B5A32CFA2B3CD4AB001C48B5 /* dgn-irregular-box.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dgn-irregular-box.cc"; path = "Libraries/crawl/crawl-ref/source/dgn-irregular-box.cc"; sourceTree = "<group>"; };
-		B5A32CFB2B3CD4AB001C48B5 /* mon-grow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-grow.h"; path = "Libraries/crawl/crawl-ref/source/mon-grow.h"; sourceTree = "<group>"; };
 		B5A32CFC2B3CD4AB001C48B5 /* l-dgnmon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-dgnmon.cc"; path = "Libraries/crawl/crawl-ref/source/l-dgnmon.cc"; sourceTree = "<group>"; };
 		B5A32CFD2B3CD4AB001C48B5 /* evoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = evoke.h; path = "Libraries/crawl/crawl-ref/source/evoke.h"; sourceTree = "<group>"; };
 		B5A32CFE2B3CD4AB001C48B5 /* mapmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mapmark.h; path = "Libraries/crawl/crawl-ref/source/mapmark.h"; sourceTree = "<group>"; };
@@ -1044,7 +1044,6 @@
 		B5A32E332B3CD4C0001C48B5 /* losparam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = losparam.h; path = "Libraries/crawl/crawl-ref/source/losparam.h"; sourceTree = "<group>"; };
 		B5A32E342B3CD4C0001C48B5 /* equipment-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "equipment-type.h"; path = "Libraries/crawl/crawl-ref/source/equipment-type.h"; sourceTree = "<group>"; };
 		B5A32E352B3CD4C0001C48B5 /* l-spells.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-spells.cc"; path = "Libraries/crawl/crawl-ref/source/l-spells.cc"; sourceTree = "<group>"; };
-		B5A32E362B3CD4C0001C48B5 /* mon-grow.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-grow.cc"; path = "Libraries/crawl/crawl-ref/source/mon-grow.cc"; sourceTree = "<group>"; };
 		B5A32E372B3CD4C0001C48B5 /* crash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crash.h; path = "Libraries/crawl/crawl-ref/source/crash.h"; sourceTree = "<group>"; };
 		B5A32E382B3CD4C0001C48B5 /* easy-confirm-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "easy-confirm-type.h"; path = "Libraries/crawl/crawl-ref/source/easy-confirm-type.h"; sourceTree = "<group>"; };
 		B5A32E392B3CD4C0001C48B5 /* ng-init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ng-init.h"; path = "Libraries/crawl/crawl-ref/source/ng-init.h"; sourceTree = "<group>"; };
@@ -1053,7 +1052,6 @@
 		B5A32E3C2B3CD4C0001C48B5 /* tutorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tutorial.h; path = "Libraries/crawl/crawl-ref/source/tutorial.h"; sourceTree = "<group>"; };
 		B5A32E3D2B3CD4C0001C48B5 /* spl-selfench.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "spl-selfench.h"; path = "Libraries/crawl/crawl-ref/source/spl-selfench.h"; sourceTree = "<group>"; };
 		B5A32E3E2B3CD4C0001C48B5 /* random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = random.h; path = "Libraries/crawl/crawl-ref/source/random.h"; sourceTree = "<group>"; };
-		B5A32E3F2B3CD4C1001C48B5 /* spl-wpnench.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "spl-wpnench.h"; path = "Libraries/crawl/crawl-ref/source/spl-wpnench.h"; sourceTree = "<group>"; };
 		B5A32E402B3CD4C1001C48B5 /* l-dgnevt.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-dgnevt.cc"; path = "Libraries/crawl/crawl-ref/source/l-dgnevt.cc"; sourceTree = "<group>"; };
 		B5A32E412B3CD4C1001C48B5 /* mon-clone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-clone.h"; path = "Libraries/crawl/crawl-ref/source/mon-clone.h"; sourceTree = "<group>"; };
 		B5A32E422B3CD4C1001C48B5 /* fight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fight.h; path = "Libraries/crawl/crawl-ref/source/fight.h"; sourceTree = "<group>"; };
@@ -1383,7 +1381,6 @@
 		B5A32F872B3CD4DD001C48B5 /* mon-pick-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-pick-data.h"; path = "Libraries/crawl/crawl-ref/source/mon-pick-data.h"; sourceTree = "<group>"; };
 		B5A32F882B3CD4DD001C48B5 /* acquire.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = acquire.cc; path = "Libraries/crawl/crawl-ref/source/acquire.cc"; sourceTree = "<group>"; };
 		B5A32F892B3CD4DD001C48B5 /* libutil.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = libutil.cc; path = "Libraries/crawl/crawl-ref/source/libutil.cc"; sourceTree = "<group>"; };
-		B5A32F8A2B3CD4DD001C48B5 /* spl-wpnench.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-wpnench.cc"; path = "Libraries/crawl/crawl-ref/source/spl-wpnench.cc"; sourceTree = "<group>"; };
 		B5A32F8B2B3CD4DD001C48B5 /* player-reacts.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "player-reacts.cc"; path = "Libraries/crawl/crawl-ref/source/player-reacts.cc"; sourceTree = "<group>"; };
 		B5A32F8C2B3CD4DD001C48B5 /* wiz-dgn.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "wiz-dgn.cc"; path = "Libraries/crawl/crawl-ref/source/wiz-dgn.cc"; sourceTree = "<group>"; };
 		B5A32F8D2B3CD4DD001C48B5 /* artefact.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = artefact.cc; path = "Libraries/crawl/crawl-ref/source/artefact.cc"; sourceTree = "<group>"; };
@@ -1403,6 +1400,9 @@
 		B5A32F9B2B3CD4DE001C48B5 /* jobs.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jobs.cc; path = "Libraries/crawl/crawl-ref/source/jobs.cc"; sourceTree = "<group>"; };
 		B5A32F9C2B3CD4DE001C48B5 /* tilereg-mon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-mon.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-mon.cc"; sourceTree = "<group>"; };
 		B5A32F9D2B3CD4DF001C48B5 /* mon-abil.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-abil.cc"; path = "Libraries/crawl/crawl-ref/source/mon-abil.cc"; sourceTree = "<group>"; };
+		ACE1000000000000000000A3 /* player-notices.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "player-notices.cc"; path = "Libraries/crawl/crawl-ref/source/player-notices.cc"; sourceTree = "<group>"; };
+		ACE1000000000000000000A2 /* piety-info.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "piety-info.cc"; path = "Libraries/crawl/crawl-ref/source/piety-info.cc"; sourceTree = "<group>"; };
+		ACE1000000000000000000A1 /* mon-aura.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-aura.cc"; path = "Libraries/crawl/crawl-ref/source/mon-aura.cc"; sourceTree = "<group>"; };
 		B5A32F9E2B3CD4DF001C48B5 /* feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = feature.h; path = "Libraries/crawl/crawl-ref/source/feature.h"; sourceTree = "<group>"; };
 		B5A32F9F2B3CD4DF001C48B5 /* luaterp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaterp.h; path = "Libraries/crawl/crawl-ref/source/luaterp.h"; sourceTree = "<group>"; };
 		B5A32FA02B3CD4DF001C48B5 /* pronoun-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "pronoun-type.h"; path = "Libraries/crawl/crawl-ref/source/pronoun-type.h"; sourceTree = "<group>"; };
@@ -1867,6 +1867,9 @@
 				B5A32F5B2B3CD4D9001C48B5 /* misc.cc */,
 				B5A32DAF2B3CD4B5001C48B5 /* misc.h */,
 				B5A32F9D2B3CD4DF001C48B5 /* mon-abil.cc */,
+				ACE1000000000000000000A3 /* player-notices.cc */,
+				ACE1000000000000000000A2 /* piety-info.cc */,
+				ACE1000000000000000000A1 /* mon-aura.cc */,
 				B5A32EFD2B3CD4D1001C48B5 /* mon-abil.h */,
 				B5A32D3C2B3CD4AD001C48B5 /* mon-act.cc */,
 				B5A32D4F2B3CD4AE001C48B5 /* mon-act.h */,
@@ -1891,8 +1894,6 @@
 				B5A32CDF2B3CD4AA001C48B5 /* mon-flags.h */,
 				B5A32F912B3CD4DE001C48B5 /* mon-gear.cc */,
 				B5A32E6E2B3CD4C4001C48B5 /* mon-gear.h */,
-				B5A32E362B3CD4C0001C48B5 /* mon-grow.cc */,
-				B5A32CFB2B3CD4AB001C48B5 /* mon-grow.h */,
 				B5A32E112B3CD4BD001C48B5 /* mon-holy-type.h */,
 				B5A32E292B3CD4BF001C48B5 /* mon-info-flag-name.h */,
 				B5A32D682B3CD4AF001C48B5 /* mon-info.cc */,
@@ -2083,8 +2084,6 @@
 				B5A32ECA2B3CD4CC001C48B5 /* spl-util.cc */,
 				B5A32F452B3CD4D7001C48B5 /* spl-util.h */,
 				B5A32D4A2B3CD4AE001C48B5 /* spl-vortex.cc */,
-				B5A32F8A2B3CD4DD001C48B5 /* spl-wpnench.cc */,
-				B5A32E3F2B3CD4C1001C48B5 /* spl-wpnench.h */,
 				B5A32D0B2B3CD4AB001C48B5 /* spl-zap.cc */,
 				B5A32CE12B3CD4AA001C48B5 /* spl-zap.h */,
 				B5A32F022B3CD4D1001C48B5 /* sprint.cc */,
@@ -2838,6 +2837,9 @@
 				B5A3309E2B3CD4E4001C48B5 /* directn.cc in Sources */,
 				B5A32FD62B3CD4E4001C48B5 /* arena.cc in Sources */,
 				B5A330F22B3CD4E5001C48B5 /* mon-abil.cc in Sources */,
+				ACE2000000000000000000A3 /* player-notices.cc in Sources */,
+				ACE2000000000000000000A2 /* piety-info.cc in Sources */,
+				ACE2000000000000000000A1 /* mon-aura.cc in Sources */,
 				B5A330622B3CD4E4001C48B5 /* hiscores.cc in Sources */,
 				B5A3308B2B3CD4E4001C48B5 /* maps.cc in Sources */,
 				B5A330282B3CD4E4001C48B5 /* mutation.cc in Sources */,
@@ -2976,7 +2978,6 @@
 				B5A3305F2B3CD4E4001C48B5 /* mon-behv.cc in Sources */,
 				B5A330382B3CD4E4001C48B5 /* l-colour.cc in Sources */,
 				B5A3308F2B3CD4E4001C48B5 /* mon-util.cc in Sources */,
-				B5A3306B2B3CD4E4001C48B5 /* mon-grow.cc in Sources */,
 				B5A330032B3CD4E4001C48B5 /* spl-vortex.cc in Sources */,
 				B577E9A1285FAAE4002E7FCF /* lundump.c in Sources */,
 				B577E9BA285FAAE4002E7FCF /* lparser.c in Sources */,
@@ -3072,7 +3073,6 @@
 				B5A331012B3CD4E5001C48B5 /* kills.cc in Sources */,
 				B558E321286E388500678CF5 /* main.m in Sources */,
 				B5A32FF82B3CD4E4001C48B5 /* target.cc in Sources */,
-				B5A330E82B3CD4E5001C48B5 /* spl-wpnench.cc in Sources */,
 				B5A3308D2B3CD4E4001C48B5 /* notes.cc in Sources */,
 				B5A3308A2B3CD4E4001C48B5 /* tilereg-doll.cc in Sources */,
 				B5A330512B3CD4E4001C48B5 /* l-moninf.cc in Sources */,
