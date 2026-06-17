@@ -77,30 +77,6 @@ dkms.conf
 
 # Executables
 
-### fastlane ###
-# fastlane - A streamlined workflow tool for Cocoa deployment
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-# fastlane specific
-fastlane/report.xml
-
-# deliver temporary files
-fastlane/Preview.html
-
-# snapshot generated screenshots
-fastlane/screenshots/**/*.png
-fastlane/screenshots/screenshots.html
-
-# scan temporary files
-fastlane/test_output
-
-# Fastlane.swift runner binary
-fastlane/FastlaneRunner
-
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839

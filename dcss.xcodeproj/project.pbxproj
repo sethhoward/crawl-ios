@@ -12,29 +12,13 @@
 		B503A5F22868E2F300C62C38 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B503A5F12868E2F300C62C38 /* fonts */; };
 		B503A5FB2868E57700C62C38 /* levcomp.tab.cc in Sources */ = {isa = PBXBuildFile; fileRef = B503A5F82868E57700C62C38 /* levcomp.tab.cc */; };
 		B503A5FC2868E57700C62C38 /* levcomp.lex.cc in Sources */ = {isa = PBXBuildFile; fileRef = B503A5F92868E57700C62C38 /* levcomp.lex.cc */; };
-		B503AA902868EEB000C62C38 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B503A6192868EBE800C62C38 /* libFreetype2.a */; };
-		B5122431286A60DD002A7C79 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B512240F286A5E58002A7C79 /* libSDL2.a */; };
-		B5122432286A60E3002A7C79 /* libFreetype2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B503A6192868EBE800C62C38 /* libFreetype2.a */; };
-		B5122433286A60EA002A7C79 /* libSDL2_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5122428286A5E63002A7C79 /* libSDL2_image.a */; };
 		B54FB9142860C61800BA35A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB9132860C61800BA35A1 /* UIKit.framework */; };
 		B54FB9152860C63500BA35A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB9112860C5F100BA35A1 /* Foundation.framework */; };
 		B54FB9172860C65200BA35A1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B577ED49285FC408002E7FCF /* OpenGLES.framework */; };
 		B54FB91B2860C6FC00BA35A1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */; };
 		B54FB91D2860C74000BA35A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB9182860C67800BA35A1 /* CoreGraphics.framework */; };
 		B54FB91F2860C74C00BA35A1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54FB91E2860C74C00BA35A1 /* ImageIO.framework */; };
-		B558E319286E388500678CF5 /* PageUpDownPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558E303286E388500678CF5 /* PageUpDownPanGestureRecognizer.swift */; };
-		B558E31A286E388500678CF5 /* SDL_char_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E305286E388500678CF5 /* SDL_char_utils.m */; };
-		B558E31C286E388500678CF5 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558E307286E388500678CF5 /* MenuButton.swift */; };
-		B558E31D286E388500678CF5 /* SDL_uikitview+CDDA.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E308286E388500678CF5 /* SDL_uikitview+CDDA.m */; };
-		B558E31E286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.mm in Sources */ = {isa = PBXBuildFile; fileRef = B558E30A286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.mm */; };
-		B558E320286E388500678CF5 /* GamePadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E30D286E388500678CF5 /* GamePadViewController.m */; };
-		B558E321286E388500678CF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E30E286E388500678CF5 /* main.m */; };
-		B558E322286E388500678CF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E313286E388500678CF5 /* AppDelegate.m */; };
-		B558E324286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E315286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.m */; };
 		B558E325286E388500678CF5 /* path_utils.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E318286E388500678CF5 /* path_utils.m */; };
-		B558E331286E3B8200678CF5 /* JSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E330286E3B8200678CF5 /* JSButton.m */; };
-		B558E348286E404600678CF5 /* ShowAndFixGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B558E314286E388500678CF5 /* ShowAndFixGestureRecognizer.swift */; };
-		B558F942286FAD5A000FB84F /* game_dependent.mm in Sources */ = {isa = PBXBuildFile; fileRef = B558F941286FAD5A000FB84F /* game_dependent.mm */; };
 		B577E4BF285FA4B6002E7FCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577E4BE285FA4B6002E7FCF /* Assets.xcassets */; };
 		B577E4C2285FA4B6002E7FCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B577E4C0285FA4B6002E7FCF /* LaunchScreen.storyboard */; };
 		B577E99B285FAAE4002E7FCF /* ltm.c in Sources */ = {isa = PBXBuildFile; fileRef = B577E966285FAAE1002E7FCF /* ltm.c */; };
@@ -79,19 +63,19 @@
 		B581C7632869139200AB04A1 /* CoreHaptics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B581C7622869139100AB04A1 /* CoreHaptics.framework */; };
 		B581C769286913F200AB04A1 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B581C768286913F100AB04A1 /* Metal.framework */; };
 		B59A53C42867B14C0013E7DE /* CDDA_iOS_main.mm in Sources */ = {isa = PBXBuildFile; fileRef = B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */; };
-		B5A1E702286E4AE9009970E9 /* UIControls.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A1E701286E4AE9009970E9 /* UIControls.storyboard */; };
-		B5A1E703286E4BAB009970E9 /* SDL_uikitviewcontroller+KeyboardKeysHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = B558E306286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.m */; };
-		B5A1E706286E536F009970E9 /* dPad-None@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A1E705286E536F009970E9 /* dPad-None@2x.png */; };
+		ACE5000000000000000000B /* tiledef-dngn.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000000A /* tiledef-dngn.cc */; };
+		ACE5000000000000000001B /* tiledef-feat.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000001A /* tiledef-feat.cc */; };
+		ACE5000000000000000002B /* tiledef-floor.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000002A /* tiledef-floor.cc */; };
+		ACE5000000000000000003B /* tiledef-gui.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000003A /* tiledef-gui.cc */; };
+		ACE5000000000000000004B /* tiledef-icons.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000004A /* tiledef-icons.cc */; };
+		ACE5000000000000000005B /* tiledef-main.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000005A /* tiledef-main.cc */; };
+		ACE5000000000000000006B /* tiledef-player.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000006A /* tiledef-player.cc */; };
+		ACE5000000000000000007B /* tiledef-unrand.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000007A /* tiledef-unrand.cc */; };
+		ACE5000000000000000008B /* tiledef-wall.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000008A /* tiledef-wall.cc */; };
+		ACE4000000000000000000A1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A1 /* main.mm */; };
+		ACE4000000000000000000A2 /* ConsoleAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */; };
+		ACE4000000000000000000A3 /* libios.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A3 /* libios.mm */; };
 		B5A1E710286E582E009970E9 /* stone_soup_icon-512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */; };
-		B5A32CC92B3CD489001C48B5 /* tiledef-main.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CB82B3CD488001C48B5 /* tiledef-main.cc */; };
-		B5A32CCA2B3CD489001C48B5 /* tiledef-feat.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CB92B3CD488001C48B5 /* tiledef-feat.cc */; };
-		B5A32CCB2B3CD489001C48B5 /* tiledef-floor.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CBB2B3CD488001C48B5 /* tiledef-floor.cc */; };
-		B5A32CCC2B3CD489001C48B5 /* tiledef-unrand.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CBD2B3CD488001C48B5 /* tiledef-unrand.cc */; };
-		B5A32CCD2B3CD489001C48B5 /* tiledef-dngn.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CBE2B3CD488001C48B5 /* tiledef-dngn.cc */; };
-		B5A32CCE2B3CD489001C48B5 /* tiledef-wall.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CBF2B3CD488001C48B5 /* tiledef-wall.cc */; };
-		B5A32CCF2B3CD489001C48B5 /* tiledef-gui.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CC52B3CD489001C48B5 /* tiledef-gui.cc */; };
-		B5A32CD02B3CD489001C48B5 /* tiledef-icons.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CC62B3CD489001C48B5 /* tiledef-icons.cc */; };
-		B5A32CD12B3CD489001C48B5 /* tiledef-player.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CC82B3CD489001C48B5 /* tiledef-player.cc */; };
 		B5A32FD42B3CD4E4001C48B5 /* precision-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD22B3CD4A9001C48B5 /* precision-menu.cc */; };
 		B5A32FD52B3CD4E4001C48B5 /* sqldbm.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD32B3CD4A9001C48B5 /* sqldbm.cc */; };
 		B5A32FD62B3CD4E4001C48B5 /* arena.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD72B3CD4A9001C48B5 /* arena.cc */; };
@@ -99,7 +83,6 @@
 		B5A32FD82B3CD4E4001C48B5 /* dgn-height.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CDB2B3CD4A9001C48B5 /* dgn-height.cc */; };
 		B5A32FD92B3CD4E4001C48B5 /* message-stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CDC2B3CD4A9001C48B5 /* message-stream.cc */; };
 		B5A32FDA2B3CD4E4001C48B5 /* wiz-you.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CE22B3CD4AA001C48B5 /* wiz-you.cc */; };
-		B5A32FDB2B3CD4E4001C48B5 /* tilereg-abl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CED2B3CD4AA001C48B5 /* tilereg-abl.cc */; };
 		B5A32FDC2B3CD4E4001C48B5 /* losglobal.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CF02B3CD4AA001C48B5 /* losglobal.cc */; };
 		B5A32FDD2B3CD4E4001C48B5 /* l-item.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CF22B3CD4AA001C48B5 /* l-item.cc */; };
 		B5A32FDE2B3CD4E4001C48B5 /* dgn-irregular-box.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CFA2B3CD4AB001C48B5 /* dgn-irregular-box.cc */; };
@@ -111,7 +94,6 @@
 		B5A32FE42B3CD4E4001C48B5 /* mon-speak.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D062B3CD4AB001C48B5 /* mon-speak.cc */; };
 		B5A32FE52B3CD4E4001C48B5 /* package.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D082B3CD4AB001C48B5 /* package.cc */; };
 		B5A32FE62B3CD4E4001C48B5 /* uncancel.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D092B3CD4AB001C48B5 /* uncancel.cc */; };
-		B5A32FE72B3CD4E4001C48B5 /* tilereg-spl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D0A2B3CD4AB001C48B5 /* tilereg-spl.cc */; };
 		B5A32FE82B3CD4E4001C48B5 /* spl-zap.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D0B2B3CD4AB001C48B5 /* spl-zap.cc */; };
 		B5A32FE92B3CD4E4001C48B5 /* viewgeom.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D0F2B3CD4AC001C48B5 /* viewgeom.cc */; };
 		B5A32FEA2B3CD4E4001C48B5 /* mon-movetarget.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D112B3CD4AC001C48B5 /* mon-movetarget.cc */; };
@@ -134,19 +116,16 @@
 		B5A32FFB2B3CD4E4001C48B5 /* beam.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D362B3CD4AD001C48B5 /* beam.cc */; };
 		B5A32FFC2B3CD4E4001C48B5 /* newgame.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D372B3CD4AD001C48B5 /* newgame.cc */; };
 		B5A32FFD2B3CD4E4001C48B5 /* l-file.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D3A2B3CD4AD001C48B5 /* l-file.cc */; };
-		B5A32FFE2B3CD4E4001C48B5 /* libw32c.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D3B2B3CD4AD001C48B5 /* libw32c.cc */; };
 		B5A32FFF2B3CD4E4001C48B5 /* mon-act.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D3C2B3CD4AD001C48B5 /* mon-act.cc */; };
 		B5A330002B3CD4E4001C48B5 /* spl-transloc.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D3E2B3CD4AD001C48B5 /* spl-transloc.cc */; };
 		B5A330012B3CD4E4001C48B5 /* dbg-scan.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D422B3CD4AE001C48B5 /* dbg-scan.cc */; };
 		B5A330022B3CD4E4001C48B5 /* spl-monench.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D472B3CD4AE001C48B5 /* spl-monench.cc */; };
 		B5A330032B3CD4E4001C48B5 /* spl-vortex.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D4A2B3CD4AE001C48B5 /* spl-vortex.cc */; };
-		B5A330042B3CD4E4001C48B5 /* tilereg-grid.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D502B3CD4AE001C48B5 /* tilereg-grid.cc */; };
 		B5A330052B3CD4E4001C48B5 /* ng-restr.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D542B3CD4AE001C48B5 /* ng-restr.cc */; };
 		B5A330062B3CD4E4001C48B5 /* abyss.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D572B3CD4AE001C48B5 /* abyss.cc */; };
 		B5A330072B3CD4E4001C48B5 /* timed-effects.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D5C2B3CD4AF001C48B5 /* timed-effects.cc */; };
 		B5A330082B3CD4E4001C48B5 /* geom2d.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D5D2B3CD4AF001C48B5 /* geom2d.cc */; };
 		B5A330092B3CD4E4001C48B5 /* ghost.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D5E2B3CD4AF001C48B5 /* ghost.cc */; };
-		B5A3300A2B3CD4E4001C48B5 /* tilereg-text.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D5F2B3CD4AF001C48B5 /* tilereg-text.cc */; };
 		B5A3300B2B3CD4E4001C48B5 /* fight.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D602B3CD4AF001C48B5 /* fight.cc */; };
 		B5A3300C2B3CD4E4001C48B5 /* adjust.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D612B3CD4AF001C48B5 /* adjust.cc */; };
 		B5A3300D2B3CD4E4001C48B5 /* wiz-item.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D632B3CD4AF001C48B5 /* wiz-item.cc */; };
@@ -159,7 +138,6 @@
 		B5A330142B3CD4E4001C48B5 /* l-mons.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D752B3CD4B0001C48B5 /* l-mons.cc */; };
 		B5A330152B3CD4E4001C48B5 /* ng-wanderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D772B3CD4B0001C48B5 /* ng-wanderer.cc */; };
 		B5A330162B3CD4E4001C48B5 /* terrain.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D802B3CD4B1001C48B5 /* terrain.cc */; };
-		B5A330172B3CD4E4001C48B5 /* tilereg-stat.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D882B3CD4B2001C48B5 /* tilereg-stat.cc */; };
 		B5A330182B3CD4E4001C48B5 /* tags.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D892B3CD4B2001C48B5 /* tags.cc */; };
 		B5A330192B3CD4E4001C48B5 /* god-conduct.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D8B2B3CD4B2001C48B5 /* god-conduct.cc */; };
 		B5A3301A2B3CD4E4001C48B5 /* tilepick.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D8D2B3CD4B2001C48B5 /* tilepick.cc */; };
@@ -171,16 +149,13 @@
 		B5A330202B3CD4E4001C48B5 /* religion.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32D9F2B3CD4B4001C48B5 /* religion.cc */; };
 		B5A330212B3CD4E4001C48B5 /* playable.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DA22B3CD4B4001C48B5 /* playable.cc */; };
 		B5A330222B3CD4E4001C48B5 /* l-dgngrd.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DA32B3CD4B4001C48B5 /* l-dgngrd.cc */; };
-		B5A330232B3CD4E4001C48B5 /* tilefont.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DA42B3CD4B4001C48B5 /* tilefont.cc */; };
 		B5A330242B3CD4E4001C48B5 /* domino.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DA52B3CD4B4001C48B5 /* domino.cc */; };
 		B5A330252B3CD4E4001C48B5 /* travel.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DA82B3CD4B4001C48B5 /* travel.cc */; };
-		B5A330262B3CD4E4001C48B5 /* tilepick-p.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DAB2B3CD4B5001C48B5 /* tilepick-p.cc */; };
 		B5A330272B3CD4E4001C48B5 /* l-subvault.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DAC2B3CD4B5001C48B5 /* l-subvault.cc */; };
 		B5A330282B3CD4E4001C48B5 /* mutation.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DAD2B3CD4B5001C48B5 /* mutation.cc */; };
 		B5A330292B3CD4E4001C48B5 /* mapdef.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DB02B3CD4B5001C48B5 /* mapdef.cc */; };
 		B5A3302A2B3CD4E4001C48B5 /* god-item.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DB22B3CD4B5001C48B5 /* god-item.cc */; };
 		B5A3302B2B3CD4E4001C48B5 /* mon-ench.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DB62B3CD4B5001C48B5 /* mon-ench.cc */; };
-		B5A3302C2B3CD4E4001C48B5 /* tiletex.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DB82B3CD4B6001C48B5 /* tiletex.cc */; };
 		B5A3302D2B3CD4E4001C48B5 /* l-los.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DB92B3CD4B6001C48B5 /* l-los.cc */; };
 		B5A3302E2B3CD4E4001C48B5 /* god-prayer.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DBA2B3CD4B6001C48B5 /* god-prayer.cc */; };
 		B5A3302F2B3CD4E4001C48B5 /* crash.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DBB2B3CD4B6001C48B5 /* crash.cc */; };
@@ -194,8 +169,6 @@
 		B5A330372B3CD4E4001C48B5 /* random.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DCE2B3CD4B8001C48B5 /* random.cc */; };
 		B5A330382B3CD4E4001C48B5 /* l-colour.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DCF2B3CD4B8001C48B5 /* l-colour.cc */; };
 		B5A330392B3CD4E4001C48B5 /* zot.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD22B3CD4B8001C48B5 /* zot.cc */; };
-		B5A3303A2B3CD4E4001C48B5 /* tilereg-crt.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD32B3CD4B8001C48B5 /* tilereg-crt.cc */; };
-		B5A3303B2B3CD4E4001C48B5 /* glwrapper-ogl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD42B3CD4B8001C48B5 /* glwrapper-ogl.cc */; };
 		B5A3303C2B3CD4E4001C48B5 /* attitude-change.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD62B3CD4B8001C48B5 /* attitude-change.cc */; };
 		B5A3303D2B3CD4E4001C48B5 /* hints.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD72B3CD4B8001C48B5 /* hints.cc */; };
 		B5A3303E2B3CD4E4001C48B5 /* dgn-overview.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DD92B3CD4B9001C48B5 /* dgn-overview.cc */; };
@@ -212,7 +185,6 @@
 		B5A330492B3CD4E4001C48B5 /* worley.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DE62B3CD4BA001C48B5 /* worley.cc */; };
 		B5A3304A2B3CD4E4001C48B5 /* showsymb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DE72B3CD4BA001C48B5 /* showsymb.cc */; };
 		B5A3304B2B3CD4E4001C48B5 /* l-feat.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DEA2B3CD4BA001C48B5 /* l-feat.cc */; };
-		B5A3304C2B3CD4E4001C48B5 /* tilesdl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DEC2B3CD4BA001C48B5 /* tilesdl.cc */; };
 		B5A3304D2B3CD4E4001C48B5 /* teleport.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DEE2B3CD4BA001C48B5 /* teleport.cc */; };
 		B5A3304E2B3CD4E4001C48B5 /* pattern.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DF02B3CD4BA001C48B5 /* pattern.cc */; };
 		B5A3304F2B3CD4E4001C48B5 /* mon-cast.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32DF22B3CD4BB001C48B5 /* mon-cast.cc */; };
@@ -237,7 +209,6 @@
 		B5A330622B3CD4E4001C48B5 /* hiscores.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E162B3CD4BD001C48B5 /* hiscores.cc */; };
 		B5A330632B3CD4E4001C48B5 /* unicode.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E1A2B3CD4BE001C48B5 /* unicode.cc */; };
 		B5A330642B3CD4E4001C48B5 /* l-dgn.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E1E2B3CD4BE001C48B5 /* l-dgn.cc */; };
-		B5A330652B3CD4E4001C48B5 /* tilereg-msg.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E252B3CD4BE001C48B5 /* tilereg-msg.cc */; };
 		B5A330662B3CD4E4001C48B5 /* l-debug.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E262B3CD4BF001C48B5 /* l-debug.cc */; };
 		B5A330672B3CD4E4001C48B5 /* syscalls.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E2C2B3CD4BF001C48B5 /* syscalls.cc */; };
 		B5A330682B3CD4E4001C48B5 /* cluautil.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E2E2B3CD4BF001C48B5 /* cluautil.cc */; };
@@ -248,13 +219,10 @@
 		B5A3306E2B3CD4E4001C48B5 /* l-travel.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E482B3CD4C1001C48B5 /* l-travel.cc */; };
 		B5A3306F2B3CD4E4001C48B5 /* cio.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E4E2B3CD4C2001C48B5 /* cio.cc */; };
 		B5A330702B3CD4E4001C48B5 /* describe-god.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E502B3CD4C2001C48B5 /* describe-god.cc */; };
-		B5A330712B3CD4E4001C48B5 /* fontwrapper-ft.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E512B3CD4C2001C48B5 /* fontwrapper-ft.cc */; };
-		B5A330722B3CD4E4001C48B5 /* tilereg-skl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E532B3CD4C2001C48B5 /* tilereg-skl.cc */; };
 		B5A330732B3CD4E4001C48B5 /* mon-transit.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E542B3CD4C2001C48B5 /* mon-transit.cc */; };
 		B5A330742B3CD4E4001C48B5 /* monster.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E552B3CD4C2001C48B5 /* monster.cc */; };
 		B5A330752B3CD4E4001C48B5 /* dbg-util.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E562B3CD4C2001C48B5 /* dbg-util.cc */; };
 		B5A330762B3CD4E4001C48B5 /* lookup-help.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E5D2B3CD4C3001C48B5 /* lookup-help.cc */; };
-		B5A330772B3CD4E4001C48B5 /* libgui.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E5F2B3CD4C3001C48B5 /* libgui.cc */; };
 		B5A330782B3CD4E4001C48B5 /* dgn-shoals.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E602B3CD4C3001C48B5 /* dgn-shoals.cc */; };
 		B5A3307A2B3CD4E4001C48B5 /* lang-fake.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E632B3CD4C3001C48B5 /* lang-fake.cc */; };
 		B5A3307B2B3CD4E4001C48B5 /* delay.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E672B3CD4C4001C48B5 /* delay.cc */; };
@@ -263,16 +231,13 @@
 		B5A3307E2B3CD4E4001C48B5 /* l-dgnlvl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E702B3CD4C4001C48B5 /* l-dgnlvl.cc */; };
 		B5A3307F2B3CD4E4001C48B5 /* melee-attack.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E732B3CD4C5001C48B5 /* melee-attack.cc */; };
 		B5A330802B3CD4E4001C48B5 /* dgn-proclayouts.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E742B3CD4C5001C48B5 /* dgn-proclayouts.cc */; };
-		B5A330812B3CD4E4001C48B5 /* tilereg-inv.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E752B3CD4C5001C48B5 /* tilereg-inv.cc */; };
 		B5A330822B3CD4E4001C48B5 /* hash.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E782B3CD4C5001C48B5 /* hash.cc */; };
 		B5A330832B3CD4E4001C48B5 /* files.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E7A2B3CD4C5001C48B5 /* files.cc */; };
 		B5A330842B3CD4E4001C48B5 /* chardump.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E7C2B3CD4C5001C48B5 /* chardump.cc */; };
 		B5A330852B3CD4E4001C48B5 /* wiz-mon.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E802B3CD4C6001C48B5 /* wiz-mon.cc */; };
 		B5A330862B3CD4E4001C48B5 /* main.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E812B3CD4C6001C48B5 /* main.cc */; };
 		B5A330872B3CD4E4001C48B5 /* spl-goditem.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E862B3CD4C6001C48B5 /* spl-goditem.cc */; };
-		B5A330882B3CD4E4001C48B5 /* tilebuf.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E8A2B3CD4C6001C48B5 /* tilebuf.cc */; };
 		B5A330892B3CD4E4001C48B5 /* spl-other.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E8C2B3CD4C7001C48B5 /* spl-other.cc */; };
-		B5A3308A2B3CD4E4001C48B5 /* tilereg-doll.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E8D2B3CD4C7001C48B5 /* tilereg-doll.cc */; };
 		B5A3308B2B3CD4E4001C48B5 /* maps.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E8E2B3CD4C7001C48B5 /* maps.cc */; };
 		B5A3308C2B3CD4E4001C48B5 /* ui.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E902B3CD4C7001C48B5 /* ui.cc */; };
 		B5A3308D2B3CD4E4001C48B5 /* notes.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E912B3CD4C7001C48B5 /* notes.cc */; };
@@ -283,15 +248,12 @@
 		B5A330922B3CD4E4001C48B5 /* clua.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E9E2B3CD4C8001C48B5 /* clua.cc */; };
 		B5A330932B3CD4E4001C48B5 /* initfile.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32E9F2B3CD4C8001C48B5 /* initfile.cc */; };
 		B5A330942B3CD4E4001C48B5 /* evoke.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EA12B3CD4C8001C48B5 /* evoke.cc */; };
-		B5A330952B3CD4E4001C48B5 /* windowmanager-sdl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EA22B3CD4C8001C48B5 /* windowmanager-sdl.cc */; };
 		B5A330962B3CD4E4001C48B5 /* json.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EA62B3CD4C9001C48B5 /* json.cc */; };
 		B5A330972B3CD4E4001C48B5 /* errors.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EA92B3CD4C9001C48B5 /* errors.cc */; };
 		B5A330982B3CD4E4001C48B5 /* branch.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EAA2B3CD4C9001C48B5 /* branch.cc */; };
 		B5A330992B3CD4E4001C48B5 /* output.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EAB2B3CD4C9001C48B5 /* output.cc */; };
-		B5A3309A2B3CD4E4001C48B5 /* tiledoll.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EAE2B3CD4CA001C48B5 /* tiledoll.cc */; };
 		B5A3309B2B3CD4E4001C48B5 /* spl-clouds.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EAF2B3CD4CA001C48B5 /* spl-clouds.cc */; };
 		B5A3309C2B3CD4E4001C48B5 /* skills.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EB02B3CD4CA001C48B5 /* skills.cc */; };
-		B5A3309D2B3CD4E4001C48B5 /* tilereg-map.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EB32B3CD4CA001C48B5 /* tilereg-map.cc */; };
 		B5A3309E2B3CD4E4001C48B5 /* directn.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EBB2B3CD4CB001C48B5 /* directn.cc */; };
 		B5A3309F2B3CD4E4001C48B5 /* version.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EBC2B3CD4CB001C48B5 /* version.cc */; };
 		B5A330A02B3CD4E4001C48B5 /* potion.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EBD2B3CD4CB001C48B5 /* potion.cc */; };
@@ -299,7 +261,6 @@
 		B5A330A22B3CD4E4001C48B5 /* ctest.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EC02B3CD4CB001C48B5 /* ctest.cc */; };
 		B5A330A32B3CD4E4001C48B5 /* l-dgnit.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EC22B3CD4CC001C48B5 /* l-dgnit.cc */; };
 		B5A330A42B3CD4E4001C48B5 /* l-global.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EC62B3CD4CC001C48B5 /* l-global.cc */; };
-		B5A330A52B3CD4E4001C48B5 /* glwrapper.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EC82B3CD4CC001C48B5 /* glwrapper.cc */; };
 		B5A330A62B3CD4E4001C48B5 /* spl-util.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32ECA2B3CD4CC001C48B5 /* spl-util.cc */; };
 		B5A330A72B3CD4E4001C48B5 /* quiver.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32ECF2B3CD4CD001C48B5 /* quiver.cc */; };
 		B5A330A82B3CD4E4001C48B5 /* dlua.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32ED22B3CD4CD001C48B5 /* dlua.cc */; };
@@ -313,7 +274,6 @@
 		B5A330B02B3CD4E4001C48B5 /* spl-cast.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EF22B3CD4D0001C48B5 /* spl-cast.cc */; };
 		B5A330B12B3CD4E4001C48B5 /* ng-init-branches.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EF62B3CD4D0001C48B5 /* ng-init-branches.cc */; };
 		B5A330B22B3CD4E4001C48B5 /* ouch.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EF82B3CD4D0001C48B5 /* ouch.cc */; };
-		B5A330B32B3CD4E4001C48B5 /* tileweb-text.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32EF92B3CD4D0001C48B5 /* tileweb-text.cc */; };
 		B5A330B42B3CD4E4001C48B5 /* sprint.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F022B3CD4D1001C48B5 /* sprint.cc */; };
 		B5A330B52B3CD4E4001C48B5 /* god-passive.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F0B2B3CD4D2001C48B5 /* god-passive.cc */; };
 		B5A330B62B3CD4E4001C48B5 /* state.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F0E2B3CD4D2001C48B5 /* state.cc */; };
@@ -326,7 +286,6 @@
 		B5A330BD2B3CD4E4001C48B5 /* nearby-danger.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F1D2B3CD4D3001C48B5 /* nearby-danger.cc */; };
 		B5A330BE2B3CD4E4001C48B5 /* pcg.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F1E2B3CD4D3001C48B5 /* pcg.cc */; };
 		B5A330BF2B3CD4E4001C48B5 /* l-crawl.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F212B3CD4D4001C48B5 /* l-crawl.cc */; };
-		B5A330C02B3CD4E4001C48B5 /* tilereg-mem.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F262B3CD4D4001C48B5 /* tilereg-mem.cc */; };
 		B5A330C12B3CD4E4001C48B5 /* god-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F272B3CD4D4001C48B5 /* god-menu.cc */; };
 		B5A330C22B3CD4E5001C48B5 /* show.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F2A2B3CD4D4001C48B5 /* show.cc */; };
 		B5A330C32B3CD4E5001C48B5 /* exclude.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F312B3CD4D5001C48B5 /* exclude.cc */; };
@@ -337,9 +296,7 @@
 		B5A330C82B3CD4E5001C48B5 /* english.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F422B3CD4D7001C48B5 /* english.cc */; };
 		B5A330C92B3CD4E5001C48B5 /* los.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F432B3CD4D7001C48B5 /* los.cc */; };
 		B5A330CA2B3CD4E5001C48B5 /* dbg-objstat.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F462B3CD4D7001C48B5 /* dbg-objstat.cc */; };
-		B5A330CB2B3CD4E5001C48B5 /* tilereg-tab.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F492B3CD4D7001C48B5 /* tilereg-tab.cc */; };
 		B5A330CC2B3CD4E5001C48B5 /* god-wrath.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F4A2B3CD4D7001C48B5 /* god-wrath.cc */; };
-		B5A330CD2B3CD4E5001C48B5 /* tilecell.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F4C2B3CD4D7001C48B5 /* tilecell.cc */; };
 		B5A330CE2B3CD4E5001C48B5 /* ray.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F4D2B3CD4D8001C48B5 /* ray.cc */; };
 		B5A330CF2B3CD4E5001C48B5 /* ranged-attack.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F4E2B3CD4D8001C48B5 /* ranged-attack.cc */; };
 		B5A330D02B3CD4E5001C48B5 /* mapmark.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F4F2B3CD4D8001C48B5 /* mapmark.cc */; };
@@ -350,7 +307,6 @@
 		B5A330D52B3CD4E5001C48B5 /* dbg-asrt.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F592B3CD4D9001C48B5 /* dbg-asrt.cc */; };
 		B5A330D62B3CD4E5001C48B5 /* l-option.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F5A2B3CD4D9001C48B5 /* l-option.cc */; };
 		B5A330D72B3CD4E5001C48B5 /* misc.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F5B2B3CD4D9001C48B5 /* misc.cc */; };
-		B5A330D82B3CD4E5001C48B5 /* tileweb.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F5F2B3CD4D9001C48B5 /* tileweb.cc */; };
 		B5A330D92B3CD4E5001C48B5 /* ng-init.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F602B3CD4D9001C48B5 /* ng-init.cc */; };
 		B5A330DA2B3CD4E5001C48B5 /* known-items.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F612B3CD4D9001C48B5 /* known-items.cc */; };
 		B5A330DB2B3CD4E5001C48B5 /* view.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F622B3CD4D9001C48B5 /* view.cc */; };
@@ -372,9 +328,7 @@
 		B5A330EC2B3CD4E5001C48B5 /* luaterp.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F8E2B3CD4DD001C48B5 /* luaterp.cc */; };
 		B5A330ED2B3CD4E5001C48B5 /* mon-gear.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F912B3CD4DE001C48B5 /* mon-gear.cc */; };
 		B5A330EE2B3CD4E5001C48B5 /* spl-damage.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F922B3CD4DE001C48B5 /* spl-damage.cc */; };
-		B5A330EF2B3CD4E5001C48B5 /* tilereg-dgn.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F942B3CD4DE001C48B5 /* tilereg-dgn.cc */; };
 		B5A330F02B3CD4E5001C48B5 /* jobs.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9B2B3CD4DE001C48B5 /* jobs.cc */; };
-		B5A330F12B3CD4E5001C48B5 /* tilereg-mon.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9C2B3CD4DE001C48B5 /* tilereg-mon.cc */; };
 		B5A330F22B3CD4E5001C48B5 /* mon-abil.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32F9D2B3CD4DF001C48B5 /* mon-abil.cc */; };
 		ACE2000000000000000000A3 /* player-notices.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A3 /* player-notices.cc */; };
 		ACE2000000000000000000A2 /* piety-info.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A2 /* piety-info.cc */; };
@@ -383,11 +337,7 @@
 		B5A330F42B3CD4E5001C48B5 /* skill-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA22B3CD4DF001C48B5 /* skill-menu.cc */; };
 		B5A330F52B3CD4E5001C48B5 /* stepdown.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA32B3CD4DF001C48B5 /* stepdown.cc */; };
 		B5A330F62B3CD4E5001C48B5 /* exercise.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA42B3CD4DF001C48B5 /* exercise.cc */; };
-		B5A330F72B3CD4E5001C48B5 /* tiledgnbuf.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA62B3CD4DF001C48B5 /* tiledgnbuf.cc */; };
 		B5A330F82B3CD4E5001C48B5 /* database.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FA82B3CD4E0001C48B5 /* database.cc */; };
-		B5A330F92B3CD4E5001C48B5 /* tilemcache.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FAA2B3CD4E0001C48B5 /* tilemcache.cc */; };
-		B5A330FA2B3CD4E5001C48B5 /* tilereg.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FAB2B3CD4E0001C48B5 /* tilereg.cc */; };
-		B5A330FB2B3CD4E5001C48B5 /* tilereg-cmd.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FAF2B3CD4E0001C48B5 /* tilereg-cmd.cc */; };
 		B5A330FC2B3CD4E5001C48B5 /* game-options.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FB12B3CD4E0001C48B5 /* game-options.cc */; };
 		B5A330FD2B3CD4E5001C48B5 /* l-you.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FB32B3CD4E1001C48B5 /* l-you.cc */; };
 		B5A330FE2B3CD4E5001C48B5 /* describe.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FB52B3CD4E1001C48B5 /* describe.cc */; };
@@ -400,8 +350,6 @@
 		B5A331052B3CD4E5001C48B5 /* god-companions.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FCD2B3CD4E3001C48B5 /* god-companions.cc */; };
 		B5A331062B3CD4E5001C48B5 /* throw.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FCE2B3CD4E3001C48B5 /* throw.cc */; };
 		B5A331072B3CD4E5001C48B5 /* bloodspatter.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32FD32B3CD4E4001C48B5 /* bloodspatter.cc */; };
-		B5ACC6F22B3B89290076A6ED /* libSDL2_mixer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5ACC6F12B3B89150076A6ED /* libSDL2_mixer.a */; };
-		B5FF5E8628638B4800D90679 /* dcss_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5FF5E8428638B4700D90679 /* dcss_ios.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -524,25 +472,11 @@
 			remoteGlobalIDString = 6382B1B10FB0FC5100ECAC02;
 			remoteInfo = Freetype2;
 		};
-		B581C74F2869124400AB04A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B577ED1E285FB4B9002E7FCF /* freetype2.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 6382B1B00FB0FC5100ECAC02;
-			remoteInfo = Freetype2;
-		};
 		B5ACC6F02B3B89150076A6ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5ACC6EC2B3B89150076A6ED /* SDL_mixer.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BE1FA95407AF96B2004B6283;
-			remoteInfo = "Static Library";
-		};
-		B5ACC6F32B3B89300076A6ED /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5ACC6EC2B3B89150076A6ED /* SDL_mixer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BE1FA90707AF96B2004B6283;
 			remoteInfo = "Static Library";
 		};
 /* End PBXContainerItemProxy section */
@@ -562,32 +496,10 @@
 		B54FB9182860C67800BA35A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B54FB91E2860C74C00BA35A1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		B558E302286E388500678CF5 /* GamePadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePadViewController.h; sourceTree = "<group>"; };
-		B558E303286E388500678CF5 /* PageUpDownPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageUpDownPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		B558E304286E388500678CF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B558E305286E388500678CF5 /* SDL_char_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDL_char_utils.m; sourceTree = "<group>"; };
-		B558E306286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDL_uikitviewcontroller+KeyboardKeysHandling.m"; sourceTree = "<group>"; };
-		B558E307286E388500678CF5 /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		B558E308286E388500678CF5 /* SDL_uikitview+CDDA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDL_uikitview+CDDA.m"; sourceTree = "<group>"; };
-		B558E309286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitviewcontroller+VirtualKeyboardInput.h"; sourceTree = "<group>"; };
-		B558E30A286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "SDL_uikitviewcontroller+Gamepad.mm"; sourceTree = "<group>"; };
 		B558E30B286E388500678CF5 /* path_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_utils.h; sourceTree = "<group>"; };
-		B558E30C286E388500678CF5 /* ZipArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipArchiver.swift; sourceTree = "<group>"; };
-		B558E30D286E388500678CF5 /* GamePadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePadViewController.m; sourceTree = "<group>"; };
-		B558E30E286E388500678CF5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCSS-Bridging-Header.h"; sourceTree = "<group>"; };
-		B558E310286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitviewcontroller+KeyboardKeysHandling.h"; sourceTree = "<group>"; };
-		B558E311286E388500678CF5 /* SDL_char_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_char_utils.h; sourceTree = "<group>"; };
 		B558E312286E388500678CF5 /* CDDA_iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDA_iOS_main.h; sourceTree = "<group>"; };
-		B558E313286E388500678CF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B558E314286E388500678CF5 /* ShowAndFixGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAndFixGestureRecognizer.swift; sourceTree = "<group>"; };
-		B558E315286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SDL_uikitviewcontroller+VirtualKeyboardInput.m"; sourceTree = "<group>"; };
-		B558E316286E388500678CF5 /* SDL_uikitview+CDDA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitview+CDDA.h"; sourceTree = "<group>"; };
-		B558E317286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitviewcontroller+Gamepad.h"; sourceTree = "<group>"; };
 		B558E318286E388500678CF5 /* path_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = path_utils.m; sourceTree = "<group>"; };
-		B558E330286E3B8200678CF5 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSButton.m; path = dcss/commons/JSButton.m; sourceTree = "<group>"; };
-		B558F92D286FAC53000FB84F /* game_dependent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_dependent.h; sourceTree = "<group>"; };
-		B558F941286FAD5A000FB84F /* game_dependent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = game_dependent.mm; sourceTree = "<group>"; };
 		B577E4B2285FA4B5002E7FCF /* dcss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dcss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577E4BE285FA4B6002E7FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B577E4C1285FA4B6002E7FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -669,29 +581,30 @@
 		B581C766286913C400AB04A1 /* libMTLToolsDiagnostics.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMTLToolsDiagnostics.tbd; path = usr/lib/libMTLToolsDiagnostics.tbd; sourceTree = SDKROOT; };
 		B581C768286913F100AB04A1 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CDDA_iOS_main.mm; sourceTree = "<group>"; };
-		B5A1E701286E4AE9009970E9 /* UIControls.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIControls.storyboard; sourceTree = "<group>"; };
-		B5A1E704286E4CC0009970E9 /* JSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSButton.h; path = dcss/commons/JSButton.h; sourceTree = "<group>"; };
-		B5A1E705286E536F009970E9 /* dPad-None@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dPad-None@2x.png"; path = "dcss/commons/dPad-None@2x.png"; sourceTree = "<group>"; };
+		ACE5000000000000000000A /* tiledef-dngn.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-dngn.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-dngn.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000001A /* tiledef-feat.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-feat.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-feat.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000002A /* tiledef-floor.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-floor.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-floor.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000003A /* tiledef-gui.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-gui.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-gui.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000004A /* tiledef-icons.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-icons.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000005A /* tiledef-main.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-main.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-main.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000006A /* tiledef-player.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-player.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-player.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000007A /* tiledef-unrand.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-unrand.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-unrand.cc"; sourceTree = SOURCE_ROOT; };
+		ACE5000000000000000008A /* tiledef-wall.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-wall.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-wall.cc"; sourceTree = SOURCE_ROOT; };
+		ACE3000000000000000000A1 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/main.mm"; sourceTree = "<group>"; };
+		ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/ConsoleAppDelegate.mm"; sourceTree = "<group>"; };
+		ACE3000000000000000000A3 /* libios.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/libios.mm"; sourceTree = "<group>"; };
+		ACE3000000000000000000A4 /* ConsoleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "console/ConsoleAppDelegate.h"; sourceTree = "<group>"; };
 		B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stone_soup_icon-512x512.png"; path = "Libraries/crawl/crawl-ref/source/dat/tiles/stone_soup_icon-512x512.png"; sourceTree = SOURCE_ROOT; };
 		B5A32CB62B3CD488001C48B5 /* tiledef-icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-icons.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.h"; sourceTree = "<group>"; };
 		B5A32CB72B3CD488001C48B5 /* tiledef-unrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-unrand.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-unrand.h"; sourceTree = "<group>"; };
-		B5A32CB82B3CD488001C48B5 /* tiledef-main.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-main.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-main.cc"; sourceTree = "<group>"; };
-		B5A32CB92B3CD488001C48B5 /* tiledef-feat.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-feat.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-feat.cc"; sourceTree = "<group>"; };
 		B5A32CBA2B3CD488001C48B5 /* tiledef-feat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-feat.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-feat.h"; sourceTree = "<group>"; };
-		B5A32CBB2B3CD488001C48B5 /* tiledef-floor.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-floor.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-floor.cc"; sourceTree = "<group>"; };
 		B5A32CBC2B3CD488001C48B5 /* tiledef_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tiledef_defines.h; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef_defines.h"; sourceTree = "<group>"; };
-		B5A32CBD2B3CD488001C48B5 /* tiledef-unrand.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-unrand.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-unrand.cc"; sourceTree = "<group>"; };
-		B5A32CBE2B3CD488001C48B5 /* tiledef-dngn.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-dngn.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-dngn.cc"; sourceTree = "<group>"; };
-		B5A32CBF2B3CD488001C48B5 /* tiledef-wall.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-wall.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-wall.cc"; sourceTree = "<group>"; };
 		B5A32CC02B3CD489001C48B5 /* tiledef-dngn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-dngn.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-dngn.h"; sourceTree = "<group>"; };
 		B5A32CC12B3CD489001C48B5 /* tiledef-main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-main.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-main.h"; sourceTree = "<group>"; };
 		B5A32CC22B3CD489001C48B5 /* tiledef-player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-player.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-player.h"; sourceTree = "<group>"; };
 		B5A32CC32B3CD489001C48B5 /* tiledef-wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-wall.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-wall.h"; sourceTree = "<group>"; };
 		B5A32CC42B3CD489001C48B5 /* tiledef-floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-floor.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-floor.h"; sourceTree = "<group>"; };
-		B5A32CC52B3CD489001C48B5 /* tiledef-gui.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-gui.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-gui.cc"; sourceTree = "<group>"; };
-		B5A32CC62B3CD489001C48B5 /* tiledef-icons.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-icons.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.cc"; sourceTree = "<group>"; };
 		B5A32CC72B3CD489001C48B5 /* tiledef-gui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-gui.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-gui.h"; sourceTree = "<group>"; };
-		B5A32CC82B3CD489001C48B5 /* tiledef-player.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-player.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-player.cc"; sourceTree = "<group>"; };
 		B5A32CD22B3CD4A9001C48B5 /* precision-menu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "precision-menu.cc"; path = "Libraries/crawl/crawl-ref/source/precision-menu.cc"; sourceTree = "<group>"; };
 		B5A32CD32B3CD4A9001C48B5 /* sqldbm.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sqldbm.cc; path = "Libraries/crawl/crawl-ref/source/sqldbm.cc"; sourceTree = "<group>"; };
 		B5A32CD42B3CD4A9001C48B5 /* feature-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "feature-data.h"; path = "Libraries/crawl/crawl-ref/source/feature-data.h"; sourceTree = "<group>"; };
@@ -719,7 +632,6 @@
 		B5A32CEA2B3CD4AA001C48B5 /* threads.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = threads.h; path = "Libraries/crawl/crawl-ref/source/threads.h"; sourceTree = "<group>"; };
 		B5A32CEB2B3CD4AA001C48B5 /* rc-line-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "rc-line-type.h"; path = "Libraries/crawl/crawl-ref/source/rc-line-type.h"; sourceTree = "<group>"; };
 		B5A32CEC2B3CD4AA001C48B5 /* form-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "form-data.h"; path = "Libraries/crawl/crawl-ref/source/form-data.h"; sourceTree = "<group>"; };
-		B5A32CED2B3CD4AA001C48B5 /* tilereg-abl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-abl.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-abl.cc"; sourceTree = "<group>"; };
 		B5A32CEE2B3CD4AA001C48B5 /* trap-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "trap-type.h"; path = "Libraries/crawl/crawl-ref/source/trap-type.h"; sourceTree = "<group>"; };
 		B5A32CEF2B3CD4AA001C48B5 /* monster-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "monster-type.h"; path = "Libraries/crawl/crawl-ref/source/monster-type.h"; sourceTree = "<group>"; };
 		B5A32CF02B3CD4AA001C48B5 /* losglobal.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = losglobal.cc; path = "Libraries/crawl/crawl-ref/source/losglobal.cc"; sourceTree = "<group>"; };
@@ -747,7 +659,6 @@
 		B5A32D072B3CD4AB001C48B5 /* terrain-change-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "terrain-change-type.h"; path = "Libraries/crawl/crawl-ref/source/terrain-change-type.h"; sourceTree = "<group>"; };
 		B5A32D082B3CD4AB001C48B5 /* package.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = package.cc; path = "Libraries/crawl/crawl-ref/source/package.cc"; sourceTree = "<group>"; };
 		B5A32D092B3CD4AB001C48B5 /* uncancel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = uncancel.cc; path = "Libraries/crawl/crawl-ref/source/uncancel.cc"; sourceTree = "<group>"; };
-		B5A32D0A2B3CD4AB001C48B5 /* tilereg-spl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-spl.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-spl.cc"; sourceTree = "<group>"; };
 		B5A32D0B2B3CD4AB001C48B5 /* spl-zap.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-zap.cc"; path = "Libraries/crawl/crawl-ref/source/spl-zap.cc"; sourceTree = "<group>"; };
 		B5A32D0C2B3CD4AB001C48B5 /* scroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = scroller.h; path = "Libraries/crawl/crawl-ref/source/scroller.h"; sourceTree = "<group>"; };
 		B5A32D0D2B3CD4AC001C48B5 /* game-options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "game-options.h"; path = "Libraries/crawl/crawl-ref/source/game-options.h"; sourceTree = "<group>"; };
@@ -796,7 +707,6 @@
 		B5A32D382B3CD4AD001C48B5 /* enchant-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "enchant-type.h"; path = "Libraries/crawl/crawl-ref/source/enchant-type.h"; sourceTree = "<group>"; };
 		B5A32D392B3CD4AD001C48B5 /* energy-use-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "energy-use-type.h"; path = "Libraries/crawl/crawl-ref/source/energy-use-type.h"; sourceTree = "<group>"; };
 		B5A32D3A2B3CD4AD001C48B5 /* l-file.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-file.cc"; path = "Libraries/crawl/crawl-ref/source/l-file.cc"; sourceTree = "<group>"; };
-		B5A32D3B2B3CD4AD001C48B5 /* libw32c.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = libw32c.cc; path = "Libraries/crawl/crawl-ref/source/libw32c.cc"; sourceTree = "<group>"; };
 		B5A32D3C2B3CD4AD001C48B5 /* mon-act.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-act.cc"; path = "Libraries/crawl/crawl-ref/source/mon-act.cc"; sourceTree = "<group>"; };
 		B5A32D3D2B3CD4AD001C48B5 /* KeymapContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeymapContext.h; path = "Libraries/crawl/crawl-ref/source/KeymapContext.h"; sourceTree = "<group>"; };
 		B5A32D3E2B3CD4AD001C48B5 /* spl-transloc.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-transloc.cc"; path = "Libraries/crawl/crawl-ref/source/spl-transloc.cc"; sourceTree = "<group>"; };
@@ -817,7 +727,6 @@
 		B5A32D4D2B3CD4AE001C48B5 /* format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = format.h; path = "Libraries/crawl/crawl-ref/source/format.h"; sourceTree = "<group>"; };
 		B5A32D4E2B3CD4AE001C48B5 /* files.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = files.h; path = "Libraries/crawl/crawl-ref/source/files.h"; sourceTree = "<group>"; };
 		B5A32D4F2B3CD4AE001C48B5 /* mon-act.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-act.h"; path = "Libraries/crawl/crawl-ref/source/mon-act.h"; sourceTree = "<group>"; };
-		B5A32D502B3CD4AE001C48B5 /* tilereg-grid.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-grid.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-grid.cc"; sourceTree = "<group>"; };
 		B5A32D512B3CD4AE001C48B5 /* item-prop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "item-prop.h"; path = "Libraries/crawl/crawl-ref/source/item-prop.h"; sourceTree = "<group>"; };
 		B5A32D522B3CD4AE001C48B5 /* conduct-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "conduct-type.h"; path = "Libraries/crawl/crawl-ref/source/conduct-type.h"; sourceTree = "<group>"; };
 		B5A32D532B3CD4AE001C48B5 /* terrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = terrain.h; path = "Libraries/crawl/crawl-ref/source/terrain.h"; sourceTree = "<group>"; };
@@ -832,7 +741,6 @@
 		B5A32D5C2B3CD4AF001C48B5 /* timed-effects.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "timed-effects.cc"; path = "Libraries/crawl/crawl-ref/source/timed-effects.cc"; sourceTree = "<group>"; };
 		B5A32D5D2B3CD4AF001C48B5 /* geom2d.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = geom2d.cc; path = "Libraries/crawl/crawl-ref/source/geom2d.cc"; sourceTree = "<group>"; };
 		B5A32D5E2B3CD4AF001C48B5 /* ghost.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ghost.cc; path = "Libraries/crawl/crawl-ref/source/ghost.cc"; sourceTree = "<group>"; };
-		B5A32D5F2B3CD4AF001C48B5 /* tilereg-text.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-text.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-text.cc"; sourceTree = "<group>"; };
 		B5A32D602B3CD4AF001C48B5 /* fight.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = fight.cc; path = "Libraries/crawl/crawl-ref/source/fight.cc"; sourceTree = "<group>"; };
 		B5A32D612B3CD4AF001C48B5 /* adjust.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = adjust.cc; path = "Libraries/crawl/crawl-ref/source/adjust.cc"; sourceTree = "<group>"; };
 		B5A32D622B3CD4AF001C48B5 /* debug-defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "debug-defines.h"; path = "Libraries/crawl/crawl-ref/source/debug-defines.h"; sourceTree = "<group>"; };
@@ -873,7 +781,6 @@
 		B5A32D852B3CD4B1001C48B5 /* branch-data-json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "branch-data-json.h"; path = "Libraries/crawl/crawl-ref/source/branch-data-json.h"; sourceTree = "<group>"; };
 		B5A32D862B3CD4B2001C48B5 /* endianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = endianness.h; path = "Libraries/crawl/crawl-ref/source/endianness.h"; sourceTree = "<group>"; };
 		B5A32D872B3CD4B2001C48B5 /* tilereg-skl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tilereg-skl.h"; path = "Libraries/crawl/crawl-ref/source/tilereg-skl.h"; sourceTree = "<group>"; };
-		B5A32D882B3CD4B2001C48B5 /* tilereg-stat.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-stat.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-stat.cc"; sourceTree = "<group>"; };
 		B5A32D892B3CD4B2001C48B5 /* tags.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tags.cc; path = "Libraries/crawl/crawl-ref/source/tags.cc"; sourceTree = "<group>"; };
 		B5A32D8A2B3CD4B2001C48B5 /* level-gen-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "level-gen-type.h"; path = "Libraries/crawl/crawl-ref/source/level-gen-type.h"; sourceTree = "<group>"; };
 		B5A32D8B2B3CD4B2001C48B5 /* god-conduct.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "god-conduct.cc"; path = "Libraries/crawl/crawl-ref/source/god-conduct.cc"; sourceTree = "<group>"; };
@@ -901,14 +808,12 @@
 		B5A32DA12B3CD4B4001C48B5 /* mon-inv-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-inv-type.h"; path = "Libraries/crawl/crawl-ref/source/mon-inv-type.h"; sourceTree = "<group>"; };
 		B5A32DA22B3CD4B4001C48B5 /* playable.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = playable.cc; path = "Libraries/crawl/crawl-ref/source/playable.cc"; sourceTree = "<group>"; };
 		B5A32DA32B3CD4B4001C48B5 /* l-dgngrd.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-dgngrd.cc"; path = "Libraries/crawl/crawl-ref/source/l-dgngrd.cc"; sourceTree = "<group>"; };
-		B5A32DA42B3CD4B4001C48B5 /* tilefont.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilefont.cc; path = "Libraries/crawl/crawl-ref/source/tilefont.cc"; sourceTree = "<group>"; };
 		B5A32DA52B3CD4B4001C48B5 /* domino.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = domino.cc; path = "Libraries/crawl/crawl-ref/source/domino.cc"; sourceTree = "<group>"; };
 		B5A32DA62B3CD4B4001C48B5 /* mon-book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-book.h"; path = "Libraries/crawl/crawl-ref/source/mon-book.h"; sourceTree = "<group>"; };
 		B5A32DA72B3CD4B4001C48B5 /* religion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = religion.h; path = "Libraries/crawl/crawl-ref/source/religion.h"; sourceTree = "<group>"; };
 		B5A32DA82B3CD4B4001C48B5 /* travel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = travel.cc; path = "Libraries/crawl/crawl-ref/source/travel.cc"; sourceTree = "<group>"; };
 		B5A32DA92B3CD4B4001C48B5 /* dgn-irregular-box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "dgn-irregular-box.h"; path = "Libraries/crawl/crawl-ref/source/dgn-irregular-box.h"; sourceTree = "<group>"; };
 		B5A32DAA2B3CD4B4001C48B5 /* sprint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sprint.h; path = "Libraries/crawl/crawl-ref/source/sprint.h"; sourceTree = "<group>"; };
-		B5A32DAB2B3CD4B5001C48B5 /* tilepick-p.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilepick-p.cc"; path = "Libraries/crawl/crawl-ref/source/tilepick-p.cc"; sourceTree = "<group>"; };
 		B5A32DAC2B3CD4B5001C48B5 /* l-subvault.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-subvault.cc"; path = "Libraries/crawl/crawl-ref/source/l-subvault.cc"; sourceTree = "<group>"; };
 		B5A32DAD2B3CD4B5001C48B5 /* mutation.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mutation.cc; path = "Libraries/crawl/crawl-ref/source/mutation.cc"; sourceTree = "<group>"; };
 		B5A32DAE2B3CD4B5001C48B5 /* describe-god.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "describe-god.h"; path = "Libraries/crawl/crawl-ref/source/describe-god.h"; sourceTree = "<group>"; };
@@ -921,7 +826,6 @@
 		B5A32DB52B3CD4B5001C48B5 /* job-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "job-data.h"; path = "Libraries/crawl/crawl-ref/source/job-data.h"; sourceTree = "<group>"; };
 		B5A32DB62B3CD4B5001C48B5 /* mon-ench.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-ench.cc"; path = "Libraries/crawl/crawl-ref/source/mon-ench.cc"; sourceTree = "<group>"; };
 		B5A32DB72B3CD4B6001C48B5 /* xp-tracking-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "xp-tracking-type.h"; path = "Libraries/crawl/crawl-ref/source/xp-tracking-type.h"; sourceTree = "<group>"; };
-		B5A32DB82B3CD4B6001C48B5 /* tiletex.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tiletex.cc; path = "Libraries/crawl/crawl-ref/source/tiletex.cc"; sourceTree = "<group>"; };
 		B5A32DB92B3CD4B6001C48B5 /* l-los.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-los.cc"; path = "Libraries/crawl/crawl-ref/source/l-los.cc"; sourceTree = "<group>"; };
 		B5A32DBA2B3CD4B6001C48B5 /* god-prayer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "god-prayer.cc"; path = "Libraries/crawl/crawl-ref/source/god-prayer.cc"; sourceTree = "<group>"; };
 		B5A32DBB2B3CD4B6001C48B5 /* crash.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = crash.cc; path = "Libraries/crawl/crawl-ref/source/crash.cc"; sourceTree = "<group>"; };
@@ -948,8 +852,6 @@
 		B5A32DD02B3CD4B8001C48B5 /* skill-menu-state.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "skill-menu-state.h"; path = "Libraries/crawl/crawl-ref/source/skill-menu-state.h"; sourceTree = "<group>"; };
 		B5A32DD12B3CD4B8001C48B5 /* prompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = prompt.h; path = "Libraries/crawl/crawl-ref/source/prompt.h"; sourceTree = "<group>"; };
 		B5A32DD22B3CD4B8001C48B5 /* zot.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = zot.cc; path = "Libraries/crawl/crawl-ref/source/zot.cc"; sourceTree = "<group>"; };
-		B5A32DD32B3CD4B8001C48B5 /* tilereg-crt.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-crt.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-crt.cc"; sourceTree = "<group>"; };
-		B5A32DD42B3CD4B8001C48B5 /* glwrapper-ogl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "glwrapper-ogl.cc"; path = "Libraries/crawl/crawl-ref/source/glwrapper-ogl.cc"; sourceTree = "<group>"; };
 		B5A32DD52B3CD4B8001C48B5 /* xp-evoker-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "xp-evoker-data.h"; path = "Libraries/crawl/crawl-ref/source/xp-evoker-data.h"; sourceTree = "<group>"; };
 		B5A32DD62B3CD4B8001C48B5 /* attitude-change.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "attitude-change.cc"; path = "Libraries/crawl/crawl-ref/source/attitude-change.cc"; sourceTree = "<group>"; };
 		B5A32DD72B3CD4B8001C48B5 /* hints.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hints.cc; path = "Libraries/crawl/crawl-ref/source/hints.cc"; sourceTree = "<group>"; };
@@ -973,7 +875,6 @@
 		B5A32DE92B3CD4BA001C48B5 /* chardump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = chardump.h; path = "Libraries/crawl/crawl-ref/source/chardump.h"; sourceTree = "<group>"; };
 		B5A32DEA2B3CD4BA001C48B5 /* l-feat.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-feat.cc"; path = "Libraries/crawl/crawl-ref/source/l-feat.cc"; sourceTree = "<group>"; };
 		B5A32DEB2B3CD4BA001C48B5 /* ac-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ac-type.h"; path = "Libraries/crawl/crawl-ref/source/ac-type.h"; sourceTree = "<group>"; };
-		B5A32DEC2B3CD4BA001C48B5 /* tilesdl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilesdl.cc; path = "Libraries/crawl/crawl-ref/source/tilesdl.cc"; sourceTree = "<group>"; };
 		B5A32DED2B3CD4BA001C48B5 /* pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = pattern.h; path = "Libraries/crawl/crawl-ref/source/pattern.h"; sourceTree = "<group>"; };
 		B5A32DEE2B3CD4BA001C48B5 /* teleport.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = teleport.cc; path = "Libraries/crawl/crawl-ref/source/teleport.cc"; sourceTree = "<group>"; };
 		B5A32DEF2B3CD4BA001C48B5 /* mutation-data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mutation-data.h"; path = "Libraries/crawl/crawl-ref/source/mutation-data.h"; sourceTree = "<group>"; };
@@ -1030,7 +931,6 @@
 		B5A32E222B3CD4BE001C48B5 /* known-items.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "known-items.h"; path = "Libraries/crawl/crawl-ref/source/known-items.h"; sourceTree = "<group>"; };
 		B5A32E232B3CD4BE001C48B5 /* attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = attack.h; path = "Libraries/crawl/crawl-ref/source/attack.h"; sourceTree = "<group>"; };
 		B5A32E242B3CD4BE001C48B5 /* playable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = playable.h; path = "Libraries/crawl/crawl-ref/source/playable.h"; sourceTree = "<group>"; };
-		B5A32E252B3CD4BE001C48B5 /* tilereg-msg.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-msg.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-msg.cc"; sourceTree = "<group>"; };
 		B5A32E262B3CD4BF001C48B5 /* l-debug.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-debug.cc"; path = "Libraries/crawl/crawl-ref/source/l-debug.cc"; sourceTree = "<group>"; };
 		B5A32E272B3CD4BF001C48B5 /* attitude-change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "attitude-change.h"; path = "Libraries/crawl/crawl-ref/source/attitude-change.h"; sourceTree = "<group>"; };
 		B5A32E282B3CD4BF001C48B5 /* text-tag-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "text-tag-type.h"; path = "Libraries/crawl/crawl-ref/source/text-tag-type.h"; sourceTree = "<group>"; };
@@ -1072,9 +972,7 @@
 		B5A32E4E2B3CD4C2001C48B5 /* cio.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = cio.cc; path = "Libraries/crawl/crawl-ref/source/cio.cc"; sourceTree = "<group>"; };
 		B5A32E4F2B3CD4C2001C48B5 /* compflag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = compflag.h; path = "Libraries/crawl/crawl-ref/source/compflag.h"; sourceTree = "<group>"; };
 		B5A32E502B3CD4C2001C48B5 /* describe-god.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "describe-god.cc"; path = "Libraries/crawl/crawl-ref/source/describe-god.cc"; sourceTree = "<group>"; };
-		B5A32E512B3CD4C2001C48B5 /* fontwrapper-ft.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "fontwrapper-ft.cc"; path = "Libraries/crawl/crawl-ref/source/fontwrapper-ft.cc"; sourceTree = "<group>"; };
 		B5A32E522B3CD4C2001C48B5 /* travel-defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "travel-defs.h"; path = "Libraries/crawl/crawl-ref/source/travel-defs.h"; sourceTree = "<group>"; };
-		B5A32E532B3CD4C2001C48B5 /* tilereg-skl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-skl.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-skl.cc"; sourceTree = "<group>"; };
 		B5A32E542B3CD4C2001C48B5 /* mon-transit.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-transit.cc"; path = "Libraries/crawl/crawl-ref/source/mon-transit.cc"; sourceTree = "<group>"; };
 		B5A32E552B3CD4C2001C48B5 /* monster.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = monster.cc; path = "Libraries/crawl/crawl-ref/source/monster.cc"; sourceTree = "<group>"; };
 		B5A32E562B3CD4C2001C48B5 /* dbg-util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dbg-util.cc"; path = "Libraries/crawl/crawl-ref/source/dbg-util.cc"; sourceTree = "<group>"; };
@@ -1086,7 +984,6 @@
 		B5A32E5C2B3CD4C3001C48B5 /* mi-enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mi-enum.h"; path = "Libraries/crawl/crawl-ref/source/mi-enum.h"; sourceTree = "<group>"; };
 		B5A32E5D2B3CD4C3001C48B5 /* lookup-help.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "lookup-help.cc"; path = "Libraries/crawl/crawl-ref/source/lookup-help.cc"; sourceTree = "<group>"; };
 		B5A32E5E2B3CD4C3001C48B5 /* ng-input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ng-input.h"; path = "Libraries/crawl/crawl-ref/source/ng-input.h"; sourceTree = "<group>"; };
-		B5A32E5F2B3CD4C3001C48B5 /* libgui.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = libgui.cc; path = "Libraries/crawl/crawl-ref/source/libgui.cc"; sourceTree = "<group>"; };
 		B5A32E602B3CD4C3001C48B5 /* dgn-shoals.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dgn-shoals.cc"; path = "Libraries/crawl/crawl-ref/source/dgn-shoals.cc"; sourceTree = "<group>"; };
 		B5A32E612B3CD4C3001C48B5 /* dgn-shoals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "dgn-shoals.h"; path = "Libraries/crawl/crawl-ref/source/dgn-shoals.h"; sourceTree = "<group>"; };
 		B5A32E632B3CD4C3001C48B5 /* lang-fake.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "lang-fake.cc"; path = "Libraries/crawl/crawl-ref/source/lang-fake.cc"; sourceTree = "<group>"; };
@@ -1107,7 +1004,6 @@
 		B5A32E722B3CD4C5001C48B5 /* wiz-fsim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "wiz-fsim.h"; path = "Libraries/crawl/crawl-ref/source/wiz-fsim.h"; sourceTree = "<group>"; };
 		B5A32E732B3CD4C5001C48B5 /* melee-attack.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "melee-attack.cc"; path = "Libraries/crawl/crawl-ref/source/melee-attack.cc"; sourceTree = "<group>"; };
 		B5A32E742B3CD4C5001C48B5 /* dgn-proclayouts.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dgn-proclayouts.cc"; path = "Libraries/crawl/crawl-ref/source/dgn-proclayouts.cc"; sourceTree = "<group>"; };
-		B5A32E752B3CD4C5001C48B5 /* tilereg-inv.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-inv.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-inv.cc"; sourceTree = "<group>"; };
 		B5A32E762B3CD4C5001C48B5 /* message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = message.h; path = "Libraries/crawl/crawl-ref/source/message.h"; sourceTree = "<group>"; };
 		B5A32E772B3CD4C5001C48B5 /* macro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macro.h; path = "Libraries/crawl/crawl-ref/source/macro.h"; sourceTree = "<group>"; };
 		B5A32E782B3CD4C5001C48B5 /* hash.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hash.cc; path = "Libraries/crawl/crawl-ref/source/hash.cc"; sourceTree = "<group>"; };
@@ -1128,10 +1024,8 @@
 		B5A32E872B3CD4C6001C48B5 /* wizard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wizard.h; path = "Libraries/crawl/crawl-ref/source/wizard.h"; sourceTree = "<group>"; };
 		B5A32E882B3CD4C6001C48B5 /* map-feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "map-feature.h"; path = "Libraries/crawl/crawl-ref/source/map-feature.h"; sourceTree = "<group>"; };
 		B5A32E892B3CD4C6001C48B5 /* object-selector-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "object-selector-type.h"; path = "Libraries/crawl/crawl-ref/source/object-selector-type.h"; sourceTree = "<group>"; };
-		B5A32E8A2B3CD4C6001C48B5 /* tilebuf.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilebuf.cc; path = "Libraries/crawl/crawl-ref/source/tilebuf.cc"; sourceTree = "<group>"; };
 		B5A32E8B2B3CD4C7001C48B5 /* monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = monster.h; path = "Libraries/crawl/crawl-ref/source/monster.h"; sourceTree = "<group>"; };
 		B5A32E8C2B3CD4C7001C48B5 /* spl-other.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-other.cc"; path = "Libraries/crawl/crawl-ref/source/spl-other.cc"; sourceTree = "<group>"; };
-		B5A32E8D2B3CD4C7001C48B5 /* tilereg-doll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-doll.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-doll.cc"; sourceTree = "<group>"; };
 		B5A32E8E2B3CD4C7001C48B5 /* maps.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = maps.cc; path = "Libraries/crawl/crawl-ref/source/maps.cc"; sourceTree = "<group>"; };
 		B5A32E8F2B3CD4C7001C48B5 /* dgn-overview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "dgn-overview.h"; path = "Libraries/crawl/crawl-ref/source/dgn-overview.h"; sourceTree = "<group>"; };
 		B5A32E902B3CD4C7001C48B5 /* ui.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ui.cc; path = "Libraries/crawl/crawl-ref/source/ui.cc"; sourceTree = "<group>"; };
@@ -1152,7 +1046,6 @@
 		B5A32E9F2B3CD4C8001C48B5 /* initfile.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = initfile.cc; path = "Libraries/crawl/crawl-ref/source/initfile.cc"; sourceTree = "<group>"; };
 		B5A32EA02B3CD4C8001C48B5 /* item-type-id-state-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "item-type-id-state-type.h"; path = "Libraries/crawl/crawl-ref/source/item-type-id-state-type.h"; sourceTree = "<group>"; };
 		B5A32EA12B3CD4C8001C48B5 /* evoke.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = evoke.cc; path = "Libraries/crawl/crawl-ref/source/evoke.cc"; sourceTree = "<group>"; };
-		B5A32EA22B3CD4C8001C48B5 /* windowmanager-sdl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "windowmanager-sdl.cc"; path = "Libraries/crawl/crawl-ref/source/windowmanager-sdl.cc"; sourceTree = "<group>"; };
 		B5A32EA32B3CD4C9001C48B5 /* skills.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = skills.h; path = "Libraries/crawl/crawl-ref/source/skills.h"; sourceTree = "<group>"; };
 		B5A32EA42B3CD4C9001C48B5 /* lookup-help-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "lookup-help-type.h"; path = "Libraries/crawl/crawl-ref/source/lookup-help-type.h"; sourceTree = "<group>"; };
 		B5A32EA52B3CD4C9001C48B5 /* tile-env.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tile-env.h"; path = "Libraries/crawl/crawl-ref/source/tile-env.h"; sourceTree = "<group>"; };
@@ -1164,12 +1057,10 @@
 		B5A32EAB2B3CD4C9001C48B5 /* output.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = output.cc; path = "Libraries/crawl/crawl-ref/source/output.cc"; sourceTree = "<group>"; };
 		B5A32EAC2B3CD4CA001C48B5 /* canned-message-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "canned-message-type.h"; path = "Libraries/crawl/crawl-ref/source/canned-message-type.h"; sourceTree = "<group>"; };
 		B5A32EAD2B3CD4CA001C48B5 /* invent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = invent.h; path = "Libraries/crawl/crawl-ref/source/invent.h"; sourceTree = "<group>"; };
-		B5A32EAE2B3CD4CA001C48B5 /* tiledoll.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tiledoll.cc; path = "Libraries/crawl/crawl-ref/source/tiledoll.cc"; sourceTree = "<group>"; };
 		B5A32EAF2B3CD4CA001C48B5 /* spl-clouds.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-clouds.cc"; path = "Libraries/crawl/crawl-ref/source/spl-clouds.cc"; sourceTree = "<group>"; };
 		B5A32EB02B3CD4CA001C48B5 /* skills.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = skills.cc; path = "Libraries/crawl/crawl-ref/source/skills.cc"; sourceTree = "<group>"; };
 		B5A32EB12B3CD4CA001C48B5 /* targeting-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "targeting-type.h"; path = "Libraries/crawl/crawl-ref/source/targeting-type.h"; sourceTree = "<group>"; };
 		B5A32EB22B3CD4CA001C48B5 /* duration-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "duration-type.h"; path = "Libraries/crawl/crawl-ref/source/duration-type.h"; sourceTree = "<group>"; };
-		B5A32EB32B3CD4CA001C48B5 /* tilereg-map.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-map.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-map.cc"; sourceTree = "<group>"; };
 		B5A32EB42B3CD4CA001C48B5 /* viewgeom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = viewgeom.h; path = "Libraries/crawl/crawl-ref/source/viewgeom.h"; sourceTree = "<group>"; };
 		B5A32EB52B3CD4CA001C48B5 /* dgn-height.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "dgn-height.h"; path = "Libraries/crawl/crawl-ref/source/dgn-height.h"; sourceTree = "<group>"; };
 		B5A32EB62B3CD4CA001C48B5 /* holy-word-source-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "holy-word-source-type.h"; path = "Libraries/crawl/crawl-ref/source/holy-word-source-type.h"; sourceTree = "<group>"; };
@@ -1190,7 +1081,6 @@
 		B5A32EC52B3CD4CC001C48B5 /* stepdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stepdown.h; path = "Libraries/crawl/crawl-ref/source/stepdown.h"; sourceTree = "<group>"; };
 		B5A32EC62B3CD4CC001C48B5 /* l-global.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "l-global.cc"; path = "Libraries/crawl/crawl-ref/source/l-global.cc"; sourceTree = "<group>"; };
 		B5A32EC72B3CD4CC001C48B5 /* mgen-enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mgen-enum.h"; path = "Libraries/crawl/crawl-ref/source/mgen-enum.h"; sourceTree = "<group>"; };
-		B5A32EC82B3CD4CC001C48B5 /* glwrapper.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = glwrapper.cc; path = "Libraries/crawl/crawl-ref/source/glwrapper.cc"; sourceTree = "<group>"; };
 		B5A32EC92B3CD4CC001C48B5 /* describe-spells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "describe-spells.h"; path = "Libraries/crawl/crawl-ref/source/describe-spells.h"; sourceTree = "<group>"; };
 		B5A32ECA2B3CD4CC001C48B5 /* spl-util.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-util.cc"; path = "Libraries/crawl/crawl-ref/source/spl-util.cc"; sourceTree = "<group>"; };
 		B5A32ECB2B3CD4CC001C48B5 /* hiscores.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = hiscores.h; path = "Libraries/crawl/crawl-ref/source/hiscores.h"; sourceTree = "<group>"; };
@@ -1239,7 +1129,6 @@
 		B5A32EF62B3CD4D0001C48B5 /* ng-init-branches.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "ng-init-branches.cc"; path = "Libraries/crawl/crawl-ref/source/ng-init-branches.cc"; sourceTree = "<group>"; };
 		B5A32EF72B3CD4D0001C48B5 /* mon-project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-project.h"; path = "Libraries/crawl/crawl-ref/source/mon-project.h"; sourceTree = "<group>"; };
 		B5A32EF82B3CD4D0001C48B5 /* ouch.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ouch.cc; path = "Libraries/crawl/crawl-ref/source/ouch.cc"; sourceTree = "<group>"; };
-		B5A32EF92B3CD4D0001C48B5 /* tileweb-text.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tileweb-text.cc"; path = "Libraries/crawl/crawl-ref/source/tileweb-text.cc"; sourceTree = "<group>"; };
 		B5A32EFA2B3CD4D0001C48B5 /* beam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = beam.h; path = "Libraries/crawl/crawl-ref/source/beam.h"; sourceTree = "<group>"; };
 		B5A32EFB2B3CD4D0001C48B5 /* tilecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tilecell.h; path = "Libraries/crawl/crawl-ref/source/tilecell.h"; sourceTree = "<group>"; };
 		B5A32EFC2B3CD4D0001C48B5 /* spl-summoning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "spl-summoning.h"; path = "Libraries/crawl/crawl-ref/source/spl-summoning.h"; sourceTree = "<group>"; };
@@ -1284,7 +1173,6 @@
 		B5A32F232B3CD4D4001C48B5 /* filter-enum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "filter-enum.h"; path = "Libraries/crawl/crawl-ref/source/filter-enum.h"; sourceTree = "<group>"; };
 		B5A32F242B3CD4D4001C48B5 /* ctest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ctest.h; path = "Libraries/crawl/crawl-ref/source/ctest.h"; sourceTree = "<group>"; };
 		B5A32F252B3CD4D4001C48B5 /* ng-setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ng-setup.h"; path = "Libraries/crawl/crawl-ref/source/ng-setup.h"; sourceTree = "<group>"; };
-		B5A32F262B3CD4D4001C48B5 /* tilereg-mem.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-mem.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-mem.cc"; sourceTree = "<group>"; };
 		B5A32F272B3CD4D4001C48B5 /* god-menu.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "god-menu.cc"; path = "Libraries/crawl/crawl-ref/source/god-menu.cc"; sourceTree = "<group>"; };
 		B5A32F282B3CD4D4001C48B5 /* ui-scissor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ui-scissor.h"; path = "Libraries/crawl/crawl-ref/source/ui-scissor.h"; sourceTree = "<group>"; };
 		B5A32F292B3CD4D4001C48B5 /* fontwrapper-ft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "fontwrapper-ft.h"; path = "Libraries/crawl/crawl-ref/source/fontwrapper-ft.h"; sourceTree = "<group>"; };
@@ -1319,10 +1207,8 @@
 		B5A32F462B3CD4D7001C48B5 /* dbg-objstat.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "dbg-objstat.cc"; path = "Libraries/crawl/crawl-ref/source/dbg-objstat.cc"; sourceTree = "<group>"; };
 		B5A32F472B3CD4D7001C48B5 /* targ-mode-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "targ-mode-type.h"; path = "Libraries/crawl/crawl-ref/source/targ-mode-type.h"; sourceTree = "<group>"; };
 		B5A32F482B3CD4D7001C48B5 /* libconsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libconsole.h; path = "Libraries/crawl/crawl-ref/source/libconsole.h"; sourceTree = "<group>"; };
-		B5A32F492B3CD4D7001C48B5 /* tilereg-tab.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-tab.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-tab.cc"; sourceTree = "<group>"; };
 		B5A32F4A2B3CD4D7001C48B5 /* god-wrath.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "god-wrath.cc"; path = "Libraries/crawl/crawl-ref/source/god-wrath.cc"; sourceTree = "<group>"; };
 		B5A32F4B2B3CD4D7001C48B5 /* torment-source-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "torment-source-type.h"; path = "Libraries/crawl/crawl-ref/source/torment-source-type.h"; sourceTree = "<group>"; };
-		B5A32F4C2B3CD4D7001C48B5 /* tilecell.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilecell.cc; path = "Libraries/crawl/crawl-ref/source/tilecell.cc"; sourceTree = "<group>"; };
 		B5A32F4D2B3CD4D8001C48B5 /* ray.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ray.cc; path = "Libraries/crawl/crawl-ref/source/ray.cc"; sourceTree = "<group>"; };
 		B5A32F4E2B3CD4D8001C48B5 /* ranged-attack.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "ranged-attack.cc"; path = "Libraries/crawl/crawl-ref/source/ranged-attack.cc"; sourceTree = "<group>"; };
 		B5A32F4F2B3CD4D8001C48B5 /* mapmark.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mapmark.cc; path = "Libraries/crawl/crawl-ref/source/mapmark.cc"; sourceTree = "<group>"; };
@@ -1341,7 +1227,6 @@
 		B5A32F5C2B3CD4D9001C48B5 /* species.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = species.h; path = "Libraries/crawl/crawl-ref/source/species.h"; sourceTree = "<group>"; };
 		B5A32F5D2B3CD4D9001C48B5 /* object-class-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "object-class-type.h"; path = "Libraries/crawl/crawl-ref/source/object-class-type.h"; sourceTree = "<group>"; };
 		B5A32F5E2B3CD4D9001C48B5 /* flang-t.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "flang-t.h"; path = "Libraries/crawl/crawl-ref/source/flang-t.h"; sourceTree = "<group>"; };
-		B5A32F5F2B3CD4D9001C48B5 /* tileweb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tileweb.cc; path = "Libraries/crawl/crawl-ref/source/tileweb.cc"; sourceTree = "<group>"; };
 		B5A32F602B3CD4D9001C48B5 /* ng-init.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "ng-init.cc"; path = "Libraries/crawl/crawl-ref/source/ng-init.cc"; sourceTree = "<group>"; };
 		B5A32F612B3CD4D9001C48B5 /* known-items.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "known-items.cc"; path = "Libraries/crawl/crawl-ref/source/known-items.cc"; sourceTree = "<group>"; };
 		B5A32F622B3CD4D9001C48B5 /* view.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = view.cc; path = "Libraries/crawl/crawl-ref/source/view.cc"; sourceTree = "<group>"; };
@@ -1393,7 +1278,6 @@
 		B5A32F912B3CD4DE001C48B5 /* mon-gear.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-gear.cc"; path = "Libraries/crawl/crawl-ref/source/mon-gear.cc"; sourceTree = "<group>"; };
 		B5A32F922B3CD4DE001C48B5 /* spl-damage.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "spl-damage.cc"; path = "Libraries/crawl/crawl-ref/source/spl-damage.cc"; sourceTree = "<group>"; };
 		B5A32F932B3CD4DE001C48B5 /* mon-spell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-spell.h"; path = "Libraries/crawl/crawl-ref/source/mon-spell.h"; sourceTree = "<group>"; };
-		B5A32F942B3CD4DE001C48B5 /* tilereg-dgn.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-dgn.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-dgn.cc"; sourceTree = "<group>"; };
 		B5A32F952B3CD4DE001C48B5 /* mon-info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "mon-info.h"; path = "Libraries/crawl/crawl-ref/source/mon-info.h"; sourceTree = "<group>"; };
 		B5A32F962B3CD4DE001C48B5 /* level-id.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "level-id.h"; path = "Libraries/crawl/crawl-ref/source/level-id.h"; sourceTree = "<group>"; };
 		B5A32F972B3CD4DE001C48B5 /* ng-init-branches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ng-init-branches.h"; path = "Libraries/crawl/crawl-ref/source/ng-init-branches.h"; sourceTree = "<group>"; };
@@ -1401,7 +1285,6 @@
 		B5A32F992B3CD4DE001C48B5 /* los-def.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "los-def.h"; path = "Libraries/crawl/crawl-ref/source/los-def.h"; sourceTree = "<group>"; };
 		B5A32F9A2B3CD4DE001C48B5 /* tile-flags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tile-flags.h"; path = "Libraries/crawl/crawl-ref/source/tile-flags.h"; sourceTree = "<group>"; };
 		B5A32F9B2B3CD4DE001C48B5 /* jobs.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jobs.cc; path = "Libraries/crawl/crawl-ref/source/jobs.cc"; sourceTree = "<group>"; };
-		B5A32F9C2B3CD4DE001C48B5 /* tilereg-mon.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-mon.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-mon.cc"; sourceTree = "<group>"; };
 		B5A32F9D2B3CD4DF001C48B5 /* mon-abil.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-abil.cc"; path = "Libraries/crawl/crawl-ref/source/mon-abil.cc"; sourceTree = "<group>"; };
 		ACE1000000000000000000A3 /* player-notices.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "player-notices.cc"; path = "Libraries/crawl/crawl-ref/source/player-notices.cc"; sourceTree = "<group>"; };
 		ACE1000000000000000000A2 /* piety-info.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "piety-info.cc"; path = "Libraries/crawl/crawl-ref/source/piety-info.cc"; sourceTree = "<group>"; };
@@ -1414,16 +1297,12 @@
 		B5A32FA32B3CD4DF001C48B5 /* stepdown.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stepdown.cc; path = "Libraries/crawl/crawl-ref/source/stepdown.cc"; sourceTree = "<group>"; };
 		B5A32FA42B3CD4DF001C48B5 /* exercise.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = exercise.cc; path = "Libraries/crawl/crawl-ref/source/exercise.cc"; sourceTree = "<group>"; };
 		B5A32FA52B3CD4DF001C48B5 /* player-save-info.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "player-save-info.h"; path = "Libraries/crawl/crawl-ref/source/player-save-info.h"; sourceTree = "<group>"; };
-		B5A32FA62B3CD4DF001C48B5 /* tiledgnbuf.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tiledgnbuf.cc; path = "Libraries/crawl/crawl-ref/source/tiledgnbuf.cc"; sourceTree = "<group>"; };
 		B5A32FA72B3CD4DF001C48B5 /* tag-version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tag-version.h"; path = "Libraries/crawl/crawl-ref/source/tag-version.h"; sourceTree = "<group>"; };
 		B5A32FA82B3CD4E0001C48B5 /* database.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = database.cc; path = "Libraries/crawl/crawl-ref/source/database.cc"; sourceTree = "<group>"; };
 		B5A32FA92B3CD4E0001C48B5 /* makeitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = makeitem.h; path = "Libraries/crawl/crawl-ref/source/makeitem.h"; sourceTree = "<group>"; };
-		B5A32FAA2B3CD4E0001C48B5 /* tilemcache.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilemcache.cc; path = "Libraries/crawl/crawl-ref/source/tilemcache.cc"; sourceTree = "<group>"; };
-		B5A32FAB2B3CD4E0001C48B5 /* tilereg.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tilereg.cc; path = "Libraries/crawl/crawl-ref/source/tilereg.cc"; sourceTree = "<group>"; };
 		B5A32FAC2B3CD4E0001C48B5 /* player-stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "player-stats.h"; path = "Libraries/crawl/crawl-ref/source/player-stats.h"; sourceTree = "<group>"; };
 		B5A32FAD2B3CD4E0001C48B5 /* fixedvector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fixedvector.h; path = "Libraries/crawl/crawl-ref/source/fixedvector.h"; sourceTree = "<group>"; };
 		B5A32FAE2B3CD4E0001C48B5 /* windowmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = windowmanager.h; path = "Libraries/crawl/crawl-ref/source/windowmanager.h"; sourceTree = "<group>"; };
-		B5A32FAF2B3CD4E0001C48B5 /* tilereg-cmd.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "tilereg-cmd.cc"; path = "Libraries/crawl/crawl-ref/source/tilereg-cmd.cc"; sourceTree = "<group>"; };
 		B5A32FB02B3CD4E0001C48B5 /* json-wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "json-wrapper.h"; path = "Libraries/crawl/crawl-ref/source/json-wrapper.h"; sourceTree = "<group>"; };
 		B5A32FB12B3CD4E0001C48B5 /* game-options.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "game-options.cc"; path = "Libraries/crawl/crawl-ref/source/game-options.cc"; sourceTree = "<group>"; };
 		B5A32FB22B3CD4E0001C48B5 /* size-type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "size-type.h"; path = "Libraries/crawl/crawl-ref/source/size-type.h"; sourceTree = "<group>"; };
@@ -1461,8 +1340,6 @@
 		B5A32FD22B3CD4E4001C48B5 /* place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = place.h; path = "Libraries/crawl/crawl-ref/source/place.h"; sourceTree = "<group>"; };
 		B5A32FD32B3CD4E4001C48B5 /* bloodspatter.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bloodspatter.cc; path = "Libraries/crawl/crawl-ref/source/bloodspatter.cc"; sourceTree = "<group>"; };
 		B5ACC6EC2B3B89150076A6ED /* SDL_mixer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_mixer.xcodeproj; path = "Libraries/sdl2-mixer/Xcode-iOS/SDL_mixer.xcodeproj"; sourceTree = "<group>"; };
-		B5FF5E8428638B4700D90679 /* dcss_ios.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dcss_ios.cpp; sourceTree = "<group>"; };
-		B5FF5E8528638B4700D90679 /* dcss_ios.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = dcss_ios.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1470,14 +1347,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5ACC6F22B3B89290076A6ED /* libSDL2_mixer.a in Frameworks */,
 				B577ED32285FBD88002E7FCF /* AVFAudio.framework in Frameworks */,
 				B54FB91F2860C74C00BA35A1 /* ImageIO.framework in Frameworks */,
-				B5122433286A60EA002A7C79 /* libSDL2_image.a in Frameworks */,
-				B5122432286A60E3002A7C79 /* libFreetype2.a in Frameworks */,
 				B581C769286913F200AB04A1 /* Metal.framework in Frameworks */,
 				B54FB91B2860C6FC00BA35A1 /* QuartzCore.framework in Frameworks */,
-				B5122431286A60DD002A7C79 /* libSDL2.a in Frameworks */,
 				B54FB91D2860C74000BA35A1 /* CoreGraphics.framework in Frameworks */,
 				B577ED3D285FBEF4002E7FCF /* CoreMotion.framework in Frameworks */,
 				B54FB9172860C65200BA35A1 /* OpenGLES.framework in Frameworks */,
@@ -1485,7 +1358,6 @@
 				B54FB9152860C63500BA35A1 /* Foundation.framework in Frameworks */,
 				B577ED33285FBD9E002E7FCF /* AudioToolbox.framework in Frameworks */,
 				B577ED37285FBDED002E7FCF /* CoreServices.framework in Frameworks */,
-				B503AA902868EEB000C62C38 /* libFreetype2.a in Frameworks */,
 				B577ED28285FBD0D002E7FCF /* GameController.framework in Frameworks */,
 				B54FB9142860C61800BA35A1 /* UIKit.framework in Frameworks */,
 				B577E9BC285FAB13002E7FCF /* libiconv.tbd in Frameworks */,
@@ -1697,7 +1569,6 @@
 				B5A32F5E2B3CD4D9001C48B5 /* flang-t.h */,
 				B5A32DBC2B3CD4B6001C48B5 /* flood-find.h */,
 				B5A32EB72B3CD4CB001C48B5 /* flush-reason-type.h */,
-				B5A32E512B3CD4C2001C48B5 /* fontwrapper-ft.cc */,
 				B5A32F292B3CD4D4001C48B5 /* fontwrapper-ft.h */,
 				B5A32CEC2B3CD4AA001C48B5 /* form-data.h */,
 				B5A32F6C2B3CD4DA001C48B5 /* format.cc */,
@@ -1714,9 +1585,7 @@
 				B5A32F502B3CD4D8001C48B5 /* geom2d.h */,
 				B5A32D5E2B3CD4AF001C48B5 /* ghost.cc */,
 				B5A32FCF2B3CD4E3001C48B5 /* ghost.h */,
-				B5A32DD42B3CD4B8001C48B5 /* glwrapper-ogl.cc */,
 				B5A32E2F2B3CD4BF001C48B5 /* glwrapper-ogl.h */,
-				B5A32EC82B3CD4CC001C48B5 /* glwrapper.cc */,
 				B5A32D102B3CD4AC001C48B5 /* glwrapper.h */,
 				B5A32D2E2B3CD4AD001C48B5 /* god-abil.cc */,
 				B5A32F2B2B3CD4D4001C48B5 /* god-abil.h */,
@@ -1814,11 +1683,9 @@
 				B5A32F962B3CD4DE001C48B5 /* level-id.h */,
 				B5A32F782B3CD4DB001C48B5 /* level-state-type.h */,
 				B5A32F482B3CD4D7001C48B5 /* libconsole.h */,
-				B5A32E5F2B3CD4C3001C48B5 /* libgui.cc */,
 				B5A32D452B3CD4AE001C48B5 /* libunix.h */,
 				B5A32F892B3CD4DD001C48B5 /* libutil.cc */,
 				B5A32ECD2B3CD4CC001C48B5 /* libutil.h */,
-				B5A32D3B2B3CD4AD001C48B5 /* libw32c.cc */,
 				B5A32F842B3CD4DC001C48B5 /* libw32c.h */,
 				B5A32D122B3CD4AC001C48B5 /* loading-screen.cc */,
 				B5A32CE72B3CD4AA001C48B5 /* loading-screen.h */,
@@ -2136,67 +2003,39 @@
 				B5A32D7C2B3CD4B1001C48B5 /* tile-inventory-flags.h */,
 				B5A32DFD2B3CD4BB001C48B5 /* tile-player-flag-cut.h */,
 				B5A32CF72B3CD4AB001C48B5 /* tile-player-flags.h */,
-				B5A32E8A2B3CD4C6001C48B5 /* tilebuf.cc */,
 				B5A32F902B3CD4DD001C48B5 /* tilebuf.h */,
-				B5A32F4C2B3CD4D7001C48B5 /* tilecell.cc */,
 				B5A32EFB2B3CD4D0001C48B5 /* tilecell.h */,
-				B5A32FA62B3CD4DF001C48B5 /* tiledgnbuf.cc */,
 				B5A32E0D2B3CD4BD001C48B5 /* tiledgnbuf.h */,
-				B5A32EAE2B3CD4CA001C48B5 /* tiledoll.cc */,
 				B5A32FCA2B3CD4E3001C48B5 /* tiledoll.h */,
-				B5A32DA42B3CD4B4001C48B5 /* tilefont.cc */,
 				B5A32E492B3CD4C1001C48B5 /* tilefont.h */,
-				B5A32FAA2B3CD4E0001C48B5 /* tilemcache.cc */,
 				B5A32CE32B3CD4AA001C48B5 /* tilemcache.h */,
-				B5A32DAB2B3CD4B5001C48B5 /* tilepick-p.cc */,
 				B5A32D432B3CD4AE001C48B5 /* tilepick-p.h */,
 				B5A32D8D2B3CD4B2001C48B5 /* tilepick.cc */,
 				B5A32F162B3CD4D3001C48B5 /* tilepick.h */,
-				B5A32CED2B3CD4AA001C48B5 /* tilereg-abl.cc */,
 				B5A32F392B3CD4D6001C48B5 /* tilereg-abl.h */,
-				B5A32FAF2B3CD4E0001C48B5 /* tilereg-cmd.cc */,
 				B5A32D132B3CD4AC001C48B5 /* tilereg-cmd.h */,
-				B5A32DD32B3CD4B8001C48B5 /* tilereg-crt.cc */,
 				B5A32E9C2B3CD4C8001C48B5 /* tilereg-crt.h */,
-				B5A32F942B3CD4DE001C48B5 /* tilereg-dgn.cc */,
 				B5A32ED72B3CD4CD001C48B5 /* tilereg-dgn.h */,
-				B5A32E8D2B3CD4C7001C48B5 /* tilereg-doll.cc */,
 				B5A32FB72B3CD4E1001C48B5 /* tilereg-doll.h */,
-				B5A32D502B3CD4AE001C48B5 /* tilereg-grid.cc */,
 				B5A32F102B3CD4D2001C48B5 /* tilereg-grid.h */,
-				B5A32E752B3CD4C5001C48B5 /* tilereg-inv.cc */,
 				B5A32E9B2B3CD4C8001C48B5 /* tilereg-inv.h */,
-				B5A32EB32B3CD4CA001C48B5 /* tilereg-map.cc */,
 				B5A32E182B3CD4BD001C48B5 /* tilereg-map.h */,
-				B5A32F262B3CD4D4001C48B5 /* tilereg-mem.cc */,
 				B5A32D912B3CD4B2001C48B5 /* tilereg-mem.h */,
-				B5A32F9C2B3CD4DE001C48B5 /* tilereg-mon.cc */,
 				B5A32F532B3CD4D8001C48B5 /* tilereg-mon.h */,
-				B5A32E252B3CD4BE001C48B5 /* tilereg-msg.cc */,
 				B5A32E592B3CD4C3001C48B5 /* tilereg-msg.h */,
-				B5A32E532B3CD4C2001C48B5 /* tilereg-skl.cc */,
 				B5A32D872B3CD4B2001C48B5 /* tilereg-skl.h */,
-				B5A32D0A2B3CD4AB001C48B5 /* tilereg-spl.cc */,
 				B5A32EE32B3CD4CE001C48B5 /* tilereg-spl.h */,
-				B5A32D882B3CD4B2001C48B5 /* tilereg-stat.cc */,
 				B5A32F372B3CD4D6001C48B5 /* tilereg-stat.h */,
-				B5A32F492B3CD4D7001C48B5 /* tilereg-tab.cc */,
 				B5A32CF82B3CD4AB001C48B5 /* tilereg-tab.h */,
-				B5A32D5F2B3CD4AF001C48B5 /* tilereg-text.cc */,
 				B5A32D672B3CD4AF001C48B5 /* tilereg-text.h */,
-				B5A32FAB2B3CD4E0001C48B5 /* tilereg.cc */,
 				B5A32DBE2B3CD4B6001C48B5 /* tilereg.h */,
 				B5A32D762B3CD4B0001C48B5 /* tiles-build-specific.h */,
 				B5A32CDE2B3CD4AA001C48B5 /* tiles.h */,
-				B5A32DEC2B3CD4BA001C48B5 /* tilesdl.cc */,
 				B5A32DE52B3CD4BA001C48B5 /* tilesdl.h */,
-				B5A32DB82B3CD4B6001C48B5 /* tiletex.cc */,
 				B5A32FCB2B3CD4E3001C48B5 /* tiletex.h */,
 				B5A32F7C2B3CD4DC001C48B5 /* tileview.cc */,
 				B5A32F0D2B3CD4D2001C48B5 /* tileview.h */,
-				B5A32EF92B3CD4D0001C48B5 /* tileweb-text.cc */,
 				B5A32F3F2B3CD4D6001C48B5 /* tileweb-text.h */,
-				B5A32F5F2B3CD4D9001C48B5 /* tileweb.cc */,
 				B5A32ECE2B3CD4CD001C48B5 /* tileweb.h */,
 				B5A32F3E2B3CD4D6001C48B5 /* timed-effect-type.h */,
 				B5A32D5C2B3CD4AF001C48B5 /* timed-effects.cc */,
@@ -2238,7 +2077,6 @@
 				B5A32F362B3CD4D5001C48B5 /* viewmap.cc */,
 				B5A32D9D2B3CD4B3001C48B5 /* viewmap.h */,
 				B5A32E022B3CD4BC001C48B5 /* wcwidth.cc */,
-				B5A32EA22B3CD4C8001C48B5 /* windowmanager-sdl.cc */,
 				B5A32FC92B3CD4E3001C48B5 /* windowmanager-sdl.h */,
 				B5A32FAE2B3CD4E0001C48B5 /* windowmanager.h */,
 				B5A32F8C2B3CD4DD001C48B5 /* wiz-dgn.cc */,
@@ -2283,23 +2121,14 @@
 			isa = PBXGroup;
 			children = (
 				B5A32CBC2B3CD488001C48B5 /* tiledef_defines.h */,
-				B5A32CBE2B3CD488001C48B5 /* tiledef-dngn.cc */,
 				B5A32CC02B3CD489001C48B5 /* tiledef-dngn.h */,
-				B5A32CB92B3CD488001C48B5 /* tiledef-feat.cc */,
 				B5A32CBA2B3CD488001C48B5 /* tiledef-feat.h */,
-				B5A32CBB2B3CD488001C48B5 /* tiledef-floor.cc */,
 				B5A32CC42B3CD489001C48B5 /* tiledef-floor.h */,
-				B5A32CC52B3CD489001C48B5 /* tiledef-gui.cc */,
 				B5A32CC72B3CD489001C48B5 /* tiledef-gui.h */,
-				B5A32CC62B3CD489001C48B5 /* tiledef-icons.cc */,
 				B5A32CB62B3CD488001C48B5 /* tiledef-icons.h */,
-				B5A32CB82B3CD488001C48B5 /* tiledef-main.cc */,
 				B5A32CC12B3CD489001C48B5 /* tiledef-main.h */,
-				B5A32CC82B3CD489001C48B5 /* tiledef-player.cc */,
 				B5A32CC22B3CD489001C48B5 /* tiledef-player.h */,
-				B5A32CBD2B3CD488001C48B5 /* tiledef-unrand.cc */,
 				B5A32CB72B3CD488001C48B5 /* tiledef-unrand.h */,
-				B5A32CBF2B3CD488001C48B5 /* tiledef-wall.cc */,
 				B5A32CC32B3CD489001C48B5 /* tiledef-wall.h */,
 			);
 			name = rltiles;
@@ -2358,7 +2187,6 @@
 		B558E2EE286E386C00678CF5 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				B5A1E705286E536F009970E9 /* dPad-None@2x.png */,
 				B558E301286E388500678CF5 /* commons */,
 			);
 			name = Commons;
@@ -2367,30 +2195,10 @@
 		B558E301286E388500678CF5 /* commons */ = {
 			isa = PBXGroup;
 			children = (
-				B558E304286E388500678CF5 /* AppDelegate.h */,
-				B558E313286E388500678CF5 /* AppDelegate.m */,
 				B558E312286E388500678CF5 /* CDDA_iOS_main.h */,
 				B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */,
-				B558E302286E388500678CF5 /* GamePadViewController.h */,
-				B558E30D286E388500678CF5 /* GamePadViewController.m */,
-				B558E30E286E388500678CF5 /* main.m */,
-				B558E307286E388500678CF5 /* MenuButton.swift */,
-				B558E303286E388500678CF5 /* PageUpDownPanGestureRecognizer.swift */,
 				B558E30B286E388500678CF5 /* path_utils.h */,
 				B558E318286E388500678CF5 /* path_utils.m */,
-				B558E311286E388500678CF5 /* SDL_char_utils.h */,
-				B558E305286E388500678CF5 /* SDL_char_utils.m */,
-				B558E316286E388500678CF5 /* SDL_uikitview+CDDA.h */,
-				B558E308286E388500678CF5 /* SDL_uikitview+CDDA.m */,
-				B558E317286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.h */,
-				B558E30A286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.mm */,
-				B558E310286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.h */,
-				B558E306286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.m */,
-				B558E309286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.h */,
-				B558E315286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.m */,
-				B558E314286E388500678CF5 /* ShowAndFixGestureRecognizer.swift */,
-				B558E30C286E388500678CF5 /* ZipArchiver.swift */,
-				B558F92D286FAC53000FB84F /* game_dependent.h */,
 			);
 			name = commons;
 			path = dcss/commons;
@@ -2399,8 +2207,6 @@
 		B558E32F286E3A5900678CF5 /* JSController */ = {
 			isa = PBXGroup;
 			children = (
-				B5A1E704286E4CC0009970E9 /* JSButton.h */,
-				B558E330286E3B8200678CF5 /* JSButton.m */,
 			);
 			name = JSController;
 			sourceTree = "<group>";
@@ -2431,11 +2237,20 @@
 				B577E4BE285FA4B6002E7FCF /* Assets.xcassets */,
 				B577E4C0285FA4B6002E7FCF /* LaunchScreen.storyboard */,
 				B577E4C3285FA4B6002E7FCF /* Info.plist */,
-				B5FF5E8428638B4700D90679 /* dcss_ios.cpp */,
-				B5FF5E8528638B4700D90679 /* dcss_ios.hpp */,
 				B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */,
-				B5A1E701286E4AE9009970E9 /* UIControls.storyboard */,
-				B558F941286FAD5A000FB84F /* game_dependent.mm */,
+				ACE5000000000000000000A /* tiledef-dngn.cc */,
+				ACE5000000000000000001A /* tiledef-feat.cc */,
+				ACE5000000000000000002A /* tiledef-floor.cc */,
+				ACE5000000000000000003A /* tiledef-gui.cc */,
+				ACE5000000000000000004A /* tiledef-icons.cc */,
+				ACE5000000000000000005A /* tiledef-main.cc */,
+				ACE5000000000000000006A /* tiledef-player.cc */,
+				ACE5000000000000000007A /* tiledef-unrand.cc */,
+				ACE5000000000000000008A /* tiledef-wall.cc */,
+				ACE3000000000000000000A1 /* main.mm */,
+				ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */,
+				ACE3000000000000000000A3 /* libios.mm */,
+				ACE3000000000000000000A4 /* ConsoleAppDelegate.h */,
 			);
 			path = dcss;
 			sourceTree = "<group>";
@@ -2582,8 +2397,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B5ACC6F42B3B89300076A6ED /* PBXTargetDependency */,
-				B581C7502869124400AB04A1 /* PBXTargetDependency */,
 			);
 			name = dcss;
 			productName = dcss;
@@ -2781,10 +2594,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B503A5EF2868E27400C62C38 /* dat in Resources */,
-				B5A1E706286E536F009970E9 /* dPad-None@2x.png in Resources */,
 				B5A1E710286E582E009970E9 /* stone_soup_icon-512x512.png in Resources */,
 				B503A5ED2868E26B00C62C38 /* docs in Resources */,
-				B5A1E702286E4AE9009970E9 /* UIControls.storyboard in Resources */,
 				B503A5F22868E2F300C62C38 /* fonts in Resources */,
 				B577E4C2285FA4B6002E7FCF /* LaunchScreen.storyboard in Resources */,
 				B577E4BF285FA4B6002E7FCF /* Assets.xcassets in Resources */,
@@ -2800,21 +2611,13 @@
 			files = (
 				B5A330502B3CD4E4001C48B5 /* los-def.cc in Sources */,
 				B5A3305A2B3CD4E4001C48B5 /* god-blessing.cc in Sources */,
-				B558E319286E388500678CF5 /* PageUpDownPanGestureRecognizer.swift in Sources */,
-				B5A3300A2B3CD4E4001C48B5 /* tilereg-text.cc in Sources */,
-				B5A330172B3CD4E4001C48B5 /* tilereg-stat.cc in Sources */,
-				B5A3303B2B3CD4E4001C48B5 /* glwrapper-ogl.cc in Sources */,
 				B5A3307A2B3CD4E4001C48B5 /* lang-fake.cc in Sources */,
-				B5A32CCE2B3CD489001C48B5 /* tiledef-wall.cc in Sources */,
-				B5A330B32B3CD4E4001C48B5 /* tileweb-text.cc in Sources */,
 				B5A330A12B3CD4E4001C48B5 /* l-mapgrd.cc in Sources */,
-				B5A330FA2B3CD4E5001C48B5 /* tilereg.cc in Sources */,
 				B5A330F32B3CD4E5001C48B5 /* actor-los.cc in Sources */,
 				B5A330602B3CD4E4001C48B5 /* spl-summoning.cc in Sources */,
 				B5A330142B3CD4E4001C48B5 /* l-mons.cc in Sources */,
 				B5A330E02B3CD4E5001C48B5 /* mon-explode.cc in Sources */,
 				B5A3304B2B3CD4E4001C48B5 /* l-feat.cc in Sources */,
-				B558E31E286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.mm in Sources */,
 				B5A330FD2B3CD4E5001C48B5 /* l-you.cc in Sources */,
 				B5A330AB2B3CD4E4001C48B5 /* orb.cc in Sources */,
 				B5A330C52B3CD4E5001C48B5 /* viewmap.cc in Sources */,
@@ -2827,14 +2630,24 @@
 				B5A330C22B3CD4E5001C48B5 /* show.cc in Sources */,
 				B5A330CE2B3CD4E5001C48B5 /* ray.cc in Sources */,
 				B5A3301C2B3CD4E4001C48B5 /* feature.cc in Sources */,
-				B558E31C286E388500678CF5 /* MenuButton.swift in Sources */,
-				B5A330CD2B3CD4E5001C48B5 /* tilecell.cc in Sources */,
 				B5A330F02B3CD4E5001C48B5 /* jobs.cc in Sources */,
 				B5A330372B3CD4E4001C48B5 /* random.cc in Sources */,
 				B5A3300D2B3CD4E4001C48B5 /* wiz-item.cc in Sources */,
 				B577E9A0285FAAE4002E7FCF /* lfunc.c in Sources */,
 				B5A3308E2B3CD4E4001C48B5 /* wizard.cc in Sources */,
 				B59A53C42867B14C0013E7DE /* CDDA_iOS_main.mm in Sources */,
+				ACE5000000000000000000B /* tiledef-dngn.cc in Sources */,
+				ACE5000000000000000001B /* tiledef-feat.cc in Sources */,
+				ACE5000000000000000002B /* tiledef-floor.cc in Sources */,
+				ACE5000000000000000003B /* tiledef-gui.cc in Sources */,
+				ACE5000000000000000004B /* tiledef-icons.cc in Sources */,
+				ACE5000000000000000005B /* tiledef-main.cc in Sources */,
+				ACE5000000000000000006B /* tiledef-player.cc in Sources */,
+				ACE5000000000000000007B /* tiledef-unrand.cc in Sources */,
+				ACE5000000000000000008B /* tiledef-wall.cc in Sources */,
+				ACE4000000000000000000A1 /* main.mm in Sources */,
+				ACE4000000000000000000A2 /* ConsoleAppDelegate.mm in Sources */,
+				ACE4000000000000000000A3 /* libios.mm in Sources */,
 				B5A3306C2B3CD4E4001C48B5 /* describe-spells.cc in Sources */,
 				B5A330752B3CD4E4001C48B5 /* dbg-util.cc in Sources */,
 				B5A330522B3CD4E4001C48B5 /* player-equip.cc in Sources */,
@@ -2856,7 +2669,6 @@
 				B5A330732B3CD4E4001C48B5 /* mon-transit.cc in Sources */,
 				B5A330852B3CD4E4001C48B5 /* wiz-mon.cc in Sources */,
 				B5A32FE32B3CD4E4001C48B5 /* colour.cc in Sources */,
-				B5A330652B3CD4E4001C48B5 /* tilereg-msg.cc in Sources */,
 				B577E9B2285FAAE4002E7FCF /* lauxlib.c in Sources */,
 				B5A32FFA2B3CD4E4001C48B5 /* makeitem.cc in Sources */,
 				B5A3300C2B3CD4E4001C48B5 /* adjust.cc in Sources */,
@@ -2866,17 +2678,10 @@
 				B5A3305C2B3CD4E4001C48B5 /* status.cc in Sources */,
 				B577E9AA285FAAE4002E7FCF /* lstring.c in Sources */,
 				B577E9B4285FAAE4002E7FCF /* lcode.c in Sources */,
-				B5A330772B3CD4E4001C48B5 /* libgui.cc in Sources */,
-				B5A330CB2B3CD4E5001C48B5 /* tilereg-tab.cc in Sources */,
-				B5A32CD12B3CD489001C48B5 /* tiledef-player.cc in Sources */,
-				B5A32FFE2B3CD4E4001C48B5 /* libw32c.cc in Sources */,
 				B5A330F82B3CD4E5001C48B5 /* database.cc in Sources */,
-				B5A330F92B3CD4E5001C48B5 /* tilemcache.cc in Sources */,
 				B5A3306D2B3CD4E4001C48B5 /* l-dgnevt.cc in Sources */,
 				B5A330A32B3CD4E4001C48B5 /* l-dgnit.cc in Sources */,
-				B5A330042B3CD4E4001C48B5 /* tilereg-grid.cc in Sources */,
 				B5A330192B3CD4E4001C48B5 /* god-conduct.cc in Sources */,
-				B5A32CD02B3CD489001C48B5 /* tiledef-icons.cc in Sources */,
 				B5A330B42B3CD4E4001C48B5 /* sprint.cc in Sources */,
 				B5A330B92B3CD4E4001C48B5 /* death-curse.cc in Sources */,
 				B5A32FED2B3CD4E4001C48B5 /* stairs.cc in Sources */,
@@ -2884,18 +2689,15 @@
 				B5A330BB2B3CD4E4001C48B5 /* traps.cc in Sources */,
 				B577E9B5285FAAE4002E7FCF /* loslib.c in Sources */,
 				B5A330062B3CD4E4001C48B5 /* abyss.cc in Sources */,
-				B5A330C02B3CD4E4001C48B5 /* tilereg-mem.cc in Sources */,
 				B5A330552B3CD4E4001C48B5 /* corpse.cc in Sources */,
 				B5A330542B3CD4E4001C48B5 /* actor.cc in Sources */,
 				B503A5FC2868E57700C62C38 /* levcomp.lex.cc in Sources */,
-				B5A3303A2B3CD4E4001C48B5 /* tilereg-crt.cc in Sources */,
 				B577E9AD285FAAE4002E7FCF /* ldo.c in Sources */,
 				B5A3304E2B3CD4E4001C48B5 /* pattern.cc in Sources */,
 				B5A330872B3CD4E4001C48B5 /* spl-goditem.cc in Sources */,
 				B5A3302B2B3CD4E4001C48B5 /* mon-ench.cc in Sources */,
 				B577E9AE285FAAE4002E7FCF /* lbaselib.c in Sources */,
 				B5A32FF12B3CD4E4001C48B5 /* l-view.cc in Sources */,
-				B5A330232B3CD4E4001C48B5 /* tilefont.cc in Sources */,
 				B5A330B62B3CD4E4001C48B5 /* state.cc in Sources */,
 				B5A3300E2B3CD4E4001C48B5 /* items.cc in Sources */,
 				B5A330482B3CD4E4001C48B5 /* l-mapmrk.cc in Sources */,
@@ -2916,18 +2718,15 @@
 				B5A330A42B3CD4E4001C48B5 /* l-global.cc in Sources */,
 				B5A32FF02B3CD4E4001C48B5 /* ng-input.cc in Sources */,
 				B5A330F52B3CD4E5001C48B5 /* stepdown.cc in Sources */,
-				B5A32CCF2B3CD489001C48B5 /* tiledef-gui.cc in Sources */,
 				B5A330CA2B3CD4E5001C48B5 /* dbg-objstat.cc in Sources */,
 				B5A330BF2B3CD4E4001C48B5 /* l-crawl.cc in Sources */,
 				B5A3305D2B3CD4E4001C48B5 /* coordit.cc in Sources */,
 				B5A3304F2B3CD4E4001C48B5 /* mon-cast.cc in Sources */,
 				B5A330302B3CD4E4001C48B5 /* dgn-delve.cc in Sources */,
 				B5A330B72B3CD4E4001C48B5 /* maybe-bool.cc in Sources */,
-				B5A330A52B3CD4E4001C48B5 /* glwrapper.cc in Sources */,
 				B5A32FD42B3CD4E4001C48B5 /* precision-menu.cc in Sources */,
 				B5A330162B3CD4E4001C48B5 /* terrain.cc in Sources */,
 				B5A3307E2B3CD4E4001C48B5 /* l-dgnlvl.cc in Sources */,
-				B5A3309A2B3CD4E4001C48B5 /* tiledoll.cc in Sources */,
 				B5A330CF2B3CD4E5001C48B5 /* ranged-attack.cc in Sources */,
 				B5A3307D2B3CD4E4001C48B5 /* macro.cc in Sources */,
 				B5A330E32B3CD4E5001C48B5 /* store.cc in Sources */,
@@ -2946,12 +2745,9 @@
 				B5A330E42B3CD4E5001C48B5 /* fprop.cc in Sources */,
 				B5A330532B3CD4E4001C48B5 /* dgn-swamp.cc in Sources */,
 				B5A330FF2B3CD4E5001C48B5 /* prompt.cc in Sources */,
-				B558E31D286E388500678CF5 /* SDL_uikitview+CDDA.m in Sources */,
 				B5A330E22B3CD4E5001C48B5 /* tileview.cc in Sources */,
 				B5A330A02B3CD4E4001C48B5 /* potion.cc in Sources */,
-				B558F942286FAD5A000FB84F /* game_dependent.mm in Sources */,
 				B5A330352B3CD4E4001C48B5 /* losparam.cc in Sources */,
-				B5A3302C2B3CD4E4001C48B5 /* tiletex.cc in Sources */,
 				B5A32FEA2B3CD4E4001C48B5 /* mon-movetarget.cc in Sources */,
 				B5A3307C2B3CD4E4001C48B5 /* coord-circle.cc in Sources */,
 				B5A3302A2B3CD4E4001C48B5 /* god-item.cc in Sources */,
@@ -2960,7 +2756,6 @@
 				B5A330002B3CD4E4001C48B5 /* spl-transloc.cc in Sources */,
 				B5A330942B3CD4E4001C48B5 /* evoke.cc in Sources */,
 				B5A3301F2B3CD4E4001C48B5 /* perlin.cc in Sources */,
-				B5A330FB2B3CD4E5001C48B5 /* tilereg-cmd.cc in Sources */,
 				B5A330D72B3CD4E5001C48B5 /* misc.cc in Sources */,
 				B5A330272B3CD4E4001C48B5 /* l-subvault.cc in Sources */,
 				B5A330102B3CD4E4001C48B5 /* menu.cc in Sources */,
@@ -2973,7 +2768,6 @@
 				B5A32FE92B3CD4E4001C48B5 /* viewgeom.cc in Sources */,
 				B5A32FFD2B3CD4E4001C48B5 /* l-file.cc in Sources */,
 				B5A330EE2B3CD4E5001C48B5 /* spl-damage.cc in Sources */,
-				B558E348286E404600678CF5 /* ShowAndFixGestureRecognizer.swift in Sources */,
 				B5A330AF2B3CD4E4001C48B5 /* message.cc in Sources */,
 				B5A331062B3CD4E5001C48B5 /* throw.cc in Sources */,
 				B5A330212B3CD4E4001C48B5 /* playable.cc in Sources */,
@@ -3001,12 +2795,8 @@
 				B5A330F62B3CD4E5001C48B5 /* exercise.cc in Sources */,
 				B5A330B82B3CD4E4001C48B5 /* map-knowledge.cc in Sources */,
 				B5A330982B3CD4E4001C48B5 /* branch.cc in Sources */,
-				B5A32FE72B3CD4E4001C48B5 /* tilereg-spl.cc in Sources */,
-				B5A32CCC2B3CD489001C48B5 /* tiledef-unrand.cc in Sources */,
-				B5A32CCB2B3CD489001C48B5 /* tiledef-floor.cc in Sources */,
 				B5A330C72B3CD4E5001C48B5 /* dgn-layouts.cc in Sources */,
 				B5A330342B3CD4E4001C48B5 /* cloud.cc in Sources */,
-				B558E320286E388500678CF5 /* GamePadViewController.m in Sources */,
 				B5A3309C2B3CD4E4001C48B5 /* skills.cc in Sources */,
 				B5A32FEB2B3CD4E4001C48B5 /* loading-screen.cc in Sources */,
 				B5A32FDA2B3CD4E4001C48B5 /* wiz-you.cc in Sources */,
@@ -3014,43 +2804,34 @@
 				B5A330972B3CD4E4001C48B5 /* errors.cc in Sources */,
 				B5A330DD2B3CD4E5001C48B5 /* spl-book.cc in Sources */,
 				B5A330B52B3CD4E4001C48B5 /* god-passive.cc in Sources */,
-				B558E331286E3B8200678CF5 /* JSButton.m in Sources */,
-				B5A32CCA2B3CD489001C48B5 /* tiledef-feat.cc in Sources */,
 				B5A330922B3CD4E4001C48B5 /* clua.cc in Sources */,
 				B5A3306A2B3CD4E4001C48B5 /* l-spells.cc in Sources */,
-				B5A3309D2B3CD4E4001C48B5 /* tilereg-map.cc in Sources */,
 				B5A330BE2B3CD4E4001C48B5 /* pcg.cc in Sources */,
 				B5A330442B3CD4E4001C48B5 /* l-wiz.cc in Sources */,
 				B5A330472B3CD4E4001C48B5 /* AppHdr.cc in Sources */,
 				B5A330D52B3CD4E5001C48B5 /* dbg-asrt.cc in Sources */,
 				B5A330CC2B3CD4E5001C48B5 /* god-wrath.cc in Sources */,
-				B558E322286E388500678CF5 /* AppDelegate.m in Sources */,
 				B5A330DB2B3CD4E5001C48B5 /* view.cc in Sources */,
 				B5A330632B3CD4E4001C48B5 /* unicode.cc in Sources */,
 				B5A3304D2B3CD4E4001C48B5 /* teleport.cc in Sources */,
-				B5A330F12B3CD4E5001C48B5 /* tilereg-mon.cc in Sources */,
 				B5A330802B3CD4E4001C48B5 /* dgn-proclayouts.cc in Sources */,
 				B5A32FEF2B3CD4E4001C48B5 /* command.cc in Sources */,
-				B5A330D82B3CD4E5001C48B5 /* tileweb.cc in Sources */,
 				B5A330132B3CD4E4001C48B5 /* l-dgnbld.cc in Sources */,
 				B577E99D285FAAE4002E7FCF /* lapi.c in Sources */,
 				B5A32FDD2B3CD4E4001C48B5 /* l-item.cc in Sources */,
 				B5A330612B3CD4E4001C48B5 /* species.cc in Sources */,
-				B558E324286E388500678CF5 /* SDL_uikitviewcontroller+VirtualKeyboardInput.m in Sources */,
 				B5A330742B3CD4E4001C48B5 /* monster.cc in Sources */,
 				B5A330892B3CD4E4001C48B5 /* spl-other.cc in Sources */,
 				B5A32FF62B3CD4E4001C48B5 /* fineff.cc in Sources */,
 				B5A32FF52B3CD4E4001C48B5 /* scroller.cc in Sources */,
 				B5A330BC2B3CD4E4001C48B5 /* mon-tentacle.cc in Sources */,
 				B5A3303C2B3CD4E4001C48B5 /* attitude-change.cc in Sources */,
-				B5A32CC92B3CD489001C48B5 /* tiledef-main.cc in Sources */,
 				B5A32FF22B3CD4E4001C48B5 /* areas.cc in Sources */,
 				B577E9B1285FAAE4002E7FCF /* ltable.c in Sources */,
 				B5A3301A2B3CD4E4001C48B5 /* tilepick.cc in Sources */,
 				B5A330D12B3CD4E5001C48B5 /* item-name.cc in Sources */,
 				B5A330D02B3CD4E5001C48B5 /* mapmark.cc in Sources */,
 				B5A330BD2B3CD4E4001C48B5 /* nearby-danger.cc in Sources */,
-				B5A1E703286E4BAB009970E9 /* SDL_uikitviewcontroller+KeyboardKeysHandling.m in Sources */,
 				B5A32FDE2B3CD4E4001C48B5 /* dgn-irregular-box.cc in Sources */,
 				B5A330AE2B3CD4E4001C48B5 /* dbg-maps.cc in Sources */,
 				B5A330122B3CD4E4001C48B5 /* bitary.cc in Sources */,
@@ -3068,19 +2849,14 @@
 				B5A330412B3CD4E4001C48B5 /* mon-project.cc in Sources */,
 				B5A330402B3CD4E4001C48B5 /* invent.cc in Sources */,
 				B5A330C42B3CD4E5001C48B5 /* stash.cc in Sources */,
-				B5A330712B3CD4E4001C48B5 /* fontwrapper-ft.cc in Sources */,
-				B5A330952B3CD4E4001C48B5 /* windowmanager-sdl.cc in Sources */,
 				B5A330C82B3CD4E5001C48B5 /* english.cc in Sources */,
 				B5A330AA2B3CD4E4001C48B5 /* mon-poly.cc in Sources */,
 				B5A32FE02B3CD4E4001C48B5 /* dgl-message.cc in Sources */,
 				B5A330392B3CD4E4001C48B5 /* zot.cc in Sources */,
 				B577E9A9285FAAE4002E7FCF /* lzio.c in Sources */,
-				B5A32FDB2B3CD4E4001C48B5 /* tilereg-abl.cc in Sources */,
 				B5A331012B3CD4E5001C48B5 /* kills.cc in Sources */,
-				B558E321286E388500678CF5 /* main.m in Sources */,
 				B5A32FF82B3CD4E4001C48B5 /* target.cc in Sources */,
 				B5A3308D2B3CD4E4001C48B5 /* notes.cc in Sources */,
-				B5A3308A2B3CD4E4001C48B5 /* tilereg-doll.cc in Sources */,
 				B5A330512B3CD4E4001C48B5 /* l-moninf.cc in Sources */,
 				B5A330682B3CD4E4001C48B5 /* cluautil.cc in Sources */,
 				B5A3301E2B3CD4E4001C48B5 /* player-stats.cc in Sources */,
@@ -3089,30 +2865,23 @@
 				B5A330842B3CD4E4001C48B5 /* chardump.cc in Sources */,
 				B5A330462B3CD4E4001C48B5 /* item-prop.cc in Sources */,
 				B5A330DA2B3CD4E5001C48B5 /* known-items.cc in Sources */,
-				B5A3304C2B3CD4E4001C48B5 /* tilesdl.cc in Sources */,
 				B5A3302D2B3CD4E4001C48B5 /* l-los.cc in Sources */,
 				B5A3307B2B3CD4E4001C48B5 /* delay.cc in Sources */,
 				B5A3309F2B3CD4E4001C48B5 /* version.cc in Sources */,
 				B577E9A4285FAAE4002E7FCF /* ldblib.c in Sources */,
 				B5A330FE2B3CD4E5001C48B5 /* describe.cc in Sources */,
-				B5A330EF2B3CD4E5001C48B5 /* tilereg-dgn.cc in Sources */,
 				B5A331072B3CD4E5001C48B5 /* bloodspatter.cc in Sources */,
 				B5A330DC2B3CD4E5001C48B5 /* item-use.cc in Sources */,
 				B5A32FF72B3CD4E4001C48B5 /* god-abil.cc in Sources */,
 				B5A32FF32B3CD4E4001C48B5 /* end.cc in Sources */,
-				B5A330882B3CD4E4001C48B5 /* tilebuf.cc in Sources */,
 				B5A3300F2B3CD4E4001C48B5 /* mon-info.cc in Sources */,
 				B5A330D22B3CD4E5001C48B5 /* ability.cc in Sources */,
 				B5A330202B3CD4E4001C48B5 /* religion.cc in Sources */,
 				B5A331022B3CD4E5001C48B5 /* wiz-fsim.cc in Sources */,
 				B577E9A2285FAAE4002E7FCF /* loadlib.c in Sources */,
-				B5A330812B3CD4E4001C48B5 /* tilereg-inv.cc in Sources */,
 				B5A330FC2B3CD4E5001C48B5 /* game-options.cc in Sources */,
 				B5A32FF42B3CD4E4001C48B5 /* shopping.cc in Sources */,
 				B503A5FB2868E57700C62C38 /* levcomp.tab.cc in Sources */,
-				B5A330F72B3CD4E5001C48B5 /* tiledgnbuf.cc in Sources */,
-				B5A32CCD2B3CD489001C48B5 /* tiledef-dngn.cc in Sources */,
-				B5A330262B3CD4E4001C48B5 /* tilepick-p.cc in Sources */,
 				B5A32FE62B3CD4E4001C48B5 /* uncancel.cc in Sources */,
 				B5A32FE22B3CD4E4001C48B5 /* outer-menu.cc in Sources */,
 				B5A3308C2B3CD4E4001C48B5 /* ui.cc in Sources */,
@@ -3125,7 +2894,6 @@
 				B558E325286E388500678CF5 /* path_utils.m in Sources */,
 				B5A330592B3CD4E4001C48B5 /* viewchar.cc in Sources */,
 				B5A330B22B3CD4E4001C48B5 /* ouch.cc in Sources */,
-				B5FF5E8628638B4800D90679 /* dcss_ios.cpp in Sources */,
 				B5A330D62B3CD4E5001C48B5 /* l-option.cc in Sources */,
 				B5A330D42B3CD4E5001C48B5 /* act-iter.cc in Sources */,
 				B577E99B285FAAE4002E7FCF /* ltm.c in Sources */,
@@ -3137,7 +2905,6 @@
 				B577E9A8285FAAE4002E7FCF /* lobject.c in Sources */,
 				B5A330762B3CD4E4001C48B5 /* lookup-help.cc in Sources */,
 				B5A330D32B3CD4E5001C48B5 /* behold.cc in Sources */,
-				B558E31A286E388500678CF5 /* SDL_char_utils.m in Sources */,
 				B5A330C62B3CD4E5001C48B5 /* dactions.cc in Sources */,
 				B5A330C12B3CD4E4001C48B5 /* god-menu.cc in Sources */,
 				B577E99F285FAAE4002E7FCF /* liolib.c in Sources */,
@@ -3146,7 +2913,6 @@
 				B5A330322B3CD4E4001C48B5 /* stringutil.cc in Sources */,
 				B5A3301D2B3CD4E4001C48B5 /* mon-pick.cc in Sources */,
 				B5A330C32B3CD4E5001C48B5 /* exclude.cc in Sources */,
-				B5A330722B3CD4E4001C48B5 /* tilereg-skl.cc in Sources */,
 				B5A32FE42B3CD4E4001C48B5 /* mon-speak.cc in Sources */,
 				B5A330432B3CD4E4001C48B5 /* mon-pathfind.cc in Sources */,
 				B577E9A6285FAAE4002E7FCF /* llex.c in Sources */,
@@ -3171,16 +2937,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B581C7502869124400AB04A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Freetype2;
-			targetProxy = B581C74F2869124400AB04A1 /* PBXContainerItemProxy */;
-		};
-		B5ACC6F42B3B89300076A6ED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Static Library";
-			targetProxy = B5ACC6F32B3B89300076A6ED /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -3241,18 +2997,8 @@
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
 					"LUA_USE_IOS",
-					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
-					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
-					"TOUCH_UI=1",
-					"USE_FT=1",
-					"USE_GL=1",
-					"USE_GLES=1",
-					"USE_SDL=1",
-					"USE_TILE=1",
-					"USE_TILE_LOCAL=1",
 					"HAVE_STAT=1",
 					"WIZARD=1",
-					"USE_SOUND=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3269,20 +3015,15 @@
 				OTHER_LDFLAGS = "-lz";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "dcss/commons/DCSS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DCSS-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				SYSTEM_HEADER_SEARCH_PATHS = (
-					Libraries/SDL/include,
 					"Libraries/crawl/crawl-ref/source/contrib/lua/src",
-					"Libraries/freetype2-ios/include",
-					Libraries/SDL_image,
-					"Libraries/sdl2-mixer",
 				);
 				USER_HEADER_SEARCH_PATHS = (
 					"Libraries/crawl/crawl-ref/source",
-					Libraries/SDL/src/video/uikit,
 					dcss/commons,
 				);
 			};
@@ -3332,18 +3073,8 @@
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
 					"LUA_USE_IOS",
-					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
-					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
-					"TOUCH_UI=1",
-					"USE_FT=1",
-					"USE_GL=1",
-					"USE_GLES=1",
-					"USE_SDL=1",
-					"USE_TILE=1",
-					"USE_TILE_LOCAL=1",
 					"HAVE_STAT=1",
 					"WIZARD=1",
-					"USE_SOUND=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -3359,20 +3090,15 @@
 				OTHER_LDFLAGS = "-lz";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "dcss/commons/DCSS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DCSS-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				SYSTEM_HEADER_SEARCH_PATHS = (
-					Libraries/SDL/include,
 					"Libraries/crawl/crawl-ref/source/contrib/lua/src",
-					"Libraries/freetype2-ios/include",
-					Libraries/SDL_image,
-					"Libraries/sdl2-mixer",
 				);
 				USER_HEADER_SEARCH_PATHS = (
 					"Libraries/crawl/crawl-ref/source",
-					Libraries/SDL/src/video/uikit,
 					dcss/commons,
 				);
 				VALIDATE_PRODUCT = YES;
@@ -3416,7 +3142,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3455,7 +3181,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

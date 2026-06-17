@@ -10,7 +10,15 @@
 #ifndef path_utils_h
 #define path_utils_h
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 NSURL* getICloudDocumentURL(void);
 NSURL* getDocumentURL(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* path_utils_h */
