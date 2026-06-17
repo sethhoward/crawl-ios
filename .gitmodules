@@ -1,16 +1,4 @@
-[submodule "Libraries/SDL"]
-	path = Libraries/SDL
-	url = https://github.com/sethhoward/SDL.git
-[submodule "Libraries/SDL_image"]
-	path = Libraries/SDL_image
-	url = https://github.com/sethhoward/SDL_image.git
-[submodule "Libraries/freetype2-ios"]
-	path = Libraries/freetype2-ios
-	url = https://github.com/sethhoward/freetype2-ios.git
 [submodule "Libraries/crawl"]
 	path = Libraries/crawl
 	url = https://github.com/sethhoward/crawl.git
 	branch = console-0.34.1
-[submodule "Libraries/sdl2-mixer"]
-	path = Libraries/sdl2-mixer
-	url = https://github.com/sethhoward/crawl-sdl2-mixer.git
