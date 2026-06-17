@@ -75,6 +75,7 @@
 		ACE4000000000000000000A1 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A1 /* main.mm */; };
 		ACE4000000000000000000A2 /* ConsoleAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */; };
 		ACE4000000000000000000A3 /* libios.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A3 /* libios.mm */; };
+		ACE4000000000000000000B1 /* ConsoleView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000B1 /* ConsoleView.mm */; };
 		B5A1E710286E582E009970E9 /* stone_soup_icon-512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */; };
 		B5A32FD42B3CD4E4001C48B5 /* precision-menu.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD22B3CD4A9001C48B5 /* precision-menu.cc */; };
 		B5A32FD52B3CD4E4001C48B5 /* sqldbm.cc in Sources */ = {isa = PBXBuildFile; fileRef = B5A32CD32B3CD4A9001C48B5 /* sqldbm.cc */; };
@@ -593,6 +594,9 @@
 		ACE3000000000000000000A1 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/main.mm"; sourceTree = "<group>"; };
 		ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/ConsoleAppDelegate.mm"; sourceTree = "<group>"; };
 		ACE3000000000000000000A3 /* libios.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/libios.mm"; sourceTree = "<group>"; };
+		ACE3000000000000000000B1 /* ConsoleView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "console/ConsoleView.mm"; sourceTree = "<group>"; };
+		ACE3000000000000000000B2 /* ConsoleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "console/ConsoleView.h"; sourceTree = "<group>"; };
+		ACE3000000000000000000B3 /* console_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "console/console_bridge.h"; sourceTree = "<group>"; };
 		ACE3000000000000000000A4 /* ConsoleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "console/ConsoleAppDelegate.h"; sourceTree = "<group>"; };
 		B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stone_soup_icon-512x512.png"; path = "Libraries/crawl/crawl-ref/source/dat/tiles/stone_soup_icon-512x512.png"; sourceTree = SOURCE_ROOT; };
 		B5A32CB62B3CD488001C48B5 /* tiledef-icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-icons.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.h"; sourceTree = "<group>"; };
@@ -2250,6 +2254,9 @@
 				ACE3000000000000000000A1 /* main.mm */,
 				ACE3000000000000000000A2 /* ConsoleAppDelegate.mm */,
 				ACE3000000000000000000A3 /* libios.mm */,
+				ACE3000000000000000000B1 /* ConsoleView.mm */,
+				ACE3000000000000000000B2 /* ConsoleView.h */,
+				ACE3000000000000000000B3 /* console_bridge.h */,
 				ACE3000000000000000000A4 /* ConsoleAppDelegate.h */,
 			);
 			path = dcss;
@@ -2648,6 +2655,7 @@
 				ACE4000000000000000000A1 /* main.mm in Sources */,
 				ACE4000000000000000000A2 /* ConsoleAppDelegate.mm in Sources */,
 				ACE4000000000000000000A3 /* libios.mm in Sources */,
+				ACE4000000000000000000B1 /* ConsoleView.mm in Sources */,
 				B5A3306C2B3CD4E4001C48B5 /* describe-spells.cc in Sources */,
 				B5A330752B3CD4E4001C48B5 /* dbg-util.cc in Sources */,
 				B5A330522B3CD4E4001C48B5 /* player-equip.cc in Sources */,
