@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC54000000000000000000D1 /* app/DCSSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D1 /* app/DCSSApp.swift */; };
+		AC54000000000000000000D2 /* app/ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D2 /* app/ContentView.swift */; };
+		AC54000000000000000000D3 /* app/KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D3 /* app/KeyboardInputView.swift */; };
 		ACE2000000000000000000A1 /* mon-aura.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A1 /* mon-aura.cc */; };
 		ACE2000000000000000000A2 /* piety-info.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A2 /* piety-info.cc */; };
 		ACE2000000000000000000A3 /* player-notices.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000A3 /* player-notices.cc */; };
@@ -14,9 +17,6 @@
 		ACE2000000000000000000C2 /* lctype.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000C2 /* lctype.c */; };
 		ACE2000000000000000000C3 /* lutf8lib.c in Sources */ = {isa = PBXBuildFile; fileRef = ACE1000000000000000000C3 /* lutf8lib.c */; };
 		ACE4000000000000000000A3 /* console/libios.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACE3000000000000000000A3 /* console/libios.mm */; };
-		AC54000000000000000000D1 /* DCSSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D1 /* DCSSApp.swift */; };
-		AC54000000000000000000D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D2 /* ContentView.swift */; };
-		AC54000000000000000000D3 /* KeyboardInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC53000000000000000000D3 /* KeyboardInputView.swift */; };
 		ACE5000000000000000000B /* tiledef-dngn.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000000A /* tiledef-dngn.cc */; };
 		ACE5000000000000000001B /* tiledef-feat.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000001A /* tiledef-feat.cc */; };
 		ACE5000000000000000002B /* tiledef-floor.cc in Sources */ = {isa = PBXBuildFile; fileRef = ACE5000000000000000002A /* tiledef-floor.cc */; };
@@ -344,6 +344,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC53000000000000000000D1 /* app/DCSSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/DCSSApp.swift; sourceTree = "<group>"; };
+		AC53000000000000000000D2 /* app/ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/ContentView.swift; sourceTree = "<group>"; };
+		AC53000000000000000000D3 /* app/KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/KeyboardInputView.swift; sourceTree = "<group>"; };
+		AC53000000000000000000D4 /* dcss-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dcss-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACE1000000000000000000A1 /* mon-aura.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mon-aura.cc"; path = "Libraries/crawl/crawl-ref/source/mon-aura.cc"; sourceTree = "<group>"; };
 		ACE1000000000000000000A2 /* piety-info.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "piety-info.cc"; path = "Libraries/crawl/crawl-ref/source/piety-info.cc"; sourceTree = "<group>"; };
 		ACE1000000000000000000A3 /* player-notices.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "player-notices.cc"; path = "Libraries/crawl/crawl-ref/source/player-notices.cc"; sourceTree = "<group>"; };
@@ -351,10 +355,6 @@
 		ACE1000000000000000000C2 /* lctype.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lctype.c; sourceTree = "<group>"; };
 		ACE1000000000000000000C3 /* lutf8lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lutf8lib.c; sourceTree = "<group>"; };
 		ACE3000000000000000000A3 /* console/libios.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = console/libios.mm; sourceTree = "<group>"; };
-		AC53000000000000000000D1 /* DCSSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/DCSSApp.swift; sourceTree = "<group>"; };
-		AC53000000000000000000D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/ContentView.swift; sourceTree = "<group>"; };
-		AC53000000000000000000D3 /* KeyboardInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app/KeyboardInputView.swift; sourceTree = "<group>"; };
-		AC53000000000000000000D4 /* dcss-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dcss-Bridging-Header.h"; sourceTree = "<group>"; };
 		ACE3000000000000000000B3 /* console/console_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = console/console_bridge.h; sourceTree = "<group>"; };
 		ACE5000000000000000000A /* tiledef-dngn.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-dngn.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-dngn.cc"; sourceTree = SOURCE_ROOT; };
 		ACE5000000000000000001A /* tiledef-feat.cc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "tiledef-feat.cc"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-feat.cc"; sourceTree = SOURCE_ROOT; };
@@ -375,8 +375,8 @@
 		B54FB9132860C61800BA35A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B54FB9182860C67800BA35A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B558E30B286E388500678CF5 /* path_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_utils.h; sourceTree = "<group>"; };
-		B558E318286E388500678CF5 /* path_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = path_utils.m; sourceTree = "<group>"; };
+		B558E30B286E388500678CF5 /* path_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "app/path_utils.h"; sourceTree = "<group>"; };
+		B558E318286E388500678CF5 /* path_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "app/path_utils.m"; sourceTree = "<group>"; };
 		B577E4B2285FA4B5002E7FCF /* dcss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dcss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577E4BE285FA4B6002E7FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B577E4C1285FA4B6002E7FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -1957,44 +1957,9 @@
 			name = rltiles;
 			sourceTree = "<group>";
 		};
-		B51223F5286A5E40002A7C79 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				B558E32F286E3A5900678CF5 /* JSController */,
-				B558E2EE286E386C00678CF5 /* Commons */,
-			);
-			name = Libraries;
-			sourceTree = "<group>";
-		};
-		B558E2EE286E386C00678CF5 /* Commons */ = {
-			isa = PBXGroup;
-			children = (
-				B558E301286E388500678CF5 /* commons */,
-			);
-			name = Commons;
-			sourceTree = "<group>";
-		};
-		B558E301286E388500678CF5 /* commons */ = {
-			isa = PBXGroup;
-			children = (
-				B558E30B286E388500678CF5 /* path_utils.h */,
-				B558E318286E388500678CF5 /* path_utils.m */,
-			);
-			name = commons;
-			path = dcss/commons;
-			sourceTree = "<group>";
-		};
-		B558E32F286E3A5900678CF5 /* JSController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = JSController;
-			sourceTree = "<group>";
-		};
 		B577E4A9285FA4B5002E7FCF = {
 			isa = PBXGroup;
 			children = (
-				B51223F5286A5E40002A7C79 /* Libraries */,
 				B577E4C9285FA4C8002E7FCF /* crawl */,
 				B577E4B4285FA4B5002E7FCF /* dcss */,
 				B577E4B3285FA4B5002E7FCF /* Products */,
@@ -2029,9 +1994,11 @@
 				ACE5000000000000000008A /* tiledef-wall.cc */,
 				ACE3000000000000000000A3 /* console/libios.mm */,
 				ACE3000000000000000000B3 /* console/console_bridge.h */,
-				AC53000000000000000000D1 /* DCSSApp.swift */,
-				AC53000000000000000000D2 /* ContentView.swift */,
-				AC53000000000000000000D3 /* KeyboardInputView.swift */,
+				AC53000000000000000000D1 /* app/DCSSApp.swift */,
+				AC53000000000000000000D2 /* app/ContentView.swift */,
+				AC53000000000000000000D3 /* app/KeyboardInputView.swift */,
+				B558E30B286E388500678CF5 /* path_utils.h */,
+				B558E318286E388500678CF5 /* path_utils.m */,
 				AC53000000000000000000D4 /* dcss-Bridging-Header.h */,
 			);
 			path = dcss;
@@ -2256,9 +2223,9 @@
 				ACE5000000000000000007B /* tiledef-unrand.cc in Sources */,
 				ACE5000000000000000008B /* tiledef-wall.cc in Sources */,
 				ACE4000000000000000000A3 /* console/libios.mm in Sources */,
-				AC54000000000000000000D1 /* DCSSApp.swift in Sources */,
-				AC54000000000000000000D2 /* ContentView.swift in Sources */,
-				AC54000000000000000000D3 /* KeyboardInputView.swift in Sources */,
+				AC54000000000000000000D1 /* app/DCSSApp.swift in Sources */,
+				AC54000000000000000000D2 /* app/ContentView.swift in Sources */,
+				AC54000000000000000000D3 /* app/KeyboardInputView.swift in Sources */,
 				B5A3306C2B3CD4E4001C48B5 /* describe-spells.cc in Sources */,
 				B5A330752B3CD4E4001C48B5 /* dbg-util.cc in Sources */,
 				B5A330522B3CD4E4001C48B5 /* player-equip.cc in Sources */,
@@ -2630,7 +2597,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = "Libraries/crawl/crawl-ref/source/contrib/lua/src";
 				USER_HEADER_SEARCH_PATHS = (
 					"Libraries/crawl/crawl-ref/source",
-					dcss/commons,
+					dcss/app,
 				);
 			};
 			name = Debug;
@@ -2703,7 +2670,7 @@
 				SYSTEM_HEADER_SEARCH_PATHS = "Libraries/crawl/crawl-ref/source/contrib/lua/src";
 				USER_HEADER_SEARCH_PATHS = (
 					"Libraries/crawl/crawl-ref/source",
-					dcss/commons,
+					dcss/app,
 				);
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2732,8 +2699,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2770,8 +2737,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
