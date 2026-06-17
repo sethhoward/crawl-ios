@@ -27,11 +27,12 @@ char** cArrayFromNSArray(NSArray* array)
 }
 
 extern "C" {
-int CDDA_iOS_main(NSString* documentPath)
+int CDDA_iOS_main(const char* documentPath)
 {
+    NSString* docs = documentPath ? [NSString stringWithUTF8String:documentPath] : @"";
     NSArray<NSString*>* arguments = NSProcessInfo.processInfo.arguments;
     NSArray<NSString*>* newArguments = [arguments arrayByAddingObjectsFromArray:@[
-        @"-dir", documentPath,
+        @"-dir", docs,
 
     ]];
     int newArgumentsCount = newArguments.count;

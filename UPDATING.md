@@ -5,10 +5,14 @@ the engine as close to upstream as possible so version bumps stay cheap:
 
 - `Libraries/crawl` is a submodule pointing at **`sethhoward/crawl`** (a fork of the
   official **`crawl/crawl`**), branch `console-<version>`.
-- That branch is **upstream's release tag + exactly one patched file** (`main.cc`):
-  rename `main()` → `DCSS_main` under `DCSS_IOS` (so the app owns `UIApplicationMain`)
-  and guard a `system()` call that's unavailable on iOS. See commit
-  `iOS console entry: DCSS_main under DCSS_IOS + guard system()`.
+- That branch is **upstream's release tag + two patched files**:
+  - `main.cc` — rename `main()` → `DCSS_main` under `DCSS_IOS` (so the app owns
+    `UIApplicationMain`) and guard a `system()` call unavailable on iOS. See commit
+    `iOS console entry: DCSS_main under DCSS_IOS + guard system()`.
+  - `viewgeom.cc` — add a portrait **`_stacked_layout`** (HUD/stats below the map
+    instead of to its right) and select it for narrow grids, so phone portrait is
+    legible. See commit `console: add portrait 'stacked' layout`. Landscape/wide
+    grids keep the unchanged stock layout.
 - The whole iOS layer is in **`dcss/console/`** and is version-independent:
   - `libios.mm` — implements DCSS's console backend contract (`libconsole.h`):
     a character-grid model + input queue (`getch_ck` blocks on it).
@@ -25,16 +29,19 @@ enums even in console — but **not** the tile atlas PNGs.
 
 ## Steps to bump to a new DCSS release (e.g. 0.35.0)
 
-### 1. Re-apply the shim onto the new tag (minutes)
+### 1. Re-apply the patches onto the new tag (minutes)
 In a clone of `sethhoward/crawl`:
 ```sh
 git remote add upstream https://github.com/crawl/crawl.git   # once
 git fetch upstream --tags
 git checkout -b console-0.35.0 0.35.0
-git cherry-pick <main.cc shim commit>      # or: git rebase --onto 0.35.0 0.34.1 console-0.34.1
+git cherry-pick <main.cc shim commit> <viewgeom stacked-layout commit>
+# or: git rebase --onto 0.35.0 0.34.1 console-0.34.1
 git push -u origin console-0.35.0
 ```
-It's one small hunk — expect a clean apply or a trivial context fixup.
+`main.cc` is a tiny hunk (clean apply). `viewgeom.cc` adds a class + an
+`init_geometry` branch; if upstream reworked the layout code, re-port the
+`_stacked_layout` class and its selection (the change is self-contained).
 
 ### 2. Regenerate the generated build inputs (macOS prebuild)
 Crawl generates several build inputs: the tiledef index tables, `prebuilt/levcomp.*`,

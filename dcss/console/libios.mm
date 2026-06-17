@@ -28,6 +28,12 @@
 
 // ---- model ---------------------------------------------------------------
 namespace {
+    struct ConsoleCell {
+        char32_t ch = U' ';
+        uint8_t  fg = 7;   // DCSS COLOURS index (0-15)
+        uint8_t  bg = 0;
+    };
+
     std::mutex g_grid_mutex;
     std::vector<ConsoleCell> g_grid;
     int g_cols = 80, g_rows = 24;
@@ -55,6 +61,13 @@ void ios_console_set_size(int cols, int rows) {
     g_cols = cols > 0 ? cols : 80;
     g_rows = rows > 0 ? rows : 24;
     g_grid.assign(g_cols * g_rows, ConsoleCell{});
+}
+void ios_console_resize(int cols, int rows) {
+    ios_console_set_size(cols, rows);
+    // Wake the engine: the main loop polls terminal_resized and re-runs
+    // init_geometry; CK_REDRAW unblocks getch_ck so it polls promptly.
+    crawl_state.terminal_resized = true;
+    ios_console_push_key(CK_REDRAW);
 }
 int  ios_console_cols(void) { return g_cols; }
 int  ios_console_rows(void) { return g_rows; }
