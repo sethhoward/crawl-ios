@@ -590,7 +590,6 @@
 		B577E4BE285FA4B6002E7FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B577E4C1285FA4B6002E7FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B577E4C3285FA4B6002E7FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B577E904285FA9B9002E7FCF /* libintl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libintl.a; path = dcss/Binaries/glib/lib/libintl.a; sourceTree = "<group>"; };
 		B577E964285FAAE1002E7FCF /* lzio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzio.h; sourceTree = "<group>"; };
 		B577E965285FAAE1002E7FCF /* ltable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ltable.h; sourceTree = "<group>"; };
 		B577E966285FAAE1002E7FCF /* ltm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ltm.c; sourceTree = "<group>"; };
@@ -2477,7 +2476,6 @@
 				B577ED29285FBD2F002E7FCF /* CoreAudio.framework */,
 				B577ED27285FBD0D002E7FCF /* GameController.framework */,
 				B577E9BB285FAB07002E7FCF /* libiconv.tbd */,
-				B577E904285FA9B9002E7FCF /* libintl.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3234,7 +3232,6 @@
 					"ASSERTS=1",
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
-					"ENABLE_NLS=1",
 					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
 					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
 					"TOUCH_UI=1",
@@ -3275,7 +3272,6 @@
 					"Libraries/sdl2-mixer",
 				);
 				USER_HEADER_SEARCH_PATHS = (
-					dcss/Binaries/glib/include,
 					"Libraries/crawl/crawl-ref/source",
 					Libraries/SDL/src/video/uikit,
 					dcss/commons,
@@ -3326,7 +3322,6 @@
 					"ASSERTS=1",
 					"CLUA_BINDINGS=1",
 					"DCSS_IOS=1",
-					"ENABLE_NLS=1",
 					"MONOSPACED_FONT=\\\"./fonts/DejaVuSansMono.ttf\\\"",
 					"PROPORTIONAL_FONT=\\\"./fonts/DejaVuSans.ttf\\\"",
 					"TOUCH_UI=1",
@@ -3366,7 +3361,6 @@
 					"Libraries/sdl2-mixer",
 				);
 				USER_HEADER_SEARCH_PATHS = (
-					dcss/Binaries/glib/include,
 					"Libraries/crawl/crawl-ref/source",
 					Libraries/SDL/src/video/uikit,
 					dcss/commons,
