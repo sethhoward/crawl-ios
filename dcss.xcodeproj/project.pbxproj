@@ -377,8 +377,6 @@
 		B54FB9182860C67800BA35A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B54FB91A2860C6FB00BA35A1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B558E30B286E388500678CF5 /* path_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = path_utils.h; sourceTree = "<group>"; };
-		B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCSS-Bridging-Header.h"; sourceTree = "<group>"; };
-		B558E312286E388500678CF5 /* CDDA_iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDA_iOS_main.h; sourceTree = "<group>"; };
 		B558E318286E388500678CF5 /* path_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = path_utils.m; sourceTree = "<group>"; };
 		B577E4B2285FA4B5002E7FCF /* dcss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dcss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577E4BE285FA4B6002E7FCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1980,8 +1978,6 @@
 		B558E301286E388500678CF5 /* commons */ = {
 			isa = PBXGroup;
 			children = (
-				B558E312286E388500678CF5 /* CDDA_iOS_main.h */,
-				B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */,
 				B558E30B286E388500678CF5 /* path_utils.h */,
 				B558E318286E388500678CF5 /* path_utils.m */,
 			);
