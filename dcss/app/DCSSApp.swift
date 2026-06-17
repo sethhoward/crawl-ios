@@ -51,7 +51,15 @@ let palette: [Color] = [
 // so showing the keyboard just shrinks the font, it does NOT resize/clear the
 // engine grid (which would blank menus that don't repaint on resize).
 enum GridMetrics {
-    // Per-point metrics of Menlo.
+    // DCSS menus assume ~80 cols, so the engine grid is at least this wide and
+    // the view scrolls. In portrait the font is sized so ~visibleCols fit the
+    // screen width (readable); the extra cols are reached by scrolling.
+    static let menuCols = 80
+    static let visibleCols: CGFloat = 42
+
+    struct Result { let portrait: Bool; let cols, rows: Int
+                    let fontSize, cellW, cellH: CGFloat }
+
     private static func perPoint() -> (charW: CGFloat, lineH: CGFloat) {
         let ref: CGFloat = 12
         let f = UIFont(name: "Menlo", size: ref)
@@ -60,26 +68,28 @@ enum GridMetrics {
         return (charW, f.lineHeight / ref)
     }
 
-    // Engine grid (cols x rows) for a full-screen area, by aspect.
-    static func gridSize(width: CGFloat, height: CGFloat) -> (cols: Int, rows: Int) {
+    static func compute(width: CGFloat, height: CGFloat) -> Result {
+        let (charW, lineH) = perPoint()
         let portrait = height >= width
-        let minCols: CGFloat = portrait ? 42 : 79
-        let minRows: CGFloat = portrait ? 37 : 24
-        let (charW, lineH) = perPoint()
-        let size = max(6, min(min((width / minCols) / charW, (height / minRows) / lineH), 22))
-        let cellW = size * charW, cellH = size * lineH
-        return (max(Int(minCols), Int(width / cellW)),
-                max(Int(minRows), Int(height / cellH)))
-    }
-
-    // Largest font that fits a fixed cols x rows grid into the given area.
-    static func fit(cols: Int, rows: Int, width: CGFloat, height: CGFloat)
-        -> (fontSize: CGFloat, cellW: CGFloat, cellH: CGFloat)
-    {
-        let (charW, lineH) = perPoint()
-        let size = max(4, min(min(width / (CGFloat(cols) * charW),
-                                  height / (CGFloat(rows) * lineH)), 22))
-        return (size, size * charW, size * lineH)
+        if portrait {
+            // Readable font (~visibleCols across the width); wide scrollable grid.
+            let size = max(6, min((width / visibleCols) / charW, 22))
+            let cellW = size * charW, cellH = size * lineH
+            let cols = max(menuCols, Int(width / cellW))
+            let rows = max(37, Int(height / cellH))   // >= stacked-layout minimum
+            return Result(portrait: true, cols: cols, rows: rows,
+                          fontSize: size, cellW: cellW, cellH: cellH)
+        } else {
+            // Landscape: fit the standard wide layout across the width.
+            let minCols: CGFloat = 79, minRows: CGFloat = 24
+            let size = max(6, min(min((width / minCols) / charW,
+                                      (height / minRows) / lineH), 22))
+            let cellW = size * charW, cellH = size * lineH
+            let cols = max(Int(minCols), Int(width / cellW))
+            let rows = max(Int(minRows), Int(height / cellH))
+            return Result(portrait: false, cols: cols, rows: rows,
+                          fontSize: size, cellW: cellW, cellH: cellH)
+        }
     }
 }
 
@@ -104,29 +114,22 @@ final class GameModel: ObservableObject {
 
     func bumpTick() { tick &+= 1 }
 
-    // Set the engine grid for the full-screen area. Called on first layout and
-    // on rotation only — NOT when the keyboard appears (that would clear the
-    // grid and blank screens that don't repaint on resize).
+    // Size the engine grid + render scale for the full-screen area. Called on
+    // first layout and on rotation only — NOT when the keyboard appears (the
+    // scroll viewport just shrinks; the grid is unchanged so menus don't blank).
     func setEngineGrid(width: CGFloat, height: CGFloat) {
         guard width > 1, height > 1 else { return }
-        let g = GridMetrics.gridSize(width: width, height: height)
+        let g = GridMetrics.compute(width: width, height: height)
+        ios_set_force_stacked(g.portrait ? 1 : 0)   // before (re)size → init_geometry sees it
         let changed = (g.cols != cols || g.rows != rows)
         cols = g.cols; rows = g.rows
+        cellW = g.cellW; cellH = g.cellH; fontSize = g.fontSize
         if !started {
             ios_console_set_size(Int32(g.cols), Int32(g.rows))
-            rescale(width: width, height: height)
             start()
         } else if changed {
             ios_console_resize(Int32(g.cols), Int32(g.rows))
         }
-    }
-
-    // Fit the fixed engine grid into the currently-free drawable area (changes
-    // with the keyboard). Pure rendering — never touches the engine.
-    func rescale(width: CGFloat, height: CGFloat) {
-        guard cols > 0, rows > 0, width > 1, height > 1 else { return }
-        let f = GridMetrics.fit(cols: cols, rows: rows, width: width, height: height)
-        fontSize = f.fontSize; cellW = f.cellW; cellH = f.cellH
     }
 
     private func start() {

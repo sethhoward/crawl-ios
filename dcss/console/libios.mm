@@ -56,7 +56,11 @@ namespace {
     }
 }
 
-// ---- bridge (used by ConsoleView) ---------------------------------------
+// ---- bridge (used by the SwiftUI layer) ---------------------------------
+// Read by crawl's viewgeom.cc (extern "C"): when set, portrait stacked layout.
+extern "C" { bool g_ios_force_stacked = false; }
+void ios_set_force_stacked(int on) { g_ios_force_stacked = (on != 0); }
+
 void ios_console_set_size(int cols, int rows) {
     std::lock_guard<std::mutex> lk(g_grid_mutex);
     g_cols = cols > 0 ? cols : 80;

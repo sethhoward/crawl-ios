@@ -11,8 +11,10 @@ the engine as close to upstream as possible so version bumps stay cheap:
     `DCSS_IOS` loop `_launch_game_loop()` forever instead of falling through to
     `end()` (the app must never terminate itself).
   - `viewgeom.cc` — add a portrait **`_stacked_layout`** (HUD/stats below the map
-    instead of to its right) and select it for narrow grids, so phone portrait is
-    legible. Landscape/wide grids keep the unchanged stock layout.
+    instead of to its right). Selected for narrow grids, or whenever the iOS layer
+    sets the `extern "C" bool g_ios_force_stacked` flag (portrait uses a wide ~80-col
+    scrollable grid so menus render fully; the flag keeps the game stacked and caps
+    its panes to ~HUD_WIDTH so it still fits the screen). Landscape keeps stock inline.
   - `end.cc` — under `DCSS_IOS`, a clean exit (`end(0)`, e.g. quitting the startup
     menu) is turned into `game_ended(game_exit::abort)` so it unwinds back to the
     game loop and re-shows the menu instead of calling `exit()` (which would quit

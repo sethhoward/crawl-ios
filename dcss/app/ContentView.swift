@@ -13,19 +13,21 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { geo in
             // When the keyboard is up, the accessory bar carries Esc/Tab/Hide,
-            // so the floating strip hides; the game reflows above the keyboard.
+            // so the floating strip hides; the scroll viewport shrinks above the
+            // keyboard (the grid is unchanged — no resize, no blanking).
             let kbd = model.keyboardHeight
             let showStrip = kbd == 0
             let strip = showStrip ? stripHeight : 0
-            // Engine grid is sized for the keyboard-down layout (stable per
-            // orientation); the keyboard only rescales the rendering.
-            let baseH = max(1, geo.size.height - stripHeight)
-            let canvasH = max(1, geo.size.height - strip - kbd)
+            let viewportH = max(1, geo.size.height - strip - kbd)
 
             VStack(spacing: 0) {
-                ConsoleCanvas(model: model)
-                    .frame(width: geo.size.width, height: canvasH)
-                    .clipped()
+                ScrollView([.horizontal, .vertical]) {
+                    ConsoleCanvas(model: model)
+                        .frame(width: CGFloat(model.cols) * model.cellW,
+                               height: CGFloat(model.rows) * model.cellH)
+                }
+                .frame(width: geo.size.width, height: viewportH)
+                .background(Color.black)
 
                 if showStrip {
                     ControlStrip(model: model)
@@ -37,19 +39,12 @@ struct ContentView: View {
             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(KeyboardInputView(model: model))   // invisible responder
             .onAppear {
-                model.setEngineGrid(width: geo.size.width, height: baseH)
-                model.rescale(width: geo.size.width, height: canvasH)
+                model.setEngineGrid(width: geo.size.width,
+                                    height: max(1, geo.size.height - stripHeight))
             }
             .onChange(of: geo.size) {
-                let w = geo.size.width, h = geo.size.height
-                let kh = model.keyboardHeight
-                model.setEngineGrid(width: w, height: max(1, h - stripHeight))
-                model.rescale(width: w, height: max(1, h - (kh > 0 ? kh : stripHeight)))
-            }
-            .onChange(of: kbd) {
-                let w = geo.size.width, h = geo.size.height
-                let kh = model.keyboardHeight
-                model.rescale(width: w, height: max(1, h - (kh > 0 ? kh : stripHeight)))
+                model.setEngineGrid(width: geo.size.width,
+                                    height: max(1, geo.size.height - stripHeight))
             }
         }
         .ignoresSafeArea(.keyboard)        // we size the game above the keyboard ourselves
