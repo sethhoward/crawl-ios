@@ -10,6 +10,7 @@
 [submodule "Libraries/crawl"]
 	path = Libraries/crawl
 	url = https://github.com/sethhoward/crawl.git
+	branch = console-0.34.1
 [submodule "Libraries/sdl2-mixer"]
 	path = Libraries/sdl2-mixer
 	url = https://github.com/sethhoward/crawl-sdl2-mixer.git
