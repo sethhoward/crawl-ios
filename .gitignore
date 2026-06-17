@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,c++,c,objective-c,swift,fastlane,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,c++,c,objective-c,swift,fastlane,intellij+all
 
+# macOS
+.DS_Store
+
 ### C ###
 # Prerequisites
 *.d

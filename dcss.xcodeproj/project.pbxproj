@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC1805BA8BDE7AD2A80B7350 /* Pods_dcss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B57AB42F96A0716156F561F7 /* Pods_dcss.framework */; };
 		B503A5ED2868E26B00C62C38 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = B503A5EC2868E26B00C62C38 /* docs */; };
 		B503A5EF2868E27400C62C38 /* dat in Resources */ = {isa = PBXBuildFile; fileRef = B503A5EE2868E27400C62C38 /* dat */; };
 		B503A5F22868E2F300C62C38 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B503A5F12868E2F300C62C38 /* fonts */; };
@@ -546,8 +545,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19AF4EF1EBF6CE2858CDD33C /* Pods-dcss.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dcss.debug.xcconfig"; path = "Target Support Files/Pods-dcss/Pods-dcss.debug.xcconfig"; sourceTree = "<group>"; };
-		321C2A04B4F1B42090CF07EC /* Pods-dcss.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dcss.release.xcconfig"; path = "Target Support Files/Pods-dcss/Pods-dcss.release.xcconfig"; sourceTree = "<group>"; };
 		B503A5EC2868E26B00C62C38 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = docs; path = "Libraries/crawl/crawl-ref/docs"; sourceTree = "<group>"; };
 		B503A5EE2868E27400C62C38 /* dat */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dat; path = "Libraries/crawl/crawl-ref/source/dat"; sourceTree = "<group>"; };
 		B503A5F12868E2F300C62C38 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = "Libraries/crawl/crawl-ref/source/contrib/fonts"; sourceTree = "<group>"; };
@@ -575,7 +572,7 @@
 		B558E30C286E388500678CF5 /* ZipArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipArchiver.swift; sourceTree = "<group>"; };
 		B558E30D286E388500678CF5 /* GamePadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePadViewController.m; sourceTree = "<group>"; };
 		B558E30E286E388500678CF5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B558E30F286E388500678CF5 /* CDDA-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDDA-Bridging-Header.h"; sourceTree = "<group>"; };
+		B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DCSS-Bridging-Header.h"; sourceTree = "<group>"; };
 		B558E310286E388500678CF5 /* SDL_uikitviewcontroller+KeyboardKeysHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitviewcontroller+KeyboardKeysHandling.h"; sourceTree = "<group>"; };
 		B558E311286E388500678CF5 /* SDL_char_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDL_char_utils.h; sourceTree = "<group>"; };
 		B558E312286E388500678CF5 /* CDDA_iOS_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDDA_iOS_main.h; sourceTree = "<group>"; };
@@ -585,7 +582,7 @@
 		B558E316286E388500678CF5 /* SDL_uikitview+CDDA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitview+CDDA.h"; sourceTree = "<group>"; };
 		B558E317286E388500678CF5 /* SDL_uikitviewcontroller+Gamepad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SDL_uikitviewcontroller+Gamepad.h"; sourceTree = "<group>"; };
 		B558E318286E388500678CF5 /* path_utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = path_utils.m; sourceTree = "<group>"; };
-		B558E330286E3B8200678CF5 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSButton.m; path = Libraries/JSController/Controller/JSButton.m; sourceTree = "<group>"; };
+		B558E330286E3B8200678CF5 /* JSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSButton.m; path = dcss/commons/JSButton.m; sourceTree = "<group>"; };
 		B558F92D286FAC53000FB84F /* game_dependent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_dependent.h; sourceTree = "<group>"; };
 		B558F941286FAD5A000FB84F /* game_dependent.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = game_dependent.mm; sourceTree = "<group>"; };
 		B577E4B2285FA4B5002E7FCF /* dcss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dcss.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -663,15 +660,14 @@
 		B577ED42285FC278002E7FCF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B577ED49285FC408002E7FCF /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		B577ED4B285FC415002E7FCF /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		B57AB42F96A0716156F561F7 /* Pods_dcss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dcss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B581C7622869139100AB04A1 /* CoreHaptics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreHaptics.framework; path = System/Library/Frameworks/CoreHaptics.framework; sourceTree = SDKROOT; };
 		B581C764286913A300AB04A1 /* libMTLCapture.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMTLCapture.tbd; path = usr/lib/libMTLCapture.tbd; sourceTree = SDKROOT; };
 		B581C766286913C400AB04A1 /* libMTLToolsDiagnostics.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libMTLToolsDiagnostics.tbd; path = usr/lib/libMTLToolsDiagnostics.tbd; sourceTree = SDKROOT; };
 		B581C768286913F100AB04A1 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		B59A53BC2867ABB90013E7DE /* CDDA_iOS_main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CDDA_iOS_main.mm; sourceTree = "<group>"; };
 		B5A1E701286E4AE9009970E9 /* UIControls.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIControls.storyboard; sourceTree = "<group>"; };
-		B5A1E704286E4CC0009970E9 /* JSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSButton.h; path = Libraries/JSController/Controller/JSButton.h; sourceTree = "<group>"; };
-		B5A1E705286E536F009970E9 /* dPad-None@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dPad-None@2x.png"; path = "Libraries/Cataclysm-DDA-iOS-commons/Bundle/JSDPad/dPad-None@2x.png"; sourceTree = "<group>"; };
+		B5A1E704286E4CC0009970E9 /* JSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSButton.h; path = dcss/commons/JSButton.h; sourceTree = "<group>"; };
+		B5A1E705286E536F009970E9 /* dPad-None@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dPad-None@2x.png"; path = "dcss/commons/dPad-None@2x.png"; sourceTree = "<group>"; };
 		B5A1E70F286E582E009970E9 /* stone_soup_icon-512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stone_soup_icon-512x512.png"; path = "Libraries/crawl/crawl-ref/source/dat/tiles/stone_soup_icon-512x512.png"; sourceTree = SOURCE_ROOT; };
 		B5A32CB62B3CD488001C48B5 /* tiledef-icons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-icons.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-icons.h"; sourceTree = "<group>"; };
 		B5A32CB72B3CD488001C48B5 /* tiledef-unrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "tiledef-unrand.h"; path = "Libraries/crawl/crawl-ref/source/rltiles/tiledef-unrand.h"; sourceTree = "<group>"; };
@@ -1491,22 +1487,12 @@
 				B54FB9142860C61800BA35A1 /* UIKit.framework in Frameworks */,
 				B577E9BC285FAB13002E7FCF /* libiconv.tbd in Frameworks */,
 				B577ED43285FC27D002E7FCF /* libsqlite3.tbd in Frameworks */,
-				AC1805BA8BDE7AD2A80B7350 /* Pods_dcss.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A75D93222F403C86BE24195D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				19AF4EF1EBF6CE2858CDD33C /* Pods-dcss.debug.xcconfig */,
-				321C2A04B4F1B42090CF07EC /* Pods-dcss.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		B503A5F02868E27E00C62C38 /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -2322,7 +2308,7 @@
 			children = (
 				B5ACC6EC2B3B89150076A6ED /* SDL_mixer.xcodeproj */,
 				B558E32F286E3A5900678CF5 /* JSController */,
-				B558E2EE286E386C00678CF5 /* Cataclysm-DDA-iOS-commons */,
+				B558E2EE286E386C00678CF5 /* Commons */,
 				B535E420286A6DF200B71D28 /* freetype2.xcodeproj */,
 				B5122420286A5E63002A7C79 /* SDL_image.xcodeproj */,
 				B51223F6286A5E58002A7C79 /* SDL.xcodeproj */,
@@ -2367,22 +2353,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B558E2EE286E386C00678CF5 /* Cataclysm-DDA-iOS-commons */ = {
+		B558E2EE286E386C00678CF5 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
 				B5A1E705286E536F009970E9 /* dPad-None@2x.png */,
-				B558E301286E388500678CF5 /* source */,
+				B558E301286E388500678CF5 /* commons */,
 			);
-			name = "Cataclysm-DDA-iOS-commons";
+			name = Commons;
 			sourceTree = "<group>";
 		};
-		B558E301286E388500678CF5 /* source */ = {
+		B558E301286E388500678CF5 /* commons */ = {
 			isa = PBXGroup;
 			children = (
 				B558E304286E388500678CF5 /* AppDelegate.h */,
 				B558E313286E388500678CF5 /* AppDelegate.m */,
 				B558E312286E388500678CF5 /* CDDA_iOS_main.h */,
-				B558E30F286E388500678CF5 /* CDDA-Bridging-Header.h */,
+				B558E30F286E388500678CF5 /* DCSS-Bridging-Header.h */,
 				B558E302286E388500678CF5 /* GamePadViewController.h */,
 				B558E30D286E388500678CF5 /* GamePadViewController.m */,
 				B558E30E286E388500678CF5 /* main.m */,
@@ -2404,8 +2390,8 @@
 				B558E30C286E388500678CF5 /* ZipArchiver.swift */,
 				B558F92D286FAC53000FB84F /* game_dependent.h */,
 			);
-			name = source;
-			path = "Libraries/Cataclysm-DDA-iOS-commons/source";
+			name = commons;
+			path = dcss/commons;
 			sourceTree = "<group>";
 		};
 		B558E32F286E3A5900678CF5 /* JSController */ = {
@@ -2425,7 +2411,6 @@
 				B577E4B4285FA4B5002E7FCF /* dcss */,
 				B577E4B3285FA4B5002E7FCF /* Products */,
 				B577E903285FA9B9002E7FCF /* Frameworks */,
-				A75D93222F403C86BE24195D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2494,7 +2479,6 @@
 				B577ED27285FBD0D002E7FCF /* GameController.framework */,
 				B577E9BB285FAB07002E7FCF /* libiconv.tbd */,
 				B577E904285FA9B9002E7FCF /* libintl.a */,
-				B57AB42F96A0716156F561F7 /* Pods_dcss.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2588,11 +2572,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B577E4C6285FA4B6002E7FCF /* Build configuration list for PBXNativeTarget "dcss" */;
 			buildPhases = (
-				364BC3719CCDC561FA0178AD /* [CP] Check Pods Manifest.lock */,
 				B577E4AE285FA4B5002E7FCF /* Sources */,
 				B577E4AF285FA4B5002E7FCF /* Frameworks */,
 				B577E4B0285FA4B5002E7FCF /* Resources */,
-				044B54D3E6856EFE85FA2846 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2807,48 +2789,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		044B54D3E6856EFE85FA2846 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dcss/Pods-dcss-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dcss/Pods-dcss-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dcss/Pods-dcss-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		364BC3719CCDC561FA0178AD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-dcss-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B577E4AE285FA4B5002E7FCF /* Sources */ = {
@@ -3255,7 +3195,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -3315,7 +3255,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -3323,8 +3263,8 @@
 				OTHER_LDFLAGS = "-lz";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "Libraries/Cataclysm-DDA-iOS-commons/source/CDDA-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CDDA-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "dcss/commons/DCSS-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DCSS-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -3338,7 +3278,7 @@
 					dcss/Binaries/glib/include,
 					"Libraries/crawl/crawl-ref/source",
 					Libraries/SDL/src/video/uikit,
-					Libraries/JSController/Controller,
+					dcss/commons,
 				);
 			};
 			name = Debug;
@@ -3349,7 +3289,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -3407,15 +3347,15 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-lz";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "Libraries/Cataclysm-DDA-iOS-commons/source/CDDA-Bridging-Header.h";
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CDDA-Swift.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "dcss/commons/DCSS-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "DCSS-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "";
 				SYSTEM_HEADER_SEARCH_PATHS = (
@@ -3429,7 +3369,7 @@
 					dcss/Binaries/glib/include,
 					"Libraries/crawl/crawl-ref/source",
 					Libraries/SDL/src/video/uikit,
-					Libraries/JSController/Controller,
+					dcss/commons,
 				);
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3437,7 +3377,6 @@
 		};
 		B577E4C7285FA4B6002E7FCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19AF4EF1EBF6CE2858CDD33C /* Pods-dcss.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3445,7 +3384,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3000;
-				DEVELOPMENT_TEAM = 3NJUD9MLAB;
+				DEVELOPMENT_TEAM = KKMWNTN39N;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DEBUG=1",
@@ -3454,6 +3393,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dcss/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "DCSS 0.30.1";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.role-playing-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -3468,7 +3408,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 30.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tk.apollov.dcss-ios.30";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandoze.dcss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -3481,7 +3421,6 @@
 		};
 		B577E4C8285FA4B6002E7FCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 321C2A04B4F1B42090CF07EC /* Pods-dcss.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -3489,10 +3428,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3000;
-				DEVELOPMENT_TEAM = 3NJUD9MLAB;
+				DEVELOPMENT_TEAM = KKMWNTN39N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = dcss/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "DCSS 0.30.1";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.role-playing-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -3507,7 +3447,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 30.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tk.apollov.dcss-ios.30";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sandoze.dcss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
