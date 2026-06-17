@@ -37,8 +37,11 @@ git push -u origin console-0.35.0
 It's one small hunk — expect a clean apply or a trivial context fixup.
 
 ### 2. Regenerate the generated build inputs (macOS prebuild)
-Crawl generates several build inputs (gitignored): the tiledef tables, `prebuilt/levcomp.*`,
-and YAML-derived headers (`mon-data.h`, `species-data.h`, `job-data.h`, …).
+Crawl generates several build inputs: the tiledef index tables, `prebuilt/levcomp.*`,
+YAML-derived headers (`mon-data.h`, `species-data.h`, `job-data.h`, …), and
+`config.h`/`build.h`/`compflag.h`. **These are committed on `console-<version>`** so a
+clean clone builds without a prebuild (see "Generated files are committed" below) — but
+when you move to a new release you must regenerate them and commit the new versions.
 ```sh
 cd Libraries/crawl/crawl-ref/source
 python3 -m venv /tmp/crawlbuild-venv && /tmp/crawlbuild-venv/bin/pip install pyyaml
@@ -86,10 +89,29 @@ branch to `console-0.35.0` and commit in this repo.
   sizes the font to guarantee ≥24 rows (landscape is wide-but-short, so rows bind first).
 - Everything else (renderer, input, app shell, the `main.cc` shim) carries forward untouched.
 
+## Generated files are committed (why a clean clone builds)
+
+To make the sideloader experience "clone → build", the generated build inputs are
+**force-committed** on the `console-<version>` branch (they're in crawl's `.gitignore`,
+so `git add -f`):
+
+- Data-derived headers: `aptitudes.h`, `art-data.h`/`art-enum.h`, `cmd-name.h`,
+  `form-data.h`, `mi-enum.h`, `mon-data.h`/`mon-mst.h`, `job-*.h`, `species-*.h`.
+- Tiledef index tables: `rltiles/tiledef-{dngn,feat,floor,gui,icons,main,player,unrand,wall}.cc/.h`
+  (console links the index tables, not the atlas PNGs). `prebuilt/levcomp.*` is already tracked.
+- `config.h` (iOS feature detection — stable across Apple hosts) and `build.h`
+  (version strings — correct for the pinned tag).
+- `compflag.h` is **hand-written with neutral values**, not the prebuild's output: the
+  prebuild emits the host triple + macOS-tiles flags, which are wrong here and machine-specific.
+  It only feeds the version/crash display string in `version.cc`, so neutral text is fine.
+
+**Not committed** (not compiled in console): atlas PNGs, `tileinfo-*.js`, `tile-feat.html`,
+`status-icon-sizes.h`, `util/levcomp.*` backups.
+
+**On a version bump:** regenerate (step 2), then re-`git add -f` the data headers + tiledef
+tables + `config.h`/`build.h`, **regenerate `compflag.h` by hand** (don't commit the prebuild's
+machine-specific version), and commit on the new branch.
+
 ## Optional: make future bumps even cheaper
-- **Commit the generated build inputs** (tiledef tables, `levcomp.*`, YAML data headers)
-  to the `console-<version>` branch so a clean clone builds without the prebuild. Commit
-  only the deterministic, data-derived files — **not** machine/build-specific ones
-  (`config.h`, `build.h`, `compflag.h`).
 - **Script step 3** (Makefile.obj diff → pbxproj patch) so the file-list reconciliation
   is one command.
