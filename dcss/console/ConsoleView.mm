@@ -26,6 +26,7 @@ static void console_redraw(void) {
     UIFont *_font;
     CGFloat _cellW, _cellH;
     int _cols, _rows;
+    BOOL _ready;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -35,25 +36,43 @@ static void console_redraw(void) {
         self.contentMode = UIViewContentModeRedraw;
         gConsoleView = self;
         ios_console_set_redraw(console_redraw);
-        [self computeGrid];
     }
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    int oldCols = _cols, oldRows = _rows;
+    [self computeGrid];
+    // Start the engine only once the grid is sized to the real bounds.
+    if (!_ready && _cols > 0 && _rows > 0) {
+        _ready = YES;
+        if (self.onReady) self.onReady();
+    } else if (_cols != oldCols || _rows != oldRows) {
+        [self setNeedsDisplay];
+    }
+}
+
 - (void)computeGrid {
-    // Choose a font size that yields a usable column count for the width.
-    const int targetCols = 80;
+    // DCSS console wants at least ~80x24. Landscape iPhone is wide but short,
+    // so rows (height) is usually the binding constraint. Pick the font size
+    // that satisfies BOTH >=80 cols and >=24 rows (i.e. the smaller font).
+    const CGFloat targetCols = 80, targetRows = 24;
     CGFloat w = self.bounds.size.width, h = self.bounds.size.height;
     if (w < 1 || h < 1) return;
-    CGFloat size = 8.0;
+
+    // Reference measurement to get per-point metrics.
+    CGFloat ref = 10.0;
+    UIFont *rf = [UIFont fontWithName:@"Menlo" size:ref] ?: [UIFont monospacedSystemFontOfSize:ref weight:UIFontWeightRegular];
+    CGFloat charWPerPt = [@"M" sizeWithAttributes:@{NSFontAttributeName: rf}].width / ref;
+    CGFloat lineHPerPt = rf.lineHeight / ref;
+
+    CGFloat sizeForCols = (w / targetCols) / charWPerPt;
+    CGFloat sizeForRows = (h / targetRows) / lineHPerPt;
+    CGFloat size = MAX(6.0, MIN(sizeForCols, sizeForRows));
+
     _font = [UIFont fontWithName:@"Menlo" size:size] ?: [UIFont monospacedSystemFontOfSize:size weight:UIFontWeightRegular];
-    CGSize m = [@"M" sizeWithAttributes:@{NSFontAttributeName: _font}];
-    // scale font so ~targetCols fit
-    CGFloat scale = (w / targetCols) / m.width;
-    size = MAX(6.0, MIN(14.0, size * scale));
-    _font = [UIFont fontWithName:@"Menlo" size:size] ?: [UIFont monospacedSystemFontOfSize:size weight:UIFontWeightRegular];
-    m = [@"M" sizeWithAttributes:@{NSFontAttributeName: _font}];
-    _cellW = m.width;
+    _cellW = [@"M" sizeWithAttributes:@{NSFontAttributeName: _font}].width;
     _cellH = _font.lineHeight;
     _cols = MAX(1, (int)(w / _cellW));
     _rows = MAX(1, (int)(h / _cellH));

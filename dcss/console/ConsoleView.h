@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ConsoleView : UIView <UIKeyInput>
+// Called once, after the view has its real bounds and the grid is sized.
+@property (nonatomic, copy) void (^onReady)(void);
 @end

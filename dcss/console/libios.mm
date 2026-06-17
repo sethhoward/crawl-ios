@@ -72,6 +72,13 @@ void ios_console_push_key(int keycode) {
     { std::lock_guard<std::mutex> lk(g_in_mutex); g_in_queue.push_back(keycode); }
     g_in_cv.notify_one();
 }
+void ios_push_key_up(void)    { ios_console_push_key(CK_UP); }
+void ios_push_key_down(void)  { ios_console_push_key(CK_DOWN); }
+void ios_push_key_left(void)  { ios_console_push_key(CK_LEFT); }
+void ios_push_key_right(void) { ios_console_push_key(CK_RIGHT); }
+void ios_push_key_esc(void)   { ios_console_push_key(ESCAPE); }
+void ios_push_key_enter(void) { ios_console_push_key('\r'); }
+void ios_push_key_tab(void)   { ios_console_push_key('\t'); }
 
 // ---- lifecycle -----------------------------------------------------------
 void console_startup()  {}

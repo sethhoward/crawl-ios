@@ -32,6 +32,14 @@ void ios_console_get(int x, int y, uint32_t *ch, uint8_t *fg, uint8_t *bg);
 void ios_console_set_redraw(void (*cb)(void));
 // Input from the view.
 void ios_console_push_key(int keycode);
+// Special keys (values live in libios.mm, which has cio.h).
+void ios_push_key_up(void);
+void ios_push_key_down(void);
+void ios_push_key_left(void);
+void ios_push_key_right(void);
+void ios_push_key_esc(void);
+void ios_push_key_enter(void);
+void ios_push_key_tab(void);
 
 #ifdef __cplusplus
 }
