@@ -19,6 +19,8 @@ extern "C" {
 // --- view -> model -------------------------------------------------------
 // Force the portrait stacked layout (HUD below the map) on a wide grid.
 void ios_set_force_stacked(int on);
+// 1 while an actual game is in progress, 0 on the title/menu screens.
+int  ios_console_in_game(void);
 // Set the grid size (initial sizing; does NOT signal the engine to relayout).
 void ios_console_set_size(int cols, int rows);
 // Set the grid size AND tell the running engine to relayout/redraw

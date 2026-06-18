@@ -89,8 +89,16 @@ struct ControlStrip: View {
     @ObservedObject var model: GameModel
 
     var body: some View {
-        HStack(spacing: 8) {
-            keyButton("Esc") { ios_push_key_esc() }
+        let _ = model.tick                       // refresh as engine state changes
+        let inGame = ios_console_in_game() != 0
+        return HStack(spacing: 8) {
+            // Esc is useful in-game (cancel/back out); on the title/menu screens
+            // it does nothing, so offer the documented Ctrl-P (view rc/log) there.
+            if inGame {
+                keyButton("Esc") { ios_push_key_esc() }
+            } else {
+                keyButton("Ctrl-P") { ios_console_push_key(16) }   // ^P
+            }
             keyButton("Tab") { ios_push_key_tab() }
             Spacer()
             keyButton("⌨ Keyboard") { model.wantsKeyboard.toggle() }
