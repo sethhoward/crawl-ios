@@ -105,14 +105,39 @@ final class GameModel: ObservableObject {
     @Published var keyboardHeight: CGFloat = 0
     @Published var wantsKeyboard: Bool = false
 
+    @Published var inGame = false           // a game is in progress (vs title/menu)
+    @Published var acceptingMoves = false   // engine waiting for a map command
+    @Published var hintsToken = 0           // bump to flash the touch-control hints
+
     private var started = false
+    private let hapticLight = UIImpactFeedbackGenerator(style: .light)
+    private let hapticMedium = UIImpactFeedbackGenerator(style: .medium)
 
     init() {
         GameModel.shared = self
         observeKeyboard()
+        hapticLight.prepare()
+        hapticMedium.prepare()
     }
 
-    func bumpTick() { tick &+= 1 }
+    func bumpTick() {
+        tick &+= 1
+        let g = ios_console_in_game() != 0
+        if g != inGame {
+            inGame = g
+            if g { flashHints() }            // entered the dungeon
+        }
+        let a = ios_console_accepting_moves() != 0
+        if a != acceptingMoves { acceptingMoves = a }
+    }
+
+    func flashHints() { hintsToken &+= 1 }
+
+    func haptic(strong: Bool = false) {
+        let g = strong ? hapticMedium : hapticLight
+        g.impactOccurred()
+        g.prepare()
+    }
 
     // Size the engine grid + render scale for the full-screen area. Called on
     // first layout and on rotation only — NOT when the keyboard appears (the
@@ -145,14 +170,16 @@ final class GameModel: ObservableObject {
         let nc = NotificationCenter.default
         nc.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification,
                        object: nil, queue: .main) { [weak self] note in
-            guard let frame = note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+            guard let self, let frame = note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
                     as? CGRect else { return }
             let screenH = UIScreen.main.bounds.height
-            self?.keyboardHeight = max(0, screenH - frame.origin.y)
+            let h = max(0, screenH - frame.origin.y)
+            if h != self.keyboardHeight { self.keyboardHeight = h; if self.inGame { self.flashHints() } }
         }
         nc.addObserver(forName: UIResponder.keyboardWillHideNotification,
                        object: nil, queue: .main) { [weak self] _ in
-            self?.keyboardHeight = 0
+            guard let self else { return }
+            if self.keyboardHeight != 0 { self.keyboardHeight = 0; if self.inGame { self.flashHints() } }
         }
     }
 }

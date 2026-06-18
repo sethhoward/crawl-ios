@@ -21,10 +21,18 @@ struct ContentView: View {
             let viewportH = max(1, geo.size.height - strip - kbd)
 
             VStack(spacing: 0) {
-                ScrollView([.horizontal, .vertical]) {
-                    ConsoleCanvas(model: model)
-                        .frame(width: CGFloat(model.cols) * model.cellW,
-                               height: CGFloat(model.rows) * model.cellH)
+                ZStack {
+                    ScrollView([.horizontal, .vertical]) {
+                        ConsoleCanvas(model: model)
+                            .frame(width: CGFloat(model.cols) * model.cellW,
+                                   height: CGFloat(model.rows) * model.cellH)
+                    }
+                    // Touch D-pad: present in-game, but only intercepts taps at
+                    // the map command prompt (so in-game menus stay scrollable).
+                    if model.inGame {
+                        TouchControlsOverlay(model: model)
+                            .allowsHitTesting(model.acceptingMoves)
+                    }
                 }
                 .frame(width: geo.size.width, height: viewportH)
                 .background(Color.black)
@@ -118,5 +126,127 @@ struct ControlStrip: View {
                 .background(Color(white: 0.25))
                 .cornerRadius(8)
         }
+    }
+}
+
+// MARK: - Touch D-pad overlay (Android-style 3x3)
+
+// A faint 3x3 movement overlay shown over the dungeon. It flashes in then fades
+// (on entering the game and on keyboard show/hide) but the zones stay tappable.
+// Directions send vi-keys (tap = one step, hold = auto-walk); center taps wait
+// (s) and holds rest (5). Haptic feedback on each press.
+struct TouchControlsOverlay: View {
+    @ObservedObject var model: GameModel
+    @State private var opacity: Double = 0
+
+    // (row, col) -> (vi-key, arrow glyph); the centre cell is nil.
+    private static let cells: [[(key: Character, glyph: String)?]] = [
+        [("y", "\u{2196}"), ("k", "\u{2191}"), ("u", "\u{2197}")],
+        [("h", "\u{2190}"),  nil,              ("l", "\u{2192}")],
+        [("b", "\u{2199}"), ("j", "\u{2193}"), ("n", "\u{2198}")],
+    ]
+
+    var body: some View {
+        GeometryReader { geo in
+            let cw = geo.size.width / 3, ch = geo.size.height / 3
+            ZStack {
+                ForEach(0..<3, id: \.self) { row in
+                    ForEach(0..<3, id: \.self) { col in
+                        cell(row, col)
+                            .frame(width: cw, height: ch)
+                            .position(x: cw * (CGFloat(col) + 0.5),
+                                      y: ch * (CGFloat(row) + 0.5))
+                    }
+                }
+            }
+        }
+        .onChange(of: model.hintsToken, initial: true) {
+            opacity = 0.5
+            withAnimation(.easeOut(duration: 1.6).delay(1.0)) { opacity = 0 }
+        }
+    }
+
+    @ViewBuilder
+    private func cell(_ row: Int, _ col: Int) -> some View {
+        if let c = Self.cells[row][col] {
+            DirZone(model: model, key: c.key, glyph: c.glyph, hintOpacity: opacity)
+        } else {
+            CenterZone(model: model, hintOpacity: opacity)
+        }
+    }
+}
+
+private struct DirZone: View {
+    @ObservedObject var model: GameModel
+    let key: Character
+    let glyph: String
+    let hintOpacity: Double
+    @State private var timer: Timer?
+    @State private var pressing = false
+
+    var body: some View {
+        Color.clear
+            .overlay(
+                Text(glyph)
+                    .font(.system(size: 36, weight: .heavy, design: .rounded))
+                    .foregroundStyle(.white).opacity(hintOpacity).shadow(radius: 2)
+            )
+            .contentShape(Rectangle())
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in
+                        guard !pressing else { return }
+                        pressing = true
+                        model.haptic()
+                        send()
+                        timer = Timer.scheduledTimer(withTimeInterval: 0.18,
+                                                     repeats: true) { _ in send() }
+                    }
+                    .onEnded { _ in
+                        pressing = false
+                        timer?.invalidate(); timer = nil
+                    }
+            )
+    }
+
+    private func send() { ios_console_push_key(Int32(key.asciiValue ?? 0)) }
+}
+
+private struct CenterZone: View {
+    @ObservedObject var model: GameModel
+    let hintOpacity: Double
+    @State private var holdTimer: Timer?
+    @State private var pressing = false
+    @State private var rested = false
+
+    var body: some View {
+        Color.clear
+            .overlay(
+                VStack(spacing: 2) {
+                    Text("wait").font(.system(size: 15, weight: .bold))
+                    Text("hold = rest").font(.system(size: 12, weight: .semibold))
+                }
+                .foregroundStyle(.white).opacity(hintOpacity).shadow(radius: 2)
+            )
+            .contentShape(Rectangle())
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in
+                        guard !pressing else { return }
+                        pressing = true; rested = false
+                        model.haptic()
+                        holdTimer = Timer.scheduledTimer(withTimeInterval: 0.45,
+                                                         repeats: false) { _ in
+                            rested = true
+                            model.haptic(strong: true)
+                            ios_console_push_key(Int32(Character("5").asciiValue!)) // rest
+                        }
+                    }
+                    .onEnded { _ in
+                        pressing = false
+                        holdTimer?.invalidate(); holdTimer = nil
+                        if !rested { ios_console_push_key(Int32(Character("s").asciiValue!)) } // wait
+                    }
+            )
     }
 }

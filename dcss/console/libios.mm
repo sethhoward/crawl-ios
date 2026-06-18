@@ -62,6 +62,10 @@ extern "C" { bool g_ios_force_stacked = false; }
 void ios_set_force_stacked(int on) { g_ios_force_stacked = (on != 0); }
 // True once an actual game is in progress (false on the title/menu screens).
 int ios_console_in_game(void) { return crawl_state.need_save ? 1 : 0; }
+// True only while the engine is waiting for a movement/command at the map
+// prompt — NOT during in-game menus (inventory, targeting, prompts). The touch
+// D-pad only intercepts taps while this is true so menus stay interactive.
+int ios_console_accepting_moves(void) { return crawl_state.waiting_for_command ? 1 : 0; }
 
 void ios_console_set_size(int cols, int rows) {
     std::lock_guard<std::mutex> lk(g_grid_mutex);
