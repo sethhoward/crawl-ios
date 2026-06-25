@@ -10,17 +10,45 @@
 import SwiftUI
 import UIKit
 
+// We drive the window through an App/Scene delegate (rather than WindowGroup) so
+// the root can be a UIHostingController subclass that defers the bottom-edge
+// system gesture — letting a swipe up from the control strip raise the keyboard
+// without first triggering the home-indicator gesture.
 @main
-struct DCSSApp: App {
-    @StateObject private var model = GameModel()
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView(model: model)
-                .statusBarHidden(true)
-                .preferredColorScheme(.dark)
-        }
+final class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: "Default Configuration",
+                                          sessionRole: connectingSceneSession.role)
+        config.delegateClass = SceneDelegate.self
+        return config
     }
+}
+
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    var window: UIWindow?
+    private let model = GameModel()   // strong owner (GameModel.shared is weak)
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+        let root = ContentView(model: model)
+            .preferredColorScheme(.dark)
+        let host = GameHostingController(rootView: root)
+        let window = UIWindow(windowScene: windowScene)
+        window.frame = windowScene.coordinateSpace.bounds   // ensure non-zero size
+        window.rootViewController = host
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+}
+
+// Hides the status bar and defers the bottom-edge system gesture so the first
+// upward swipe from the control strip is captured by the app.
+final class GameHostingController<Content: View>: UIHostingController<Content> {
+    override var prefersStatusBarHidden: Bool { true }
+    override var preferredScreenEdgesDeferringSystemGestures: UIRectEdge { .bottom }
 }
 
 // DCSS COLOURS (0-15) -> SwiftUI Color, matching the old UIKit palette.
@@ -107,6 +135,7 @@ final class GameModel: ObservableObject {
 
     @Published var inGame = false           // a game is in progress (vs title/menu)
     @Published var acceptingMoves = false   // engine waiting for a map command
+    @Published var menuOpen = false         // a menu/prompt/help overlay is open
     @Published var hintsToken = 0           // bump to flash the touch-control hints
 
     private var started = false
@@ -129,6 +158,8 @@ final class GameModel: ObservableObject {
         }
         let a = ios_console_accepting_moves() != 0
         if a != acceptingMoves { acceptingMoves = a }
+        let m = ios_console_menu_open() != 0
+        if m != menuOpen { menuOpen = m }
     }
 
     func flashHints() { hintsToken &+= 1 }

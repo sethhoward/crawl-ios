@@ -22,16 +22,35 @@ struct ContentView: View {
 
             VStack(spacing: 0) {
                 ZStack {
-                    ScrollView([.horizontal, .vertical]) {
-                        ConsoleCanvas(model: model)
-                            .frame(width: CGFloat(model.cols) * model.cellW,
-                                   height: CGFloat(model.rows) * model.cellH)
+                    ScrollViewReader { proxy in
+                        ScrollView([.horizontal, .vertical]) {
+                            ConsoleCanvas(model: model)
+                                .frame(width: CGFloat(model.cols) * model.cellW,
+                                       height: CGFloat(model.rows) * model.cellH)
+                                .overlay(alignment: .topLeading) {
+                                    // Zero-size anchor at the grid origin.
+                                    Color.clear.frame(width: 1, height: 1).id("origin")
+                                }
+                        }
+                        // Leaving a menu (where the wide grid was scrolled right)
+                        // would otherwise strand the game off-screen — the D-pad
+                        // eats drags so there's no way to scroll back. Snap to the
+                        // top-left when the overlay closes.
+                        .onChange(of: model.menuOpen) { _, open in
+                            if !open { proxy.scrollTo("origin", anchor: .topLeading) }
+                        }
+                        // Rotation reflows the grid to a new size; the old scroll
+                        // offset would otherwise leave the map shifted/cut off.
+                        .onChange(of: model.cols) { proxy.scrollTo("origin", anchor: .topLeading) }
+                        .onChange(of: model.rows) { proxy.scrollTo("origin", anchor: .topLeading) }
                     }
-                    // Touch D-pad: present in-game, but only intercepts taps at
-                    // the map command prompt (so in-game menus stay scrollable).
-                    if model.inGame {
+                    // Touch D-pad: shown in-game while no menu/prompt overlay is
+                    // open. Gating on the stable menuOpen signal (not the
+                    // per-turn waiting_for_command flicker) keeps gestures from
+                    // being cancelled mid-press, and leaves menus fully
+                    // scrollable underneath when one is open.
+                    if model.inGame && !model.menuOpen {
                         TouchControlsOverlay(model: model)
-                            .allowsHitTesting(model.acceptingMoves)
                     }
                 }
                 .frame(width: geo.size.width, height: viewportH)
@@ -100,20 +119,33 @@ struct ControlStrip: View {
         let _ = model.tick                       // refresh as engine state changes
         let inGame = ios_console_in_game() != 0
         return HStack(spacing: 8) {
-            // Esc is useful in-game (cancel/back out); on the title/menu screens
-            // it does nothing, so offer the documented Ctrl-P (view rc/log) there.
+            // In-game: just Esc (cancel/back out). On the title/menu screens,
+            // offer the documented Ctrl-P (view rc/log) and Tab for navigation;
+            // both are hidden in-game.
             if inGame {
                 keyButton("Esc") { ios_push_key_esc() }
             } else {
                 keyButton("Ctrl-P") { ios_console_push_key(16) }   // ^P
+                keyButton("Tab") { ios_push_key_tab() }
             }
-            keyButton("Tab") { ios_push_key_tab() }
             Spacer()
-            keyButton("⌨ Keyboard") { model.wantsKeyboard.toggle() }
         }
         .padding(.horizontal, 12)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(white: 0.12))
+        // Grabber hint: swipe up anywhere on the strip to raise the keyboard.
+        .overlay(alignment: .top) {
+            Capsule().fill(Color(white: 0.5))
+                .frame(width: 36, height: 5)
+                .padding(.top, 5)
+        }
+        .contentShape(Rectangle())
+        .gesture(
+            DragGesture(minimumDistance: 20)
+                .onEnded { value in
+                    if value.translation.height < -24 { model.wantsKeyboard = true }
+                }
+        )
     }
 
     private func keyButton(_ title: String, action: @escaping () -> Void) -> some View {
@@ -207,6 +239,9 @@ private struct DirZone: View {
                         timer?.invalidate(); timer = nil
                     }
             )
+            // If the overlay is torn down mid-hold (e.g. a menu opens while
+            // auto-walking), stop the repeat and clear the press latch.
+            .onDisappear { pressing = false; timer?.invalidate(); timer = nil }
     }
 
     private func send() { ios_console_push_key(Int32(key.asciiValue ?? 0)) }
@@ -248,5 +283,6 @@ private struct CenterZone: View {
                         if !rested { ios_console_push_key(Int32(Character("s").asciiValue!)) } // wait
                     }
             )
+            .onDisappear { pressing = false; holdTimer?.invalidate(); holdTimer = nil }
     }
 }

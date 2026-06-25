@@ -16,6 +16,7 @@
 #include "state.h"
 #include "view.h"       // handle_terminal_resize
 #include "viewgeom.h"   // screen_cell_t, crawl_view_buffer (full def)
+#include "ui.h"         // ui::has_layout
 
 #include "console_bridge.h"
 
@@ -66,6 +67,12 @@ int ios_console_in_game(void) { return crawl_state.need_save ? 1 : 0; }
 // prompt — NOT during in-game menus (inventory, targeting, prompts). The touch
 // D-pad only intercepts taps while this is true so menus stay interactive.
 int ios_console_accepting_moves(void) { return crawl_state.waiting_for_command ? 1 : 0; }
+// True while a menu/prompt/help/targeting overlay is open: any UI layout on the
+// stack, or the engine blocked on a UI overlay. Stable across turns (does not
+// flicker every step the way waiting_for_command does), so the touch D-pad can
+// gate cleanly on !menu_open without its gestures being cancelled mid-press.
+int ios_console_menu_open(void)
+    { return (ui::has_layout() || crawl_state.waiting_for_ui) ? 1 : 0; }
 
 void ios_console_set_size(int cols, int rows) {
     std::lock_guard<std::mutex> lk(g_grid_mutex);

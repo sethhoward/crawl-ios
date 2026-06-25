@@ -23,6 +23,10 @@ void ios_set_force_stacked(int on);
 int  ios_console_in_game(void);
 // 1 only while the engine is waiting for a command at the map prompt.
 int  ios_console_accepting_moves(void);
+// 1 while a menu/prompt/help/targeting overlay is open (any UI layout on the
+// stack, or the engine is blocked on a UI overlay). Stable across turns —
+// unlike accepting_moves, it does NOT flicker every step.
+int  ios_console_menu_open(void);
 // Set the grid size (initial sizing; does NOT signal the engine to relayout).
 void ios_console_set_size(int cols, int rows);
 // Set the grid size AND tell the running engine to relayout/redraw
