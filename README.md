@@ -62,8 +62,6 @@ git submodule update --init --recursive
 open dcss.xcodeproj
 ```
 
-(Open the **`.xcodeproj`**, not a workspace — there is no CocoaPods workspace.)
-
 ### 3. Set your signing
 
 Free Apple IDs can only sign apps under your own team and a unique bundle ID:
