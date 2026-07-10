@@ -215,8 +215,13 @@ in **[UPDATING.md](UPDATING.md)**.
 
 ## Credits & license
 
+This project as a whole is licensed under the **GNU GPL v2+** — see
+[LICENSE](LICENSE) for the full text and what it covers.
+
 - **Dungeon Crawl Stone Soup** is by the DCSS dev team and contributors, released
-  under the GNU GPL v2+. See the engine submodule (`Libraries/crawl`) for its
-  full license and credits.
-- The iOS integration layer (`dcss/console/`) and this packaging build on the
-  earlier iOS port work by [apollovy](https://github.com/apollovy/crawl-ios).
+  under the GNU GPL v2+. The engine submodule (`Libraries/crawl`) carries its own
+  `LICENSE` and `crawl-ref/CREDITS.txt` with the per-file license details and full
+  contributor credits.
+- The iOS integration layer (`dcss/app/`, `dcss/console/`) and this packaging build
+  on the earlier iOS port work by [apollovy](https://github.com/apollovy/crawl-ios),
+  and are likewise GPL v2+.
