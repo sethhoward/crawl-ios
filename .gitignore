@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/xcode,c++,c,objective-c,swift,fastlane,intellij+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode,c++,c,objective-c,swift,fastlane,intellij+all
 
+# macOS
+.DS_Store
+
 ### C ###
 # Prerequisites
 *.d
@@ -73,30 +76,6 @@ dkms.conf
 *.lai
 
 # Executables
-
-### fastlane ###
-# fastlane - A streamlined workflow tool for Cocoa deployment
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-# fastlane specific
-fastlane/report.xml
-
-# deliver temporary files
-fastlane/Preview.html
-
-# snapshot generated screenshots
-fastlane/screenshots/**/*.png
-fastlane/screenshots/screenshots.html
-
-# scan temporary files
-fastlane/test_output
-
-# Fastlane.swift runner binary
-fastlane/FastlaneRunner
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
