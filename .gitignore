@@ -157,13 +157,10 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 
 ### Intellij+all Patch ###
-# Ignore everything but code style settings and run configurations
-# that are supposed to be shared within teams.
+# Ignore the entire IntelliJ/JetBrains project directory (not used by this
+# Xcode-based project).
 
-.idea/*
-
-!.idea/codeStyles
-!.idea/runConfigurations
+.idea/
 
 ### Objective-C ###
 # Xcode
