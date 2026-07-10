@@ -4,10 +4,13 @@ An iOS port of [Dungeon Crawl Stone Soup](https://github.com/crawl/crawl) (DCSS)
 the open-source roguelike. This is the **ASCII / console** build: it renders the
 game as a text grid (like the terminal version) rather than graphical tiles.
 
-> **Not on the App Store.** Apple does not permit DCSS on the App Store, so this
-> is a **sideload** project: you build it yourself in Xcode and run it on your own
-> device with a free Apple ID. There's nothing to purchase and no account to make
-> beyond your existing Apple ID.
+> **Not on the App Store — by the developers' choice.** DCSS is licensed under the
+> GNU GPL v2+, whose freedoms (to copy, modify, and redistribute) are incompatible
+> with the App Store's terms and DRM, and the DCSS developers enforce the license
+> rather than relicense the game to fit the store (the same reason VLC and other
+> GPL software aren't distributed there). So this is a **sideload** project: you
+> build it yourself in Xcode and run it on your own device with a free Apple ID.
+> There's nothing to purchase and no account to make beyond your existing Apple ID.
 
 The console build was chosen deliberately for the simplest possible setup: it pulls
 in **no SDL, no OpenGL/Metal, and no tile atlases**. The engine is stock upstream
@@ -197,8 +200,9 @@ This is a working, playable port, but it isn't finished. Known gaps and next ste
 - **Finalize the default button-bar loadout** after more playtesting (current seed is
   provisional).
 - **Sound.** The console build links no audio; there is no sound.
-- **App Store distribution** is not possible (Apple policy) — sideloading is the only
-  path, with the 7-day free-account expiry.
+- **App Store distribution** isn't an option — the GPL is incompatible with the
+  store's terms and the DCSS developers enforce it (see the note at the top), so
+  sideloading is the only path, with the 7-day free-account expiry.
 - **Maintainer ergonomics.** Reconciling the Xcode source list on a version bump is
   still manual; scripting the `Makefile.obj → project.pbxproj` diff (noted in
   [UPDATING.md](UPDATING.md)) would make future bumps close to one command.
