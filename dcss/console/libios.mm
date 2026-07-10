@@ -17,6 +17,9 @@
 #include "view.h"       // handle_terminal_resize
 #include "viewgeom.h"   // screen_cell_t, crawl_view_buffer (full def)
 #include "ui.h"         // ui::has_layout
+#include "command-type.h" // command_type
+#include "macro.h"      // command_to_key, command_to_name
+#include "files.h"      // save_game_state
 
 #include "console_bridge.h"
 
@@ -27,6 +30,8 @@
 #include <deque>
 #include <mutex>
 #include <condition_variable>
+#include <string>
+#include <atomic>
 
 // ---- model ---------------------------------------------------------------
 namespace {
@@ -48,6 +53,7 @@ namespace {
     std::mutex g_in_mutex;
     std::condition_variable g_in_cv;
     std::deque<int> g_in_queue;
+    std::atomic<bool> g_save_requested{false};   // set by ios_request_save (main thread)
 
     inline ConsoleCell *cell_at(int x1, int y1) {       // 1-based in
         int x = x1 - 1, y = y1 - 1;
@@ -110,6 +116,144 @@ void ios_push_key_right(void) { ios_console_push_key(CK_RIGHT); }
 void ios_push_key_esc(void)   { ios_console_push_key(ESCAPE); }
 void ios_push_key_enter(void) { ios_console_push_key('\r'); }
 void ios_push_key_tab(void)   { ios_console_push_key('\t'); }
+void ios_push_key_pgup(void)  { ios_console_push_key(CK_PGUP); }
+void ios_push_key_pgdn(void)  { ios_console_push_key(CK_PGDN); }
+
+// Backgrounding: flag a save and wake the engine. The actual save runs on the
+// engine thread in getch_ck (a safe input boundary), not here on the main thread.
+void ios_request_save(void) {
+    g_save_requested = true;
+    ios_console_push_key(CK_REDRAW);
+}
+
+// ---- command catalog -----------------------------------------------------
+// Curated mirror of the in-game help (command.cc _add_formatted_keyhelp), from
+// "Extended Movement" onward; Movement, Rest, and the item-types legend are
+// intentionally omitted (movement/wait live on the touch D-pad).
+namespace {
+    struct IosCmd { command_type cmd; const char *label; };
+    struct IosCmdCat { const char *name; std::vector<IosCmd> cmds; };
+
+    const std::vector<IosCmdCat> &cmd_cats() {
+        static const std::vector<IosCmdCat> cats = {
+            { "Extended Movement", {
+                { CMD_EXPLORE, "Explore" },
+                { CMD_INTERLEVEL_TRAVEL, "Travel" },
+                { CMD_SEARCH_STASHES, "Find" },
+                { CMD_FIX_WAYPOINT, "Waypoint" },
+            }},
+            { "Autofight", {
+                { CMD_AUTOFIGHT, "Fight" },
+                { CMD_AUTOFIGHT_NOMOVE, "Fight*" },
+                { CMD_FIRE, "Fire" },
+            }},
+            { "Other Gameplay Actions", {
+                { CMD_USE_ABILITY, "Ability" },
+                { CMD_CAST_SPELL, "Cast" },
+                { CMD_FORCE_CAST_SPELL, "Cast!" },
+                { CMD_DISPLAY_SPELLS, "Spells" },
+                { CMD_MEMORISE_SPELL, "Learn" },
+                { CMD_SHOUT, "Shout" },
+                { CMD_PREV_CMD_AGAIN, "Redo" },
+                { CMD_REPEAT_CMD, "Repeat" },
+            }},
+            { "Player Character Information", {
+                { CMD_DISPLAY_CHARACTER_STATUS, "Status" },
+                { CMD_DISPLAY_SKILLS, "Skills" },
+                { CMD_RESISTS_SCREEN, "Overview" },
+                { CMD_DISPLAY_RELIGION, "Religion" },
+                { CMD_DISPLAY_MUTATIONS, "Mutations" },
+                { CMD_DISPLAY_KNOWN_OBJECTS, "Knowledge" },
+                { CMD_DISPLAY_RUNES, "Runes" },
+                { CMD_LIST_ARMOUR, "Armour" },
+                { CMD_LIST_JEWELLERY, "Jewellery" },
+                { CMD_LIST_GOLD, "Gold" },
+                { CMD_EXPERIENCE_CHECK, "XP" },
+            }},
+            { "Dungeon Interaction and Information", {
+                { CMD_OPEN_DOOR, "Open" },
+                { CMD_CLOSE_DOOR, "Close" },
+                { CMD_GO_UPSTAIRS, "Up Stairs" },
+                { CMD_GO_DOWNSTAIRS, "Down Stairs" },
+                { CMD_INSPECT_FLOOR, "Floor" },
+                { CMD_LOOK_AROUND, "Look" },
+                { CMD_DISPLAY_MAP, "Map" },
+                { CMD_FULL_VIEW, "View All" },
+                { CMD_SHOW_TERRAIN, "Terrain" },
+                { CMD_DISPLAY_OVERMAP, "Overview" },
+                { CMD_TOGGLE_AUTOPICKUP, "Autopickup" },
+            }},
+            { "Inventory management", {
+                { CMD_DISPLAY_INVENTORY, "Inventory" },
+                { CMD_PICKUP, "Pick Up" },
+                { CMD_DROP, "Drop" },
+                { CMD_DROP_LAST, "Drop Last" },
+            }},
+            { "Item Interaction", {
+                { CMD_INSCRIBE_ITEM, "Inscribe" },
+                { CMD_FIRE, "Fire" },
+                { CMD_FIRE_ITEM_NO_QUIVER, "Fire Item" },
+                { CMD_QUIVER_ITEM, "Quiver" },
+                { CMD_SWAP_QUIVER_RECENT, "Swap Quiver" },
+                { CMD_QUAFF, "Quaff" },
+                { CMD_READ, "Read" },
+                { CMD_WIELD_WEAPON, "Wield" },
+                { CMD_WEAPON_SWAP, "Swap Weapon" },
+                { CMD_PRIMARY_ATTACK, "Attack" },
+                { CMD_EVOKE, "Evoke" },
+                { CMD_EQUIP, "Equip" },
+                { CMD_UNEQUIP, "Unequip" },
+                { CMD_WEAR_ARMOUR, "Wear" },
+                { CMD_REMOVE_ARMOUR, "Take Off" },
+                { CMD_WEAR_JEWELLERY, "Put On" },
+                { CMD_REMOVE_JEWELLERY, "Remove" },
+            }},
+        };
+        return cats;
+    }
+
+    const IosCmd *find_cmd(int cmd_id) {
+        for (const auto &cat : cmd_cats())
+            for (const auto &c : cat.cmds)
+                if ((int)c.cmd == cmd_id) return &c;
+        return nullptr;
+    }
+}
+
+int ios_cmd_cat_count(void) { return (int)cmd_cats().size(); }
+const char *ios_cmd_cat_name(int cat) {
+    const auto &cats = cmd_cats();
+    return (cat >= 0 && cat < (int)cats.size()) ? cats[cat].name : "";
+}
+int ios_cmd_count(int cat) {
+    const auto &cats = cmd_cats();
+    return (cat >= 0 && cat < (int)cats.size()) ? (int)cats[cat].cmds.size() : 0;
+}
+int ios_cmd_id(int cat, int idx) {
+    const auto &cats = cmd_cats();
+    if (cat < 0 || cat >= (int)cats.size()) return 0;
+    const auto &cmds = cats[cat].cmds;
+    return (idx >= 0 && idx < (int)cmds.size()) ? (int)cmds[idx].cmd : 0;
+}
+const char *ios_cmd_label(int cmd_id) {
+    const IosCmd *c = find_cmd(cmd_id);
+    return c ? c->label : "";
+}
+const char *ios_cmd_name(int cmd_id) {
+    static thread_local std::string buf;
+    buf = command_to_name((command_type)cmd_id);
+    return buf.c_str();
+}
+int ios_cmd_key(int cmd_id) {
+    return command_to_key((command_type)cmd_id);
+}
+int ios_cmd_from_token(const char *token) {
+    if (!token) return 0;
+    for (const auto &cat : cmd_cats())
+        for (const auto &c : cat.cmds)
+            if (command_to_name(c.cmd) == token) return (int)c.cmd;
+    return 0;
+}
 
 // ---- lifecycle -----------------------------------------------------------
 void console_startup()  {}
@@ -195,6 +339,10 @@ int getch_ck() {
     // key reader only redraws on CK_REDRAW; it doesn't re-run init_geometry).
     if (k == CK_REDRAW && crawl_state.terminal_resized)
         handle_terminal_resize();
+    // Honour a backgrounding save request on the engine thread, where it's safe
+    // to touch game state. Only while a game is actually in progress.
+    if (g_save_requested.exchange(false) && crawl_state.need_save)
+        save_game_state();
     return k;
 }
 void set_mouse_enabled(bool) {}

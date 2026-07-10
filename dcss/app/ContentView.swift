@@ -9,16 +9,27 @@ struct ContentView: View {
     @ObservedObject var model: GameModel
 
     private let stripHeight: CGFloat = 46
+    private let barHeight: CGFloat = 92    // in-game portrait: two compact rows + grabber
+                                           // (kept small so the viewport still fits the
+                                           // engine's 37-row stacked-layout minimum —
+                                           // otherwise the message log clamps off-screen)
+    @State private var barExpanded = false // pulled-up 3rd row of less-used shortcuts
 
     var body: some View {
+      ZStack(alignment: .top) {
         GeometryReader { geo in
             // When the keyboard is up, the accessory bar carries Esc/Tab/Hide,
             // so the floating strip hides; the scroll viewport shrinks above the
             // keyboard (the grid is unchanged — no resize, no blanking).
             let kbd = model.keyboardHeight
-            let showStrip = kbd == 0
-            let strip = showStrip ? stripHeight : 0
-            let viewportH = max(1, geo.size.height - strip - kbd)
+            let keyboardDown = kbd == 0
+            // Reserved bottom region: title strip, or the in-game portrait bar.
+            // In-game landscape the bar floats (no reserve); keyboard up hides the
+            // bar (the keyboard accessory carries Esc/Tab/Hide).
+            let bottomReserved: CGFloat = !keyboardDown ? 0
+                : !model.inGame ? stripHeight
+                : (model.portrait ? barHeight : 0)
+            let viewportH = max(1, geo.size.height - bottomReserved - kbd)
 
             VStack(spacing: 0) {
                 ZStack {
@@ -52,11 +63,19 @@ struct ContentView: View {
                     if model.inGame && !model.menuOpen {
                         TouchControlsOverlay(model: model)
                     }
+                    // Landscape: the assignable bar floats over the right map edge.
+                    if model.inGame && !model.portrait && keyboardDown {
+                        InGameControls(model: model, portrait: false)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                            .padding(.trailing, 6)
+                    }
                 }
                 .frame(width: geo.size.width, height: viewportH)
                 .background(Color.black)
 
-                if showStrip {
+                // Title strip stays in-flow. The in-game portrait bar is a bottom
+                // overlay (below) so the expanded 3rd row can grow up over the game.
+                if keyboardDown && !model.inGame {
                     ControlStrip(model: model)
                         .frame(width: geo.size.width, height: stripHeight)
                 }
@@ -65,17 +84,48 @@ struct ContentView: View {
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .background(KeyboardInputView(model: model))   // invisible responder
-            .onAppear {
-                model.setEngineGrid(width: geo.size.width,
-                                    height: max(1, geo.size.height - stripHeight))
+            // In-game portrait bar: bottom-anchored overlay. Collapsed it fills the
+            // reserved barHeight; expanded it grows upward over the gameplay area.
+            .overlay(alignment: .bottom) {
+                if keyboardDown && model.inGame && model.portrait {
+                    InGameBar(model: model, expanded: $barExpanded)
+                }
             }
-            .onChange(of: geo.size) {
-                model.setEngineGrid(width: geo.size.width,
-                                    height: max(1, geo.size.height - stripHeight))
-            }
+            // Size the engine grid to the ACTUAL visible viewport so the message
+            // log (bottom rows) isn't laid out below the fold. The reserve differs
+            // by state (title strip vs in-game bar; landscape bar floats), so
+            // resize when inGame/portrait change too — not just on rotation.
+            .onAppear { resizeEngine(geo) }
+            .onChange(of: geo.size) { resizeEngine(geo) }
+            .onChange(of: model.inGame) { resizeEngine(geo) }
+            .onChange(of: model.portrait) { resizeEngine(geo) }
         }
-        .ignoresSafeArea(.keyboard)        // we size the game above the keyboard ourselves
-        .background(Color.black.ignoresSafeArea())   // full-bleed background
+
+        // Esc lives up in the top safe-area band, beside the Dynamic Island/notch
+        // (portrait: to its right; landscape: top-leading). It ignores the top
+        // inset so it sits level with the island rather than below the game.
+        if model.inGame {
+            EscButton(model: model)
+                .frame(maxWidth: .infinity,
+                       alignment: model.portrait ? .trailing : .leading)
+                .padding(.horizontal, 20)
+                .padding(.top, 16)   // clear the screen-corner curve
+                .ignoresSafeArea(.container, edges: .top)
+        }
+      }
+      .ignoresSafeArea(.keyboard)        // we size the game above the keyboard ourselves
+      .background(Color.black.ignoresSafeArea())   // full-bleed background
+    }
+
+    // Bottom space reserved by the bar/strip (keyboard excluded — its show/hide
+    // intentionally doesn't resize the engine, just shrinks the scroll viewport).
+    private func engineReserve() -> CGFloat {
+        !model.inGame ? stripHeight : (model.portrait ? barHeight : 0)
+    }
+
+    private func resizeEngine(_ geo: GeometryProxy) {
+        model.setEngineGrid(width: geo.size.width,
+                            height: max(1, geo.size.height - engineReserve()))
     }
 }
 
@@ -129,6 +179,10 @@ struct ControlStrip: View {
                 keyButton("Tab") { ios_push_key_tab() }
             }
             Spacer()
+            // Move the selection and confirm on the title/menu screens.
+            keyButton("↑") { ios_push_key_up() }
+            keyButton("↓") { ios_push_key_down() }
+            keyButton("⏎") { ios_push_key_enter() }
         }
         .padding(.horizontal, 12)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -157,6 +211,251 @@ struct ControlStrip: View {
                 .padding(.vertical, 8)
                 .background(Color(white: 0.25))
                 .cornerRadius(8)
+        }
+    }
+}
+
+// MARK: - In-game assignable button bar
+
+// Portrait bottom bar. Collapsed: two rows of primary shortcuts. Grabber gesture
+// is staged: swipe up once → reveal a 3rd row of less-used shortcuts (overlaying
+// the game); swipe up again → raise the keyboard; swipe down → collapse. When a
+// menu is open it shows the nav cluster instead and a swipe up raises the keyboard.
+struct InGameBar: View {
+    @ObservedObject var model: GameModel
+    @Binding var expanded: Bool
+
+    private let collapsedHeight: CGFloat = 92
+    private let expandedHeight: CGFloat = 134   // + one more row
+
+    var body: some View {
+        let showExpanded = expanded && !model.menuOpen
+        VStack(spacing: 3) {
+            Capsule().fill(Color(white: 0.5)).frame(width: 36, height: 4).padding(.top, 3)
+            if model.menuOpen {
+                MenuNavCluster(model: model, portrait: true)
+            } else {
+                CommandGrid(model: model, portrait: true, rows: showExpanded ? 3 : 2)
+            }
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: showExpanded ? expandedHeight : collapsedHeight, alignment: .top)
+        .background(Color(white: 0.12))
+        .contentShape(Rectangle())
+        .gesture(
+            DragGesture(minimumDistance: 20)
+                .onEnded { v in
+                    if v.translation.height < -24 {              // swipe up
+                        if model.menuOpen {
+                            model.wantsKeyboard = true
+                        } else if !expanded {
+                            withAnimation(.easeOut(duration: 0.15)) { expanded = true }
+                        } else {
+                            expanded = false; model.wantsKeyboard = true
+                        }
+                    } else if v.translation.height > 24 {        // swipe down
+                        if expanded { withAnimation(.easeOut(duration: 0.15)) { expanded = false } }
+                    }
+                }
+        )
+    }
+}
+
+// Picks the command grid or the menu-nav cluster based on menuOpen. In landscape
+// it floats dim-but-readable over the map; portrait gets its panel from InGameBar.
+struct InGameControls: View {
+    @ObservedObject var model: GameModel
+    let portrait: Bool
+
+    var body: some View {
+        let _ = model.tick                       // refresh labels as state changes
+        Group {
+            if model.menuOpen {
+                MenuNavCluster(model: model, portrait: portrait)
+            } else {
+                CommandGrid(model: model, portrait: portrait)
+            }
+        }
+        .modifier(FloatBacking(active: !portrait))
+    }
+}
+
+// Translucent backing + reduced opacity for the floating landscape cluster.
+private struct FloatBacking: ViewModifier {
+    let active: Bool
+    func body(content: Content) -> some View {
+        if active {
+            content
+                .padding(6)
+                .background(RoundedRectangle(cornerRadius: 12).fill(Color.black.opacity(0.45)))
+                .opacity(0.65)
+        } else {
+            content
+        }
+    }
+}
+
+struct CommandGrid: View {
+    @ObservedObject var model: GameModel
+    let portrait: Bool
+    var rows: Int = 2          // portrait row count (2 collapsed, 3 expanded)
+
+    var body: some View {
+        if portrait {
+            VStack(spacing: 5) {
+                ForEach(0..<rows, id: \.self) { row in
+                    HStack(spacing: 5) {
+                        ForEach(0..<5, id: \.self) { col in
+                            SlotButton(model: model, bar: model.bar, slot: row * 5 + col, portrait: true)
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal, 8)
+        } else {
+            // Landscape: three columns of five (room on the wide screen).
+            HStack(spacing: 5) {
+                ForEach(0..<3, id: \.self) { col in
+                    VStack(spacing: 5) {
+                        ForEach(0..<5, id: \.self) { row in
+                            SlotButton(model: model, bar: model.bar, slot: col * 5 + row, portrait: false)
+                        }
+                    }
+                }
+            }
+            .frame(width: 196)
+        }
+    }
+}
+
+// One assignable slot. Assigned: tap fires (gated on !menuOpen), long-press =
+// assign menu. Empty: shows '+', tap opens the assign menu.
+struct SlotButton: View {
+    @ObservedObject var model: GameModel
+    @ObservedObject var bar: ButtonBarModel   // observe the bar so assigns refresh
+    let slot: Int
+    let portrait: Bool
+
+    private var cmd: GameCommand? { bar.command(at: slot, portrait: portrait) }
+
+    var body: some View {
+        let _ = model.tick
+        Group {
+            if let cmd {
+                Button {
+                    ios_console_push_key(cmd.key); model.haptic()
+                } label: { face(cmd) }
+                .disabled(model.menuOpen)
+                .contextMenu { assignMenu() }
+            } else {
+                Menu { assignMenu() } label: { face(nil) }
+            }
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 34, maxHeight: .infinity)
+    }
+
+    @ViewBuilder private func face(_ cmd: GameCommand?) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 8).fill(Color(white: cmd == nil ? 0.18 : 0.28))
+            if let cmd {
+                Text(cmd.label)
+                    .font(.system(size: 12, weight: .semibold)).foregroundColor(.white)
+                    .lineLimit(1).minimumScaleFactor(0.55).padding(.horizontal, 3)
+                Text(SlotButton.keyGlyph(cmd.key))
+                    .font(.system(size: 9, weight: .bold)).foregroundColor(.white.opacity(0.55))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                    .padding(3)
+            } else {
+                Image(systemName: "plus").foregroundColor(.white.opacity(0.35))
+            }
+        }
+        .frame(minHeight: 34, maxHeight: .infinity)
+        .opacity(cmd != nil && model.menuOpen ? 0.35 : 1)
+    }
+
+    @ViewBuilder private func assignMenu() -> some View {
+        if cmd != nil {
+            Button(role: .destructive) {
+                bar.clear(slot: slot, portrait: portrait)
+            } label: { Label("Clear slot", systemImage: "xmark.circle") }
+        }
+        ForEach(CommandCatalog.categories) { cat in
+            Menu(cat.name) {
+                ForEach(cat.commands) { c in
+                    Button {
+                        bar.assign(token: c.name, slot: slot, portrait: portrait)
+                    } label: {
+                        if c.id == cmd?.id { Label(c.label, systemImage: "checkmark") }
+                        else { Text(c.label) }
+                    }
+                }
+            }
+        }
+    }
+
+    // Compact glyph for a keystroke shown in the button corner.
+    static func keyGlyph(_ key: Int32) -> String {
+        switch key {
+        case 9:  return "⇥"
+        case 13: return "⏎"
+        case 27: return "esc"
+        case 32: return "␣"
+        default:
+            if key >= 33 && key < 127, let s = Unicode.Scalar(UInt32(key)) { return String(s) }
+            if key >= 1 && key <= 26, let s = Unicode.Scalar(UInt32(key + 64)) { return "^\(s)" }
+            return ""
+        }
+    }
+}
+
+// Menu navigation cluster shown when a menu/prompt is open (replaces the grid).
+struct MenuNavCluster: View {
+    @ObservedObject var model: GameModel
+    let portrait: Bool
+
+    var body: some View {
+        HStack(spacing: 8) {
+            VStack(spacing: 6) {
+                HStack(spacing: 6) {
+                    navButton("⇞") { ios_push_key_pgup() }
+                    navButton("↑") { ios_push_key_up() }
+                    navButton("⇟") { ios_push_key_pgdn() }
+                }
+                HStack(spacing: 6) {
+                    navButton("←") { ios_push_key_left() }
+                    navButton("↓") { ios_push_key_down() }
+                    navButton("→") { ios_push_key_right() }
+                }
+            }
+            navButton("⏎ Enter") { ios_push_key_enter() }
+        }
+        .padding(.horizontal, 8)
+    }
+
+    private func navButton(_ title: String, action: @escaping () -> Void) -> some View {
+        Button {
+            action(); model.haptic()
+        } label: {
+            Text(title)
+                .font(.system(size: 17, weight: .semibold)).foregroundColor(.white)
+                .frame(minWidth: 44, maxWidth: .infinity, minHeight: 40, maxHeight: .infinity)
+                .background(RoundedRectangle(cornerRadius: 8).fill(Color(white: 0.28)))
+        }
+    }
+}
+
+// Esc button anchored by the notch (in-game only).
+struct EscButton: View {
+    @ObservedObject var model: GameModel
+    var body: some View {
+        Button {
+            ios_push_key_esc(); model.haptic()
+        } label: {
+            Text("Esc")
+                .font(.system(size: 13, weight: .semibold)).foregroundColor(.white)
+                .padding(.horizontal, 12).padding(.vertical, 6)
+                .background(Capsule().fill(Color(white: 0.25)))
         }
     }
 }

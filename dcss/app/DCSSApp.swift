@@ -42,6 +42,20 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
     }
+
+    // Auto-save when backgrounded so progress survives if iOS kills the app.
+    // Hold a background task so the engine thread has time to flush the save.
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        let app = UIApplication.shared
+        var task = UIBackgroundTaskIdentifier.invalid
+        task = app.beginBackgroundTask(withName: "dcss-save") {
+            if task != .invalid { app.endBackgroundTask(task); task = .invalid }
+        }
+        ios_request_save()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+            if task != .invalid { app.endBackgroundTask(task); task = .invalid }
+        }
+    }
 }
 
 // Hides the status bar and defers the bottom-edge system gesture so the first
@@ -137,6 +151,10 @@ final class GameModel: ObservableObject {
     @Published var acceptingMoves = false   // engine waiting for a map command
     @Published var menuOpen = false         // a menu/prompt/help overlay is open
     @Published var hintsToken = 0           // bump to flash the touch-control hints
+    @Published var portrait = true          // current layout orientation
+
+    // Assignable in-game button bar (per-orientation slot loadouts, persisted).
+    let bar = ButtonBarModel()
 
     private var started = false
     private let hapticLight = UIImpactFeedbackGenerator(style: .light)
@@ -176,6 +194,7 @@ final class GameModel: ObservableObject {
     func setEngineGrid(width: CGFloat, height: CGFloat) {
         guard width > 1, height > 1 else { return }
         let g = GridMetrics.compute(width: width, height: height)
+        if g.portrait != portrait { portrait = g.portrait }
         ios_set_force_stacked(g.portrait ? 1 : 0)   // before (re)size → init_geometry sees it
         let changed = (g.cols != cols || g.rows != rows)
         cols = g.cols; rows = g.rows
@@ -218,4 +237,116 @@ final class GameModel: ObservableObject {
 // Top-level (non-capturing) C callback the engine invokes via update_screen.
 func cConsoleRedraw() {
     DispatchQueue.main.async { GameModel.shared?.bumpTick() }
+}
+
+// MARK: - Command catalog
+
+// One assignable game command, resolved from the C bridge.
+struct GameCommand: Identifiable, Hashable {
+    let id: Int          // engine command_type as int (opaque)
+    let label: String    // curated short label for the button face
+    let name: String     // engine command name (also the persistence token)
+    let key: Int32       // default keystroke to send
+}
+
+struct CommandCategory: Identifiable {
+    let id: Int
+    let name: String
+    let commands: [GameCommand]
+}
+
+// Built once from the bridge. Commands with no bound key are dropped (can't fire).
+enum CommandCatalog {
+    static let categories: [CommandCategory] = {
+        var cats: [CommandCategory] = []
+        for c in 0..<Int(ios_cmd_cat_count()) {
+            let catName = String(cString: ios_cmd_cat_name(Int32(c)))
+            var cmds: [GameCommand] = []
+            for i in 0..<Int(ios_cmd_count(Int32(c))) {
+                let id = Int(ios_cmd_id(Int32(c), Int32(i)))
+                let key = ios_cmd_key(Int32(id))
+                guard key != 0 else { continue }
+                cmds.append(GameCommand(
+                    id: id,
+                    label: String(cString: ios_cmd_label(Int32(id))),
+                    name: String(cString: ios_cmd_name(Int32(id))),
+                    key: key))
+            }
+            if !cmds.isEmpty { cats.append(CommandCategory(id: c, name: catName, commands: cmds)) }
+        }
+        return cats
+    }()
+
+    private static let byToken: [String: GameCommand] = {
+        var m: [String: GameCommand] = [:]
+        for cat in categories { for cmd in cat.commands { m[cmd.name] = cmd } }
+        return m
+    }()
+
+    static func command(forToken token: String) -> GameCommand? { byToken[token] }
+}
+
+// MARK: - Assignable button bar model
+
+// Per-orientation loadouts of 10 slots; each slot holds a command token or nil.
+// Persisted in UserDefaults so customizations survive launches.
+final class ButtonBarModel: ObservableObject {
+    static let slotCount = 15   // 2 rows shown by default + a 3rd on pull-up (15 in landscape)
+
+    @Published private(set) var portraitSlots: [String?]
+    @Published private(set) var landscapeSlots: [String?]
+
+    // Provisional defaults (final loadout TBD after playtest): seed the first
+    // four slots, leave the rest empty.
+    private static let defaultTokens: [String?] = {
+        var s = [String?](repeating: nil, count: slotCount)
+        let seed = ["CMD_AUTOFIGHT", "CMD_EXPLORE", "CMD_INTERLEVEL_TRAVEL", "CMD_FIRE"]
+        for (i, t) in seed.enumerated() where i < slotCount { s[i] = t }
+        return s
+    }()
+
+    init() {
+        portraitSlots = ButtonBarModel.load(orientation: "portrait")
+        landscapeSlots = ButtonBarModel.load(orientation: "landscape")
+    }
+
+    func slots(portrait: Bool) -> [String?] { portrait ? portraitSlots : landscapeSlots }
+
+    func command(at slot: Int, portrait: Bool) -> GameCommand? {
+        guard let token = slots(portrait: portrait)[safe: slot] ?? nil else { return nil }
+        return CommandCatalog.command(forToken: token)
+    }
+
+    func assign(token: String?, slot: Int, portrait: Bool) {
+        guard slot >= 0, slot < ButtonBarModel.slotCount else { return }
+        if portrait { portraitSlots[slot] = token } else { landscapeSlots[slot] = token }
+        ButtonBarModel.save(slots(portrait: portrait), orientation: portrait ? "portrait" : "landscape")
+    }
+
+    func clear(slot: Int, portrait: Bool) { assign(token: nil, slot: slot, portrait: portrait) }
+
+    // --- persistence ---
+    private static func key(_ orientation: String, _ i: Int) -> String { "btnbar.\(orientation).\(i)" }
+
+    private static func load(orientation: String) -> [String?] {
+        let d = UserDefaults.standard
+        // First run for this orientation: seed defaults.
+        if d.object(forKey: "btnbar.\(orientation).seeded") == nil {
+            d.set(true, forKey: "btnbar.\(orientation).seeded")
+            for (i, t) in defaultTokens.enumerated() { d.set(t, forKey: key(orientation, i)) }
+            return defaultTokens
+        }
+        return (0..<slotCount).map { d.string(forKey: key(orientation, $0)) }
+    }
+
+    private static func save(_ slots: [String?], orientation: String) {
+        let d = UserDefaults.standard
+        for (i, t) in slots.enumerated() {
+            if let t { d.set(t, forKey: key(orientation, i)) } else { d.removeObject(forKey: key(orientation, i)) }
+        }
+    }
+}
+
+private extension Array {
+    subscript(safe i: Int) -> Element? { indices.contains(i) ? self[i] : nil }
 }

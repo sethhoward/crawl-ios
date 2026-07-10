@@ -48,6 +48,27 @@ void ios_push_key_right(void);
 void ios_push_key_esc(void);
 void ios_push_key_enter(void);
 void ios_push_key_tab(void);
+void ios_push_key_pgup(void);
+void ios_push_key_pgdn(void);
+
+// Request an in-place save (no quit) — called when the app is backgrounded.
+// Thread-safe: sets a flag and wakes the engine, which saves on its own thread
+// at the next input boundary.
+void ios_request_save(void);
+
+// --- command catalog (for the assignable button bar) ---------------------
+// Curated categories of game commands (mirrors the in-game help, from
+// "Extended Movement" onward). Commands are referenced by an opaque id (the
+// engine's command_type as an int). Strings are owned by the bridge; copy them
+// immediately on the Swift side.
+int  ios_cmd_cat_count(void);
+const char *ios_cmd_cat_name(int cat);
+int  ios_cmd_count(int cat);
+int  ios_cmd_id(int cat, int idx);     // opaque command id, or 0 if out of range
+const char *ios_cmd_label(int cmd_id); // curated short label for a button face
+const char *ios_cmd_name(int cmd_id);  // engine command name (stable; also the token)
+int  ios_cmd_key(int cmd_id);          // default keystroke to send, or 0 if unbound
+int  ios_cmd_from_token(const char *token); // name -> id, or 0 if unknown
 
 #ifdef __cplusplus
 }
