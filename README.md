@@ -33,15 +33,24 @@ ID, straight onto your device — no App Store, no TestFlight. Here's the whole 
 
 ### 1. Clone — recursively
 
-The engine and its lua/sqlite/pcre dependencies are git submodules, so you must
-clone with `--recurse-submodules`:
+This repo doesn't contain the engine source directly — it *points* at it. The
+DCSS engine lives in `Libraries/crawl` as a **git submodule** (a pinned reference
+to a commit in a separate repo), and DCSS in turn pulls its own C dependencies —
+**lua, sqlite, and pcre** — as further submodules nested inside it. A submodule
+reference is just a recorded URL and commit; it holds no code on its own.
+
+So a plain `git clone` gives you the app project with **empty** `Libraries/crawl`
+and dependency folders, and the build fails with missing-file / missing-header
+errors. `--recurse-submodules` walks that tree and actually fetches the engine and
+its dependencies at the exact commits this project is pinned to:
 
 ```sh
 git clone --recurse-submodules https://github.com/sethhoward/crawl-ios.git
 cd crawl-ios
 ```
 
-Already cloned without `--recurse-submodules`? Run this once:
+Already cloned without `--recurse-submodules` (empty submodule folders)? Fetch them
+after the fact — `--recursive` reaches the nested dependencies too:
 
 ```sh
 git submodule update --init --recursive
